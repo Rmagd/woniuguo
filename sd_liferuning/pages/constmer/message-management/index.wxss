@@ -1,0 +1,28 @@
+page {
+    background: #f1f2f4;
+}
+
+.record-module-item {
+    width: 670rpx;
+    padding: 20rpx;
+    margin: 20rpx auto 0 auto;
+    background: #fff;
+    font-size: 26rpx;
+    color: #333;
+    border-radius: 5rpx;
+}
+
+.t2 {
+    color: #ff3311;
+    margin: 5rpx 0;
+}
+
+.t3 {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+    width: 100%;
+    white-space: normal;
+    word-break: break-all;
+}

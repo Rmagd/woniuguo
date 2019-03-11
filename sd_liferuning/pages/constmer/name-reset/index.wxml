@@ -1,0 +1,7 @@
+<view class="container">
+    <view class="input-group">
+        <text class="input-addo">用户名:</text>
+        <input bindinput="inputChange" placeholder="请输入用户名" type="text"></input>
+    </view>
+    <button bindtap="confim" class="confim">确认</button>
+</view>

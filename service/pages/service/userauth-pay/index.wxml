@@ -1,0 +1,20 @@
+<import src="/wxParse/wxParse.wxml"></import>
+<view class="module-item">
+    <view class="module-item-text">
+        <view class="module-item-text-left">我的保证金：<text class="status" wx:if="{{runner.bond_id==0}}">（未缴纳）</text>
+            <text class="module-item-text-left green-text margin-left" wx:if="{{runner.bond_id!=0}}">{{runner.bond_price}}元</text>
+        </view>
+    </view>
+</view>
+<view class="module-item">
+    <view class="money-container">
+        <text bindtap="selectGetMoney" class="{{current_money_index===index&&'active'}}" data-id="{{item.id}}" data-selected="{{index}}" wx:for="{{getMoney}}">{{item.promise_money}}元</text>
+    </view>
+</view>
+<view class="module-item-text margin-top">
+    <template is="wxParse" data="{{wxParseData:article.nodes}}"></template>
+</view>
+<button bindtap="renzheng" class="pay-button" wx:if="{{type==2||type==4}}">立即认证</button>
+<button bindtap="pay" class="pay-button" wx:else>立即缴费</button>
+<button bindtap="outpay" class="outpay-button" style="">申请退款</button>
+<view bindtap="navTo" class="xieyi" data-url="/sd_liferuning/pages/constmer/protocol-detail/index?type={{xieyi.type}}">{{xieyi.name}}</view>

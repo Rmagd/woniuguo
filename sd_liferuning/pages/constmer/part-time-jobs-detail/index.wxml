@@ -1,0 +1,50 @@
+<!--sd_liferuning/pages/constmer/part-time-jobs-detail/index.wxml-->
+<view class='containe'>
+
+  <view class='title'>
+    <view class='jobname'>{{job.name}}</view>
+    <view class='price-type'>
+      <text class='price'>{{job.price}}</text>
+      <text style='margin-left:30rpx;'>{{jobCount[job.count]}}</text>
+      <text class='type'>{{jobType[job.type]}}</text>
+    </view>
+
+    <view class='date-time-empNum'>
+      <view>
+        <text>日期：{{job.date}}</text>
+      </view>
+      <view>
+        <text>时间：{{job.time}}</text>
+      </view>
+      <view>
+        <text>地点：{{job.addr}}</text>
+      </view>
+      <view>
+        <text>招聘人数：{{job.empNum}}人</text>
+      </view>
+    </view>
+
+    <view class='content'>
+      <text style='font-weight:bolder;margin-bottom:20rpx'>职位详情</text>
+      <view>{{job.content}}</view>
+    </view>
+
+  </view>
+
+
+  <view wx:if="{{hideBtn}}">
+    <button wx:if="{{job.fulled==1}}" disabled='true'>
+      <text>已报满</text>
+    </button>
+
+    <view wx:if="{{job.fulled==0}}">
+      <button wx:if="{{enrolled}}" disabled='true'>
+        <text>已报名</text>
+      </button>
+      <button wx:if="{{!enrolled}}" bindtap='enrollThis'>
+        <text>报名</text>
+      </button>
+    </view>
+  </view>
+
+</view>

@@ -1,0 +1,136 @@
+<view class="container">
+    <view class="auth-view" wx:if="{{!authStatus}}">
+        <view class="authorize">
+           <radio-group class="radio-group" bindchange="radioChange">
+           
+<label class='school'>请选择您的学校</label>
+<label class="radio"><radio value="0"/>华南理工大学</label>
+<label class="radio"><radio value="1" checked="true"/>广东工业大学</label>
+<label class="radio"><radio value="2"/>广州美术学院</label>
+<label class="radio"><radio value="3"/>广州大学</label>
+<label class="radio"><radio value="4"/>中山大学</label>
+<label class="radio"><radio value="5"/>华南师范大学</label>
+<label class="radio"><radio value="6"/>星海音乐学院</label>
+<label class="radio"><radio value="7"/>广东药科大学</label>
+<label class="radio"><radio value="8"/>广州中医药大学</label>
+<label class="radio" style='border:none'><radio value="9"/>广东外语外贸大学</label>
+           </radio-group>
+        </view>
+        <button bindgetuserinfo="getUserInfo" class="authorize-btn" openType="getUserInfo" wx:if="{{canIUse}}">确定</button>
+            <button bindtap="closePanel" class="authorize-btn" wx:if="{{!canIUse}}">确定</button>
+    </view>
+    <view class="page-content" wx:if="{{pageConfig.mainConfig.templetType==1}}">
+        <swiper autoplay="autoplay" class="banner">
+            <swiper-item wx:for="{{pageConfig.mainConfig.bannerGroups}}" wx:for-item="bannerItem">
+                <view bindtap="bannerurl" data-url="{{bannerItem.linkedUrl}}" style="width:100%;height:100%;">
+                    <image class="banner-image" src="{{bannerItem.imageUrl}}"></image>
+                </view>
+            </swiper-item>
+        </swiper>
+       
+        <swiper autoplay="autoplay" circular="true" class="sys-notify" vertical="true" wx:if="{{notice.length!=0}}">
+            <navigator url="/sd_liferuning/pages/constmer/notify-detail/index?id={{item.id}}" wx:for="{{notice}}">
+                <swiper-item class="sys-notify-item">
+                    <image src="{{pageConfig.mainConfig.systemNotifyIconUrl}}"></image>
+                    <text>系统公告:{{item.title}}</text>
+                </swiper-item>
+            </navigator>
+        </swiper>
+        <view class="switch-panel">
+            <scroll-view bindscroll="bindscroll" bindscrolltolower="scrolltolower" bindscrolltoupper="scrolltolower" class="switch-panel-title" scrollIntoView="" scrollX="true">
+                <view bindtap="switchPanel" class="switch-panel-title-item {{index==panel?'active':''}}" data-panel="{{index}}"  wx:for="{{pageConfig.mainConfig.ingressGroups.ingress}}" wx:for-item="ingressItem">
+            {{ingressItem.name}}
+          </view>
+
+            </scroll-view>
+            <view class="xian none">
+                <view style="background:{{scrolltype=='left'?'#20AD20':'#ddd'}}"></view>
+                <view style="background:{{scrolltype=='right'?'#20AD20':'#ddd'}}"></view>
+            </view>
+            <view class="switch-panel-content">
+                <view class="switch-panel-content-item {{index==panel?'active':''}}" id="{{index}}" wx:for="{{pageConfig.mainConfig.ingressGroups.ingress}}" wx:for-item="ingressItem">
+
+                    <view class="ware-module">
+                    <view wx:if="{{index!=4}}">
+                        <navigator class="{{pageConfig.mainConfig.ingressGroups.columnSize==0?'item-col-3':'item-col-4'}}" style="border-color:{{pageConfig.mainConfig.ingressGroups.borderColor}};" url="{{ingressChildrenItem.linkedUrl}}?wareText={{ingressChildrenItem.tagGroup.status=='0'?'':ingressChildrenItem.name}}&&tags={{ingressChildrenItem.tagGroup.tags}}" wx:for="{{ingressItem.children}}" wx:for-item="ingressChildrenItem">
+                            <view class="item-img">
+                                <image src="{{ingressChildrenItem.iconUrl}}"></image>
+                            </view>
+                            <view class="item-text">
+                    {{ingressChildrenItem.name}}
+                  </view>
+                        </navigator>
+                        </view>
+
+                        <view wx:if="{{index==4}}">
+                          <view class='part-time'>
+                            <view>你的智慧加我们的平台</view>
+<view>来把握好你零散时间</view>
+<view>轻松快乐挣钱</view>
+<view>你准备好了吗？</view>
+                            <navigator url='/sd_liferuning/pages/constmer/part-time-jobs-list/index' class='jobBtn'><button>我想做</button></navigator>
+                          </view>
+                        </view>
+                    </view>
+
+
+
+                </view>
+            </view>
+        </view>
+        <view class="bottom" wx:if="{{indexdata.copyright==1}}">
+        {{indexdata.copyright_rule}}
+      </view>
+    </view>
+    <view class="module-style2" wx:if="{{pageConfig.mainConfig.templetType==2}}">
+        <view class="page-head" style="background:url(\"{{pageConfig.mainConfig.headBgImage}}\")no-repeat;background-size:100% 100%;">
+            <view class="user-tip" style="background:{{pageConfig.mainConfig.nearbyConfig.bgColor}};color:{{pageConfig.mainConfig.nearbyConfig.fontColor}};">
+                <image class="icon" src="{{pageConfig.mainConfig.systemNotifyIconUrl}}"></image>
+                <text>{{pageConfig.mainConfig.nearbyConfig.hintText}}</text>
+            </view>
+            <view class="user-swiper" style="background:url(\"{{pageConfig.mainConfig.ingressGroups.bgImage}}\") no-repeat;background-size:cover;">
+                <scroll-view class="scroll-view" scrollWithAnimation="true" scrollX="true">
+                    <navigator class="scroll-view-item" url="{{ingressItem.linkedUrl}}?wareTexts={{ingressItem.name}}&&tags={{ingressItem.tagGroup.tags}}" wx:for="{{pageConfig.mainConfig.ingressGroups.ingress}}" wx:for-item="ingressItem">
+                        <image src="{{ingressItem.iconUrl}}"></image>
+                        <text>{{ingressItem.name}}</text>
+                    </navigator>
+                </scroll-view>
+                <view class="scroll-icon-group">
+                    <view class="scroll-icon-item {{currentScrollIcon==1?'active':''}}"></view>
+                    <view class="scroll-icon-item {{currentScrollIcon==2?'active':''}}"></view>
+                    <view class="scroll-icon-item {{currentScrollIcon==3?'active':''}}"></view>
+                </view>
+            </view>
+        </view>
+        <map class="page-map {{authStatus!=false?1:'none'}}  " latitude="{{mapData.latitude}}" longitude="{{mapData.longitude}}" markers="{{markers}}" scale="14 " showLocation="true" style="{{iphoneModule?'height:560rpx':'height:530rpx'}}"></map>
+    </view>
+    <view class="module-style3" wx:if="{{pageConfig.mainConfig.templetType==3}}">
+        <map class="page-map {{authStatus!=false?1:'none'}}" latitude="{{mapData.latitude}}" longitude="{{mapData.longitude}}" markers="{{markers}}" scale="14" showLocation="true" style="{{iphoneModule?'height:700rpx':'height:670rpx'}}"></map>
+        <cover-view class="map-upper-wrap" style="{{iphoneModule?'top:580rpx':'top:550rpx'}}" wx:if="{{authStatus}}">
+            <cover-view class="map-upper-btn-group">
+                <cover-image bindtap="getLocaltion" class="map-upper-btn-item" src="{{imgurl}}frash.png"></cover-image>
+            </cover-view>
+        </cover-view>
+        <swiper autoplay="autoplay" circular="true" class="sys-notify" vertical="true" wx:if="{{notice.length!=0}}">
+            <navigator url="/sd_liferuning/pages/constmer/notify-detail/index?id={{item.id}}" wx:for="{{notice}}">
+                <swiper-item class="sys-notify-item">
+                    <image src="{{pageConfig.mainConfig.systemNotifyIconUrl}}"></image>
+                    <text>系统公告:{{item.title}}</text>
+                </swiper-item>
+            </navigator>
+        </swiper>
+        <view class="user-ingress" style="background:url(\"{{pageConfig.mainConfig.ingressGroups.bgImage}}\") no-repeat;background-size:cover;">
+            <scroll-view class="scroll-view" scrollWithAnimation="true" scrollY="true">
+                <navigator class="ingress-item" style="background:url(\"{{ingressItem.iconUrl}}\") no-repeat;background-size:100% 100%;" url="{{ingressItem.linkedUrl}}?wareTexts={{ingressItem.name}}&&tags={{ingressItem.tagGroup.tags}}" wx:for="{{pageConfig.mainConfig.ingressGroups.ingress}}" wx:for-item="ingressItem">
+                    <view class="ingress-title">
+                {{ingressItem.name}}
+              </view>
+                    <view class="ingress-tip">
+                {{ingressItem.hint}}
+              </view>
+                </navigator>
+            </scroll-view>
+        </view>
+    </view>
+    <include src="/sd_liferuning/template/nav/nav.wxml"></include>
+</view>

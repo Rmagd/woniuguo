@@ -1,0 +1,61 @@
+page {
+    background: #F2F2F2;
+}
+
+.advise-module {
+    width: 710rpx;
+    margin: 0 auto;
+}
+
+.user-advise {
+    position: relative;
+    font-size: 26rpx;
+}
+
+.user-advise textarea {
+    width: 670rpx;
+    height: 260rpx;
+    background: #FFF;
+    color: #202020;
+    margin: 20rpx auto 50rpx;
+    padding: 20rpx;
+}
+
+.user-tip {
+    position: absolute;
+    bottom: 20rpx;
+    right: 20rpx;
+    color: #ababab;
+}
+
+.advise-module button {
+    width: 700rpx;
+    height: 60rpx;
+    line-height: 60rpx;
+    background: #22ae22;
+    color: #FFF;
+    font-size: 30rpx;
+}
+
+.chose_star {
+    width: 710rpx;
+    padding: 0 20rpx;
+}
+
+.star {
+    width: 60rpx;
+    height: 60rpx;
+    padding-top: 20rpx;
+    margin-right: 20rpx;
+    position: relative;
+    top: 0;
+    left: 0;
+}
+
+._star {
+    width: 60rpx;
+    height: 60rpx;
+    position: absolute;
+    top: 20rpx;
+    left: 0;
+}

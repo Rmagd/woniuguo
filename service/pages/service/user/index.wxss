@@ -1,0 +1,126 @@
+page {
+    background: #F2F2F2;
+}
+
+.user-face-module {
+    overflow: hidden;
+    background: #FFF;
+    display: flex;
+    padding: 0 30rpx;
+}
+
+.user-face {
+    width: 120rpx;
+    height: 120rpx;
+    border-radius: 60rpx;
+    box-shadow: 0 0 10rpx #333;
+    background: #FFF;
+    margin: 15rpx 0;
+}
+
+.user-info {
+    flex: 1;
+    overflow: hidden;
+    position: relative;
+    top: 35rpx;
+}
+
+.info {
+    margin-left: 30rpx;
+    font-size: 30rpx;
+}
+
+.gender-icon {
+    width: 27rpx;
+    height: 27rpx;
+    margin-left: 15rpx;
+}
+
+.module-context {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    background: #fff;
+    margin-bottom: 15rpx;
+    border-top: 2rpx solid #e2e2e2;
+}
+
+.module-context .left {
+    padding: 20rpx 0rpx;
+    width: 50%;
+    text-align: center;
+    border-right: 2rpx solid #e2e2e2;
+}
+
+.module-context .left text:first-child {
+    display: block;
+    font-size: 40rpx;
+    color: #333;
+}
+
+.module-context .left text:last-child {
+    display: block;
+    font-size: 26rpx;
+    color: #333;
+}
+
+.module-context .right {
+    padding: 20rpx 0rpx;
+    width: 50%;
+    text-align: center;
+}
+
+.module-context .right text:first-child {
+    display: block;
+    font-size: 40rpx;
+    color: #333;
+}
+
+.module-context .right text:last-child {
+    display: block;
+    font-size: 26rpx;
+    color: #333;
+}
+
+.nav-module {
+    width: 100%;
+    background: #FFF;
+    margin-bottom: 15rpx;
+}
+
+.nav-module navigator>view {
+    display: flex;
+    align-items: center;
+}
+
+.nav-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 10rpx;
+    font-size: 30rpx;
+    color: #333;
+    border-bottom: 1rpx solid #EDF2F5;
+    height: 80rpx;
+    line-height: 80rpx;
+}
+
+.nav-icon {
+    width: 32rpx;
+    height: 32rpx;
+    margin: 0 10rpx;
+}
+
+.nav-flag {
+    width: 15rpx;
+    height: 24rpx;
+    margin: 0 10rpx;
+}
+
+.nickname {
+    font-weight: bold;
+    color: #333;
+}
+
+.phone {
+    color: #555;
+}

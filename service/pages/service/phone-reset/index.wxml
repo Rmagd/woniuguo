@@ -1,0 +1,14 @@
+<view class="container">
+    <text class="phone-text">您当前的手机号为：123456789</text>
+    <text class="help-info">更换后信息不变，下次可以使用新手机号登陆</text>
+    <view class="input-group">
+        <input bindinput="changeInputData" data-name="phoneNumber" placeholder="新手机号" type="text"></input>
+        <button bindtap="getIdentifyingCode" class="getCode" disabled="{{btnType!=1?'disabled':''}}">{{btnType!=1?waitTime:defaultWaitText}}</button>
+    </view>
+    <view class="input-group">
+        <input bindinput="changeInputData" data-name="identifyingCode" placeholder="验证码" type="text"></input>
+    </view>
+    <view class="input-group">
+        <button bindtap="sendRequest" class="confirm">验证后更换新手机</button>
+    </view>
+</view>

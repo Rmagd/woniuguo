@@ -1,0 +1,20 @@
+<view class="container">
+    <view class="title">请填写您本人的银行卡信息</view>
+    <view class="input-group">
+        <text class="input-addo">姓名：</text>
+        <input bindinput="changeInputData" class="input-control" data-name="bankName" placeholder="请输入姓名" type="text" value="{{bankname}}"></input>
+    </view>
+    <view class="input-group">
+        <picker bindchange="bindBankChange" range="{{bankArr}}" rangeKey="title" value="{{index}}">
+            <text class="input-addo">开户行：</text>
+            <text class="input-control">
+                <text class="debug">-</text>{{bank.title}}</text>
+            <text class="iconfont icon-xiala"></text>
+        </picker>
+    </view>
+    <view class="input-group">
+        <text class="input-addo">银行卡号：</text>
+        <input bindinput="changeInputData" class="input-control" data-name="bankAccount" placeholder="请输入本人的银行卡卡号" type="number" value="{{bankaccount}}"></input>
+    </view>
+    <button bindtap="sendRequest" class="confirm margin-top-btn">确定</button>
+</view>

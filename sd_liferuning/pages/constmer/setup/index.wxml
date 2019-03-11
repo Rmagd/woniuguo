@@ -1,0 +1,11 @@
+<view class="title">为了更好的体验跑腿服务，需要确认一下信息无误。</view>
+<view class="view" wx:for="{{data}}">
+    <view bindtap="navTo" class="item" data-url="/sd_liferuning/pages/constmer/information/index?index={{class.index}}" wx:for="{{item.class}}" wx:for-item="class" wx:key="{{item.name}}">
+        <view class="l">{{class.name}}</view>
+        <view class="r">
+            <image class="img" src="{{imgurl}}success.png" wx:if="{{class.type!=0}}"></image>
+            <text class="{{class.type==0?'error':'success'}}">{{class.type==0?'未认证':'已认证'}}</text>
+            <icon class="iconfont icon-right"></icon>
+        </view>
+    </view>
+</view>

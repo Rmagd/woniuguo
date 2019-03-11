@@ -1,0 +1,158 @@
+.address-list-module {
+    width: 100%;
+    padding-bottom: 85rpx;
+}
+
+.address-item {
+    padding: 10rpx 20rpx;
+    border-bottom: 1rpx solid #EDF2F5;
+}
+
+.text-line {
+    font-size: 28rpx;
+    margin: 10rpx 0 20rpx;
+    font-weight: bold;
+    color: #666;
+    margin-left: 10rpx;
+    display: block;
+}
+
+.text-lines {
+    display: block;
+}
+
+.address-btn-group {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 30rpx;
+}
+
+.iconfont {
+    font-size: 40rpx;
+    margin: 0 30rpx;
+    color: #666;
+}
+
+.tag {
+    background: #666666;
+    color: #FFF;
+    font-size: 28rpx;
+    padding: 10rpx 30rpx;
+    border-radius: 10rpx;
+}
+
+.address-btn {
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    margin: 0;
+    font-size: 28rpx;
+    overflow: hidden;
+}
+
+.address-btn navigator {
+    height: 75rpx;
+    line-height: 75rpx;
+    text-align: center;
+    background: #20AD20;
+    color: #FFF;
+    display: block;
+    border-radius: 10rpx;
+    width: 95%;
+    margin: 0 auto 10rpx;
+}
+
+.list {
+    width: 620rpx;
+    padding: 0rpx 40rpx;
+    background: #fff;
+    margin: 25rpx 25rpx 0 25rpx;
+    border: 1px solid #e0e0e0;
+    border-radius: 10rpx;
+}
+
+.list .text text {
+    width: 100%;
+    display: inline-block;
+    font-size: 30rpx;
+    line-height: 60rpx;
+}
+
+.list .name {
+    display: flex;
+    align-items: center;
+}
+
+.list .phone {
+    text-align: right;
+}
+
+.hr {
+    width: 100%;
+    height: 1px;
+    background: #e0e0e0;
+    margin: 15rpx 0 5rpx 0;
+}
+
+.bottom {
+    display: flex;
+    flex: 1;
+}
+
+.left {
+    width: 50%;
+    display: flex;
+    font-size: 32rpx;
+}
+
+.left icon {
+    margin: auto 20rpx auto 0;
+}
+
+.left text {
+    line-height: 80rpx;
+}
+
+.right {
+    width: 50%;
+    line-height: 80rpx;
+    font-size: 32rpx;
+    text-align: right;
+}
+
+.right text {
+    width: 115rpx;
+    display: inline-block;
+    margin-left: 35rpx;
+}
+
+.edit {
+    background: url("http://localhost:8080/images/bianji.png") no-repeat left center;
+    background-size: 40rpx auto;
+}
+
+.del {
+    background: url(http://localhost:8080/images/del.png) no-repeat left center;
+    background-size: 40rpx auto;
+}
+
+.bottom-box {
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    font-size: 28rpx;
+    color: #000000;
+    border-top: 1rpx solid #eee;
+    height: 100rpx;
+    line-height: 100rpx;
+    background: url(https://cdn.it120.cc/images/weappshop/arrow-right.png) no-repeat 705rpx center;
+    background-color: #fff;
+    background-size: 15rpx auto;
+}
+
+.bottom-box .add-btn {
+    margin-left: 30rpx;
+    padding-left: 70rpx;
+    background: url(https://cdn.it120.cc/images/weappshop/add-addr.png) no-repeat left center;
+    background-size: 40rpx auto;
+}

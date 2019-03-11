@@ -1,0 +1,83 @@
+page {
+    background: #FAFAFA;
+}
+
+.search-input {
+    width: 95%;
+    display: flex;
+    height: 100rpx;
+    line-height: 100rpx;
+    padding: 0 2.5%;
+    margin: 20rpx 0;
+    background: #FFFFFF;
+}
+
+.search-input input {
+    flex: 1;
+    height: 100rpx;
+    line-height: 100rpx;
+    font-size: 35rpx;
+}
+
+.search-input text {
+    padding: 0 20rpx;
+}
+
+.select-time {
+    width: 100%;
+    margin-top: 20rpx;
+    background: #FFFFFF;
+}
+
+.select-time-title {
+    line-height: 100rpx;
+    margin-left: 20rpx;
+    font-size: 35rpx;
+    font-weight: bold;
+    color: #333333;
+}
+
+.select-time .section {
+    border-top: 1rpx solid #E6E6E6;
+    height: 100rpx;
+    line-height: 100rpx;
+    font-size: 35rpx;
+    padding: 0 20rpx;
+}
+
+.select-time .section .picker {
+    color: #333333;
+}
+
+.select-time .section .picker text {
+    float: right;
+}
+
+.btn-group {
+    width: 100%;
+    display: flex;
+    background: #FFFFFF;
+    position: fixed;
+    bottom: 0;
+}
+
+.btn-group .reset,.btn-group .confirm {
+    display: block;
+    line-height: 100rpx;
+    text-align: center;
+    border-radius: 10rpx;
+    box-shadow: 0 0 3rpx #ccc;
+    font-size: 35rpx;
+}
+
+.btn-group .reset {
+    flex: 1;
+    background: #FFFFFF;
+    color: #14B5FA;
+}
+
+.btn-group .confirm {
+    flex: 2;
+    background: #14B5FA;
+    color: #FFFFFF;
+}

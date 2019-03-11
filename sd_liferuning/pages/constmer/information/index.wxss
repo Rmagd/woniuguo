@@ -1,0 +1,214 @@
+page {
+    background: #f1f2f4;
+}
+
+.view {
+    padding: 0 30rpx;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    background: #fff;
+    margin-top: 20rpx;
+}
+
+.view .item {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    height: 110rpx;
+    border-bottom: 1px solid #ddd;
+}
+
+.view .item:last-child {
+    border-bottom: 0;
+}
+
+.view .l {
+    width: 230rpx;
+    font-size: 32rpx;
+    color: 3333;
+    font-weight: bold;
+}
+
+.view .r {
+    flex: 1;
+    font-size: 28rpx;
+}
+
+.c_view {
+    padding: 0 30rpx 70rpx 30rpx;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    background: #fff;
+    margin-top: 20rpx;
+}
+
+.c_view .title {
+    font-size: 32rpx;
+    color: 3333;
+    font-weight: bold;
+    height: 110rpx;
+    line-height: 110rpx;
+}
+
+.c_view .v_img {
+    width: 530rpx;
+    height: 300rpx;
+    border-radius: 10rpx;
+    background: #f1f2f4;
+    margin: 0 auto 40rpx auto;
+}
+
+.c_view .v_img .v_img_o {
+    padding: 52rpx 0;
+}
+
+.c_view .v_img .v_img_o image {
+    width: 120rpx;
+    height: 120rpx;
+    display: block;
+    margin: 0 auto;
+    border-radius: 50%;
+}
+
+.c_view .v_img .v_img_o view {
+    font-size: 26rpx;
+    color: #555;
+    text-align: center;
+    margin-top: 50rpx;
+}
+
+.c_view .v_img .img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    border-radius: 10rpx;
+}
+
+.foot {
+    padding: 0 30rpx;
+    background: #fff;
+}
+
+.foot .titles {
+    font-size: 30rpx;
+    color: #333;
+    font-weight: bold;
+    margin: 0rpx 0 18rpx 0;
+}
+
+.foot .text {
+    color: #888;
+    font-size: 24rpx;
+}
+
+.foot .text .p {
+    line-height: 35rpx;
+}
+
+.foot .text text {
+    color: #ee3112;
+}
+
+.kongbai {
+    width: 100%;
+    height: 160rpx;
+}
+
+.btn {
+    width: 100%;
+    height: 140rpx;
+    border-top: 1px solid #e5e5e5;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    background: #fff;
+    display: flex;
+    align-items: center;
+}
+
+.btn button {
+    width: 690rpx;
+    height: 86rpx;
+    font-size: 32rpx;
+    color: #fff;
+    background: #20ad20;
+    margin: 0 auto;
+}
+
+.view_vh {
+    height: 100vh;
+    background: #fff;
+}
+
+.view_vh .content {
+    padding: 10rpx 30rpx;
+}
+
+.view_vh .view_kuai {
+    width: 100%;
+    height: 20rpx;
+    background: #f1f2f4;
+}
+
+.view_vh .content .title {
+    font-size: 40rpx;
+    color: #20ad20;
+    font-weight: bold;
+    height: 135rpx;
+    line-height: 135rpx;
+}
+
+.view_vh .content .p {
+    font-size: 28rpx;
+    color: #555;
+    margin-bottom: 129rpx;
+}
+
+.view_vh .content .p text {
+    display: block;
+}
+
+.view_vh .content .item_input {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 136rpx;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 58rpx;
+}
+
+.view_vh .content .item_input .l {
+    width: 440rpx;
+}
+
+.view_vh .content .item_input .l .t {
+    font-size: 32rpx;
+    color: #333;
+    font-weight: bold;
+    height: 85rpx;
+    line-height: 85rpx;
+}
+
+.view_vh .content .item_input .l input {
+    height: 51rpx;
+    font-size: 28rpx;
+}
+
+.view_vh .content .item_input .r {
+    flex: 1;
+    text-align: center;
+}
+
+.view_vh .content .item_input .r .t {
+    color: #20ad20;
+    font-size: 28rpx;
+    height: 80rpx;
+    line-height: 80rpx;
+}
+
+.view_vh .content .item_input .r .t2 {
+    color: #aaa;
+    font-size: 28rpx;
+    height: 80rpx;
+    line-height: 80rpx;
+}

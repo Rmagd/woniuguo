@@ -1,0 +1,271 @@
+.address {
+    width: 100%;
+    background: #fff;
+    position: fixed;
+    bottom: 0rpx;
+    z-index: 999;
+}
+
+.star-address {
+    width: 700rpx;
+    display: flex;
+    margin: 30rpx auto;
+    justify-content: space-between;
+    height: 70rpx;
+}
+
+.star-address .left {
+    width: 70rpx;
+}
+
+.star-address .left image {
+    width: 44rpx;
+    height: 44rpx;
+    margin-top: 13rpx;
+}
+
+.star-address .center {
+    width: 550rpx;
+}
+
+.star-address .center text:first-child {
+    width: 100%;
+    font-size: 30rpx;
+    color: #333;
+    display: block;
+    line-height: 70rpx;
+}
+
+.star-address .right {
+    width: 80rpx;
+}
+
+.star-address .right image {
+    width: 48rpx;
+    height: 48rpx;
+    margin-top: 2rpx;
+    margin-left: 15rpx;
+}
+
+.end-address {
+    width: 700rpx;
+    display: flex;
+    margin: 30rpx auto;
+    height: 70rpx;
+    justify-content: space-between;
+}
+
+.end-address .left {
+    width: 70rpx;
+}
+
+.end-address .left image {
+    width: 44rpx;
+    height: 44rpx;
+    margin-top: 13rpx;
+}
+
+.end-address .center {
+    width: 550rpx;
+}
+
+.end-address .center text:first-child {
+    width: 100%;
+    font-size: 30rpx;
+    color: #333;
+    display: block;
+    line-height: 70rpx;
+}
+
+.end-address .right {
+    width: 80rpx;
+}
+
+.end-address .right image {
+    width: 64rpx;
+    height: 64rpx;
+    margin-top: 2rpx;
+    margin-left: 15rpx;
+}
+
+.send-btn {
+    width: 100%;
+    height: 100rpx;
+    color: #fff;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.send-btn button {
+    width: 100%;
+    height: 100rpx;
+    background: #20ad20;
+    color: #fff;
+    border-radius: none;
+}
+
+.send-btn .send-finished {
+    width: 100%;
+    height: 100rpx;
+    background: grey;
+    color: #fff;
+    border-radius: none;
+}
+
+.send-btn button::after {
+    border: none;
+}
+
+.cover-img {
+    position: absolute;
+    left: 20rpx;
+    top: 700rpx;
+    width: 80rpx;
+    height: 80rpx;
+    transition: all 2s;
+    z-index: 9999999999999;
+}
+
+.cover-img:hover {
+    transform: rotate(720deg);
+}
+
+.rotate {
+    transform: rotate(720deg);
+}
+
+.border-bottom {
+    border-top: 2rpx solid #ddd;
+}
+
+.star-addresss {
+    width: 700rpx;
+    height: 70rpx;
+    display: flex;
+    align-items: center;
+    margin: 30rpx auto;
+    justify-content: space-between;
+}
+
+.star-addresss .l {
+    display: flex;
+    align-items: center;
+}
+
+.star-addresss .l>view {
+    width: 550rpx;
+    overflow: hidden;
+    font-size: 30rpx;
+    color: #333;
+    display: block;
+}
+
+.star-addresss .l image {
+    width: 44rpx;
+    height: 44rpx;
+    display: inline-block;
+    margin-right: 20rpx;
+}
+
+.star-addresss .r {
+    width: 46rpx;
+    height: 48rpx;
+    display: inline-block;
+}
+
+.warp {
+    width: 100%;
+    background: #fff;
+    position: fixed;
+    bottom: 0;
+    z-index: 9999;
+    color: #333;
+}
+
+.warp .title {
+    text-align: center;
+    font-size: 32rpx;
+    margin-top: 30rpx;
+}
+
+.warp .body {
+    position: relative;
+}
+
+.warp .body .list {
+    display: flex;
+    width: 400rpx;
+    margin: 50rpx auto 0rpx auto;
+    position: relative;
+    overflow: hidden;
+}
+
+.warp .body input {
+    position: absolute;
+    top: 0;
+    left: -600rpx;
+    width: 1000rpx;
+    height: 80rpx;
+    opacity: 0;
+    text-indent: -999rpx;
+}
+
+.warp .body text {
+    border: 1px solid #ddd;
+    flex: 1;
+    height: 80rpx;
+    line-height: 80rpx;
+    text-align: center;
+}
+
+.warp .body text {
+    border-left: 0;
+}
+
+.warp .body text:first-child {
+    border-left: 1px solid #ddd;
+}
+
+.warp .subbtn {
+    width: 100%;
+    height: 100rpx;
+    color: #fff;
+    background: #20ad20;
+    text-align: center;
+    line-height: 100rpx;
+    font-size: 36rpx;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.warp .close {
+    position: absolute;
+    top: 10rpx;
+    right: 20rpx;
+}
+
+.warp .close image {
+    width: 60rpx;
+    height: 60rpx;
+    display: block;
+}
+
+.blue {
+    background: #f0b72e;
+    width: 20rpx;
+    height: 20rpx;
+    border-radius: 50%;
+    display: block;
+    margin-right: 20rpx;
+}
+
+.yellow {
+    background: #f0b72e;
+    width: 20rpx;
+    height: 20rpx;
+    border-radius: 50%;
+    display: block;
+    margin-right: 20rpx;
+}

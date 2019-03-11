@@ -1,0 +1,38 @@
+page {
+    background: #FAFAFA;
+}
+
+.container {
+    padding: 0 20rpx;
+}
+
+.input-group {
+    width: 100%;
+    display: flex;
+}
+
+.container input {
+    height: 80rpx;
+    line-height: 80rpx;
+    background: #FFFFFF;
+    border: 1rpx solid #14B5FA;
+    border-radius: 10rpx;
+    padding: 0 2.5%;
+    margin: 10rpx 0;
+    font-size: 30rpx;
+    flex: 1;
+}
+
+.container button {
+    height: 85rpx;
+    line-height: 85rpx;
+    margin-top: 10rpx;
+    background: #14B5FA;
+    color: #FFFFFF;
+    font-size: 30rpx;
+}
+
+.container text {
+    color: #666;
+    font-size: 30rpx;
+}

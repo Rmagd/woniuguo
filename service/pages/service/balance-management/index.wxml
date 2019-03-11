@@ -1,0 +1,59 @@
+<view class="container">
+    <view class="balance-model" style="background:url(\"{{webRoot}}/public/WeChat/bg.png\"); background-size:cover;">
+        <view class="balance-item">
+            <view class="balance-item-left">
+                <view class="title">余额(元)</view>
+                <view class="price">{{money_state.money}}</view>
+            </view>
+            <view class="balance-item-right">
+                <view class="info-item">
+                    <view>可提现余额</view>
+                    <view>{{money_state.money}}元</view>
+                </view>
+                <view class="info-item">
+                    <view>今日收入</view>
+                    <view>{{money_state.today.price}}元</view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="fn-btn-group">
+
+        <navigator class="fn-btn-item" url="../withdraw-wechat/index?type=1">
+            <image src="{{webRoot}}/public/WeChat/resource/common/image/customer/balance-management/icon1.png" wx:if="{{icons}}"></image>
+            <text>立即提现</text>
+       </navigator> 
+
+
+
+        <navigator class="fn-btn-item" url="../balance-record/index">
+            <image src="{{webRoot}}/public/WeChat/resource/common/image/customer/balance-management/icon3.png" wx:if="{{icons}}"></image>
+            <text>提现记录</text>
+        </navigator>
+    </view>
+    <view class="income-module">
+        <view class="income-module-title">
+            <text>今日订单统计</text>
+        </view>
+        <view class="income-module-item">
+            <text>完成订单</text>
+            <text>共{{money_state.today.num}}笔</text>
+            <text class="iconfont">{{money_state.today.price}} 元</text>
+        </view>
+    </view>
+    <view class="income-module">
+        <view class="income-module-title">
+            <text>总订单统计</text>
+        </view>
+        <view class="income-module-item">
+            <text>完成订单</text>
+            <text>共{{money_state.all.num}}笔</text>
+            <text class="iconfont">{{money_state.all.price}} 元</text>
+        </view>
+        <view class="income-module-item">
+            <text>待收款订单</text>
+            <text>共{{money_state.not_pay.num}}笔</text>
+            <text class="iconfont">{{money_state.not_pay.price}} 元</text>
+        </view>
+    </view>
+</view>

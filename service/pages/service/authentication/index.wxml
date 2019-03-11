@@ -1,0 +1,88 @@
+<view class="container">
+    <picker bindchange="userTypePickerChange" class="input-group" range="{{userTypeArr}}" rangeKey="name" value="{{index}}">
+        <view style="color:#666;" wx:if="{{userType==''}}">
+      请选择服务人员分类
+    </view>
+        <view wx:else>{{userType.name}}</view>
+    </picker>
+    <view class="input-group">
+        <input bindinput="changeInputData" data-name="name" placeholder="输入真实姓名" type="text"></input>
+    </view>
+    <view class="input-group">
+        <input bindinput="changeInputData" data-name="idcard" placeholder="输入身份证号" type="text"></input>
+    </view>
+    <view class="input-group" wx:if="{{agent}}">
+        <input bindinput="changeInputData" data-name="agentid" placeholder="输入代理ID" type="number"></input>
+    </view>
+    <view class="input-group">
+    拍摄身份证正面照
+    <text class="page-help">（请确保所拍摄的照片清晰）</text>
+    </view>
+    <view class="img-group">
+        <view class="img-item">
+            <text>参考照片</text>
+            <image src="http://a.123wangsu.com/image/2017/0325/444687ff0ba702e40db57986dc64871f.jpeg"></image>
+        </view>
+        <view class="img-item">
+            <text>你的正面照片</text>
+            <image bindtap="upimg" data-type="0" src="{{cardImg}}"></image>
+        </view>
+    </view>
+    <view class="input-group">
+    拍摄身份证反面照
+    <text class="page-help">（请确保所拍摄的照片清晰）</text>
+    </view>
+    <view class="img-group">
+        <view class="img-item">
+            <text>参考照片</text>
+            <image src="https://www.135k.com/addons/sd_liferuning/tp/public/uploads/xiaochengxu/zfzf.png"></image>
+        </view>
+        <view class="img-item">
+            <text>你的反面照片</text>
+            <image bindtap="upimg" data-type="1" src="{{cardImgf}}"></image>
+        </view>
+    </view>
+    <view class="input-group" wx:if="{{userType.id=='3'}}">
+    拍摄健康证正面照
+    <text class="page-help">（请确保所拍摄的照片清晰）</text>
+    </view>
+    <view class="img-group" wx:if="{{userType.id=='3'}}">
+        <view class="img-item">
+            <text>参考照片</text>
+            <image src="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=203348743,565912802&fm=27&gp=0.jpg"></image>
+        </view>
+        <view class="img-item">
+            <text>你的正面照片</text>
+            <image bindtap="upimg" data-type="4" src="{{health_front}}"></image>
+        </view>
+    </view>
+    <view class="input-group" wx:if="{{userType.id=='2'}}">
+    拍摄驾驶证正面照
+    <text class="page-help">（请确保所拍摄的照片清晰）</text>
+    </view>
+    <view class="img-group" wx:if="{{userType.id=='2'}}">
+        <view class="img-item">
+            <text>参考照片</text>
+            <image src="http://s1.sinaimg.cn/mw690/006cklfzzy7aYc6GP8k60&690"></image>
+        </view>
+        <view class="img-item">
+            <text>你的正面照片</text>
+            <image bindtap="upimg" data-type="2" src="{{license_front}}"></image>
+        </view>
+    </view>
+    <view class="input-group" wx:if="{{userType.id=='2'}}">
+    照拍摄驾驶证反面照
+    <text class="page-help">（请确保所拍摄的照片清晰）</text>
+    </view>
+    <view class="img-group" wx:if="{{userType.id=='2'}}">
+        <view class="img-item">
+            <text>参考照片</text>
+            <image src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1534409330160&di=0f034bd57b544cb195c8a1c8bbb123c9&imgtype=0&src=http%3A%2F%2Fimg.youxinpai.com%2Fupload%2FUppUpload%2FCheckAuto%2Fche%2F201703%2F1309%2F58c5fbf44f969729046.jpg"></image>
+        </view>
+        <view class="img-item">
+            <text>你的反面照片</text>
+            <image bindtap="upimg" data-type="3" src="{{license_back}}"></image>
+        </view>
+    </view>
+    <button bindtap="sendRequest" class="confirm">确认</button>
+</view>

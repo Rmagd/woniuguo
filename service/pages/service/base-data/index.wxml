@@ -1,0 +1,23 @@
+<view class="container">
+    <view bindtap="chooseFace" class="module-item">
+        <view class="module-item-text">
+            <text class="module-item-text-left">头像</text>
+            <image class="module-item-text-face" src="{{facePath}}"></image>
+        </view>
+        <view class="iconfont icon-dayuhao"></view>
+    </view>
+    <navigator class="module-item" url="/pages/service/name-reset/index">
+        <view class="module-item-text">
+            <text class="module-item-text-left">姓名</text>
+            <text class="module-item-text-right">用户名</text>
+        </view>
+        <view class="iconfont icon-dayuhao"></view>
+    </navigator>
+    <navigator class="module-item" url="/pages/service/phone-reset/index">
+        <view class="module-item-text">
+            <text class="module-item-text-left">手机号</text>
+            <text class="module-item-text-right">12345678912</text>
+        </view>
+        <view class="iconfont icon-dayuhao"></view>
+    </navigator>
+</view>

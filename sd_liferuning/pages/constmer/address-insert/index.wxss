@@ -1,0 +1,82 @@
+.address-input-module {
+    width: 100%;
+    padding-bottom: 85rpx;
+}
+
+.input-group {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20rpx;
+    border-bottom: 1rpx solid #EDF2F5;
+}
+
+.input-addo,.input-control {
+    font-size: 30rpx;
+    height: 80rpx;
+    line-height: 80rpx;
+    display: inline-block;
+}
+
+.input-controls {
+    font-size: 30rpx;
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+
+.input-addo {
+    width: 155rpx;
+    text-align: right;
+    padding-right: 10rpx;
+}
+
+.input-control {
+    flex: 1;
+}
+
+.placeholder {
+    color: #808080;
+}
+
+.tag {
+    background: #666666;
+    color: #FFF;
+    font-size: 28rpx;
+    padding: 10rpx 30rpx;
+    border-radius: 10rpx;
+    margin-right: 30rpx;
+}
+
+.active {
+    background: #20AD20;
+}
+
+.address-btn {
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    margin: 0;
+    font-size: 28rpx;
+    overflow: hidden;
+}
+
+.address-btn text {
+    height: 75rpx;
+    line-height: 75rpx;
+    text-align: center;
+    background: #20AD20;
+    color: #FFF;
+    display: block;
+    border-radius: 10rpx;
+    width: 95%;
+    margin: 0 auto 10rpx;
+}
+
+.get-address {
+    font-size: 25rpx;
+    background: #808080;
+    color: #FFFFFF;
+    height: 70rpx;
+    line-height: 70rpx;
+    margin: 5rpx 0;
+}

@@ -1,0 +1,118 @@
+<view class="container">
+    <view class="page-content">
+        <view class="user-face-module">
+            <view>
+                <image class="user-face" src="{{user.avatar_url}}"></image>
+            </view>
+            <view class="user-info">
+                <view class="info nickname">
+                    <text bindtap="navToUser">{{user.nickname}}</text>
+                </view>
+                <view class="info phone">
+                    <text bindtap="navToUser">{{phone}}</text>
+                </view>
+            </view>
+        </view>
+        <view class="module-context">
+            <view class="left">
+                <text>{{order_munber.num}}</text>
+                <text>今日完成订单</text>
+            </view>
+            <view class="right">
+                <text>{{order_munber.price}}</text>
+                <text>订单收入（元）</text>
+            </view>
+        </view>
+        <view class="nav-module">
+            <navigator class="nav-item" url="/service/pages/service/bankcard-list/index">
+                <view>
+                    <image class="nav-icon" src="{{webRoot}}/public/WeChat/resource/common/image/service/user/icon2.png" wx:if="{{webRoot}}"></image>
+                    <text>银行卡设置</text>
+                </view>
+                <view>
+                    <image class="nav-flag" src="{{webRoot}}/public/WeChat/resource/common/image/customer/user/flag1.png" wx:if="{{webRoot}}"></image>
+                </view>
+            </navigator>
+            <navigator class="nav-item" url="/service/pages/service/balance-management/index">
+                <view>
+                    <image class="nav-icon" src="{{webRoot}}/public/WeChat/resource/common/image/service/user/icon3.png" wx:if="{{webRoot}}"></image>
+                    <text>资金管理</text>
+                </view>
+                <view>
+                    <image class="nav-flag" src="{{webRoot}}/public/WeChat/resource/common/image/customer/user/flag1.png" wx:if="{{webRoot}}"></image>
+                </view>
+            </navigator>
+            <navigator class="nav-item" url="/service/pages/service/order-list/index">
+                <view>
+                    <image class="nav-icon" src="{{webRoot}}/public/WeChat/resource/common/image/service/user/icon4.png" wx:if="{{webRoot}}"></image>
+                    <text>历史订单</text>
+                </view>
+                <view>
+                    <image class="nav-flag" src="{{webRoot}}/public/WeChat/resource/common/image/customer/user/flag1.png" wx:if="{{webRoot}}"></image>
+                </view>
+            </navigator>
+        </view>
+        <view class="nav-module">
+            <navigator class="nav-item" url="/service/pages/service/userauth-pay/index">
+                <view>
+                    <image class="nav-icon" src="{{webRoot}}/public/WeChat/resource/common/image/service/user/icon5.png" wx:if="{{webRoot}}"></image>
+                    <text>保证金</text>
+                </view>
+                <view>
+                    <image class="nav-flag" src="{{webRoot}}/public/WeChat/resource/common/image/customer/user/flag1.png" wx:if="{{webRoot}}"></image>
+                </view>
+            </navigator>
+            <navigator class="nav-item" url="/service/pages/service/statistics-map/index">
+                <view>
+                    <image class="nav-icon" src="{{webRoot}}/public/WeChat/resource/common/image/service/user/icon6.png" wx:if="{{webRoot}}"></image>
+                    <text>统计报表</text>
+                </view>
+                <view>
+                    <image class="nav-flag" src="{{webRoot}}/public/WeChat/resource/common/image/customer/user/flag1.png" wx:if="{{webRoot}}"></image>
+                </view>
+            </navigator>
+            <navigator class="nav-item" url="/service/pages/service/message-management/index">
+                <view>
+                    <image class="nav-icon" src="{{webRoot}}/public/WeChat/resource/common/image/service/user/icon7.png" wx:if="{{webRoot}}"></image>
+                    <text>消息管理</text>
+                </view>
+                <view>
+                    <image class="nav-flag" src="{{webRoot}}/public/WeChat/resource/common/image/customer/user/flag1.png" wx:if="{{webRoot}}"></image>
+                </view>
+            </navigator>
+        </view>
+        <view class="nav-module">
+            <navigator bindtap="callPhone" class="nav-item">
+                <view>
+                    <image class="nav-icon" src="{{imgurl}}phone.png" wx:if="{{webRoot}}"></image>
+                    <text>我的客服</text>
+                </view>
+                <view></view>
+            </navigator>
+        </view>
+        <view class="nav-module">
+            <navigator class="nav-item" openType="reLaunch" url="/sd_liferuning/pages/constmer/index/index">
+                <view>
+                    <image class="nav-icon" src="{{webRoot}}/public/WeChat/resource/common/image/service/user/icon9.png" wx:if="{{webRoot}}"></image>
+                    <text>返回用户</text>
+                </view>
+                <view></view>
+            </navigator>
+        </view>
+    </view>
+    <view class="p-footer"></view>
+    <view class="btn-group">
+        <navigator class="btn-item" openType="redirect" url="/service/pages/service/get-order/index">
+            <image class="btn-group-icon" src="{{webRoot}}/public/WeChat/resource/common/image/nav-icon/icon0.png"></image>
+            <text>抢单</text>
+        </navigator>
+        <navigator class="btn-item" openType="redirect" url="/service/pages/service/index/index">
+            <image class="btn-group-icon" src="{{webRoot}}/public/WeChat/resource/common/image/nav-icon/icon1.png"></image>
+            <text>订单</text>
+        </navigator>
+        <navigator class="btn-item active" openType="redirect" url="/service/pages/service/user/index">
+            <image class="btn-group-icon" src="{{webRoot}}/public/WeChat/resource/common/image/nav-icon/icon2-1.png"></image>
+            <text>个人</text>
+        </navigator>
+    </view>
+</view>

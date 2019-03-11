@@ -1,0 +1,7 @@
+{
+    "usingComponents": {
+        "actionsheet": "/sd_liferuning/dist/actionsheet/index",
+        "btn": "/sd_liferuning/dist/btn/index"
+    },
+    "navigationBarTitleText": "会员签到"
+}

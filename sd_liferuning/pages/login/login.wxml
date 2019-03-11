@@ -1,0 +1,18 @@
+<view class="login">
+    <view class="tit">
+        <image src="{{webRoot}}/public/WeChat/resource/common/image/my_logo1.png"></image>
+    </view>
+    <form bindsubmit="showok">
+        <view class="left">
+            <input bindinput="blur1" class="tel" name="phone" placeholder="请输入手机号" value="{{yhname}}"></input>
+        </view>
+        <view class="border">
+            <input bindinput="blur2" class="number" name="yz" placeholder="请输入短信验证码" value="{{yhmima}}"></input>
+            <view class="right">
+                <view bindtap="reg_yanzhengma_huoqu" class="reg_yanzhengma_time1" wx:if="{{showtime1}}">{{reg_hqyzm}}</view>
+                <view class="reg_yanzhengma_time2" wx:if="{{showtime2}}">重新发送:{{countdown_time}}s</view>
+            </view>
+        </view>
+        <button class="button" formType="submit" style="background-color:{{bindcolor==true?'#00bcb8':'#00bcb8'}};">立即绑定</button>
+    </form>
+</view>

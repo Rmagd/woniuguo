@@ -1,0 +1,27 @@
+<view class="container">
+    <view class="search-input">
+        <input bindinput="inputChange" placeholder="请输入订单号" type="text"></input>
+        <text bindtap="confirm" class="iconfont icon-sousuo"></text>
+    </view>
+    <view class="select-time">
+        <text class="select-time-title">交易时间</text>
+        <view class="section">
+            <picker bindchange="bindPickerChange" data-name="startTime" mode="date" value="{{startTime}}">
+                <view class="picker">
+          当前选择：<text>{{startTime}}</text>
+                </view>
+            </picker>
+        </view>
+        <view class="section">
+            <picker bindchange="bindPickerChange" data-name="endTime" mode="date" value="{{endTime}}">
+                <view class="picker">
+          当前选择：<text>{{endTime}}</text>
+                </view>
+            </picker>
+        </view>
+    </view>
+    <view class="btn-group">
+        <text bindtap="reset" class="reset">重置</text>
+        <text bindtap="confirm" class="confirm">确认筛选</text>
+    </view>
+</view>

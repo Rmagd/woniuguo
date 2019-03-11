@@ -1,0 +1,40 @@
+/* sd_liferuning/pages/constmer/part-time-jobs-user/index.wxss */
+page{
+  background: #f2f2f2;
+}
+.wechatInfo{
+  background: white;
+  height: 100px;
+  padding: 30rpx;
+  text-align: center
+}
+.nickname{
+  display: block;
+}
+.avatar{
+  border-radius: 50%;
+  height: 80px;
+  width: 80px;
+}
+.info-item{
+  background: white;
+  margin-top: 10rpx;
+  height: 50px;
+  padding-left: 20rpx;
+}
+input{
+  height: 50px;
+}
+.info-item text,input{
+  line-height: 50px;
+}
+.slider{
+  display: inline-block;
+}
+.submit{
+  margin-top: 50rpx;
+  text-align: center;
+}
+.submit button{
+  width:80%;
+}

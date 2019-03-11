@@ -1,0 +1,42 @@
+.page-content {
+    width: 100%;
+    color: #666;
+    font-size: 30rpx;
+}
+
+.title,.recharge {
+    padding: 15rpx 50rpx;
+    border-bottom: 1rpx solid #eee;
+}
+
+.recharge {
+    padding: 50rpx;
+}
+
+.input-group {
+    display: flex;
+    margin: 20rpx 0;
+}
+
+.input-group .icon {
+    width: 30rpx;
+    height: 40rpx;
+    margin: 0 20rpx 0 0;
+}
+
+.input-group input {
+    flex: 1;
+}
+
+.tip {
+    padding: 15rpx 50rpx;
+}
+
+.sendRequest {
+    background: #20AD20;
+    color: #FFF;
+    height: 70rpx;
+    line-height: 70rpx;
+    width: 400rpx;
+    margin: 50rpx auto;
+}

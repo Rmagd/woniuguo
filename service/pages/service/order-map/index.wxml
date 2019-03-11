@@ -1,0 +1,1 @@
+<map showLocation bindcontroltap="controltap" bindmarkertap="markertap" bindregionchange="regionchange" controls="{{controls}}" id="map" latitude="{{lat}}" longitude="{{lng}}" markers="{{markers}}" polyline="{{polyline}}" scale="15" style="width: 750rpx;height:100vh;"></map>

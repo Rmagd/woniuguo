@@ -1,0 +1,93 @@
+<view class="container">
+    <view class="page-content">
+        <view class="user-face-module" style="background:url(\"{{webRoot}}/public/WeChat/resource/common/image/customer/member-center/bg.png\");background-size:100% 100%;">
+            <view class="user_head">
+                <image class="user-face" src="{{head}}"></image>
+                <image class="biaoshi" src="{{imgurl}}biaoshi.png" wx:if="{{data.expire_time!=0}}"></image>
+            </view>
+            <view class="user-name">
+                <text wx:if="{{!data.pic}}">会员等级：{{data.level_name}}</text>
+                <text wx:if="{{data.pic}}">会员等级：</text>
+                <image class="user-level-mark" src="{{data.pic}}"></image>
+            </view>
+            <view class="both-block">
+                <view>
+          成长值：{{data.member_grow}}
+        </view>
+                <view>
+          积分：{{data.member_integral}}
+        </view>
+            </view>
+        </view>
+        <view class="sub-title-panel">
+            <view class="title">
+                <view class="color-block"></view> 成长值
+      </view>
+            <view class="content">
+                <view class="level-module">
+                    <view class="level-mark">
+                        <view class="mark" style="left:{{mark}}rpx;">
+                            <image class="icon" src="{{webRoot}}/public/WeChat/resource/common/image/customer/member-center/mark.png"></image>
+                            <text class="user-integral">{{data.hyintegral}}</text>
+                        </view>
+                    </view>
+                    <progress active="true" activeMode="forwards" activeColor="#edc711" backgroundColor="#ccc" class="level-prog" percent="{{progressPercent}}" strokeWidth="3"></progress>
+                    <view class="level-group">
+                        <view class="level-item" wx:for="{{levelArr}}" wx:for-item="levelItem">
+                            <image class="icon" src="{{currentScore>=levelItem.needScore?levelItem.activeImg:levelItem.defaultImg}}"></image>
+                        </view>
+                    </view>
+                    <view class="level-tip-font">
+             距离下一等级需要{{data.grow_to_next}}成长值 
+          </view>
+                </view>
+            </view>
+        </view>
+        <view class="sub-title-panel">
+            <view class="title">
+                <view class="color-block"></view> 我的会员
+      </view>
+            <view class="content">
+                <view class="nav-group">
+                    <view bindtap="navTo" class="nav-item" data-url="/sd_liferuning/pages/constmer/member-purchase/index?num={{data.vip_price}}">
+                        <image class="nav-item-img" src="{{webRoot}}/public/WeChat/resource/common/image/customer/member-center/nav-icon1.png"></image>
+                        <view class="nav-item-title">会员购买</view>
+                    </view>
+                    <navigator class="nav-item" hidden="hidden" url="/sd_liferuning/pages/constmer/member-introduce/index">
+                        <image class="nav-item-img" src="{{webRoot}}/public/WeChat/resource/common/image/customer/member-center/nav-icon2.png"></image>
+                        <view class="nav-item-title">会员权益</view>
+                    </navigator>
+                    <navigator class="nav-item" url="/sd_liferuning/pages/constmer/sign-in/index">
+                        <image class="nav-item-img" src="{{webRoot}}/public/WeChat/resource/common/image/customer/member-center/nav-icon3.png"></image>
+                        <view class="nav-item-title">会员签到</view>
+                    </navigator>
+                </view>
+            </view>
+        </view>
+        <view class="sub-title-panel">
+            <view class="title">
+                <view class="color-block"></view> 成长问答
+      </view>
+            <view class="content">
+                <view class="tip-group">
+                    <view class="tip-item">
+                        <view class="tip-title">
+              1.如何快速增加成长值？
+            </view>
+                        <view class="tip-content">
+              通过每日签到可快速获得成长值，签到次数决定了成长值的分数。
+            </view>
+                    </view>
+                    <view class="tip-item">
+                        <view class="tip-title">
+              2.怎么快速增加会员积分？
+            </view>
+                        <view class="tip-content">
+              会员可在平台下单，下单完成后的金额决定了积分的大小，在您下次交易时，可使用积分抵现金。
+            </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,260 @@
+page {
+    background: #F2F2F2;
+}
+
+.share-poster {
+    background: #FFF;
+    position: fixed;
+    right: 0;
+    height: 80rpx;
+    width: 90rpx;
+    border-radius: 20rpx 0 0 20rpx;
+    top: 170rpx;
+    border: 1rpx solid #eee;
+}
+
+.share-poster .icon {
+    width: 50rpx;
+    height: 50rpx;
+    display: block;
+    margin: 15rpx auto;
+}
+
+.share-poster-panel {
+    background: #FFF;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,.6);
+    margin: 0 auto;
+    z-index: 9999;
+}
+
+.share-poster-module {
+    width: 90%;
+    height: 1100rpx;
+    background: #FFF;
+    margin: 50rpx auto;
+    border-radius: 20rpx;
+}
+
+.share-poster-module-head {
+    height: 100rpx;
+}
+
+.close-btn {
+    width: 100rpx;
+    height: 100rpx;
+    float: right;
+}
+
+.share-poster-module-head .icon {
+    width: 44rpx;
+    height: 44rpx;
+    margin: 28rpx auto;
+    display: block;
+}
+
+.share-poster-module-content {
+    width: 500rpx;
+    height: 700rpx;
+    background: #eee;
+    margin: 0 auto;
+    box-shadow: 0 0 3rpx #eee;
+}
+
+.share-poster-module-foot {
+    width: 500rpx;
+    height: 300rpx;
+    margin: 0 auto;
+}
+
+.save-img {
+    background: #D62C2D;
+    color: #FFF;
+    height: 70rpx;
+    line-height: 70rpx;
+    margin: 100rpx 0 20rpx;
+    font-size: 25rpx;
+}
+
+.tip-text {
+    text-align: center;
+    font-size: 25rpx;
+    color: #999;
+    width: 100%;
+}
+
+.user-face-module {
+    height: 270rpx;
+    overflow: hidden;
+    display: flex;
+}
+
+.user-face,.face-image {
+    width: 150rpx;
+    height: 150rpx;
+    border-radius: 150rpx;
+    display: block;
+    margin: 60rpx 40rpx;
+    box-shadow: 0 0 10rpx #333;
+    background: #FFF;
+    position: relative;
+}
+
+.face-image {
+    margin: 0;
+}
+
+.member-tag {
+    width: 30rpx;
+    height: 30rpx;
+    background: #000;
+    border-radius: 30rpx;
+    padding: 10rpx;
+    position: absolute;
+    right: 5rpx;
+    bottom: 10rpx;
+}
+
+.user-info {
+    width: 400rpx;
+}
+
+.user-name {
+    display: block;
+    color: #000;
+    font-size: 35rpx;
+    margin: 70rpx 0 0 0;
+}
+
+.tag-group {
+    font-size: 30rpx;
+    margin: 20rpx 0 30rpx;
+}
+
+.tag-item {
+    font-size: 22rpx;
+    border: 1rpx solid #eee;
+    display: inline-block;
+    padding: 5rpx 10rpx;
+    background: #FFF;
+    border-radius: 10rpx;
+    margin: 8rpx 10rpx 8rpx 0;
+}
+
+.tag-item:nth-child(1) {
+    color: #83b3fd;
+}
+
+.tag-item:nth-child(2) {
+    color: #bb9ff3;
+}
+
+.tag-item:nth-child(3) {
+    color: #ffb578;
+}
+
+.tag-item:nth-child(4) {
+    color: #d03c5c;
+}
+
+.tag-item:nth-child(5) {
+    color: #98da5c;
+}
+
+.nav-module {
+    width: 100%;
+    background: #FFF;
+    margin-bottom: 15rpx;
+}
+
+.nav-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 10rpx;
+    font-size: 30rpx;
+    color: #333;
+    border-bottom: 1rpx solid #EDF2F5;
+    height: 80rpx;
+    line-height: 80rpx;
+}
+
+.nav-icon {
+    width: 32rpx;
+    height: 32rpx;
+    margin: 0 10rpx;
+    position: relative;
+    top: 5rpx;
+}
+
+.nav-flag {
+    width: 15rpx;
+    height: 24rpx;
+    margin: 0 10rpx;
+}
+
+.table-nav {
+    width: 100%;
+    overflow: hidden;
+    background: #FFF;
+    margin: 20rpx 0;
+}
+
+.table-nav .nav-item {
+    width: 25%;
+    float: left;
+    border: none;
+    display: block;
+    margin: 30rpx 0;
+    padding: 0;
+    height: 100%;
+    text-align: center;
+    font-size: 25rpx;
+}
+
+.table-nav .nav-icon {
+    display: block;
+    width: 50rpx;
+    height: 50rpx;
+    margin: 0 auto;
+    top: 0;
+}
+
+button.nav-item {
+    position: relative;
+    overflow: hidden;
+    background: #FFF;
+}
+
+button::after {
+    border: none;
+}
+
+.order-nav-group {
+    background: #FFF;
+    box-shadow: 0 0 3px #ccc;
+    display: flex;
+    margin: 15rpx 0;
+    padding: 30rpx 0;
+    margin-top: 0;
+}
+
+.order-nav-item {
+    flex: 1;
+    font-size: 25rpx;
+    text-align: center;
+    border-right: 1rpx solid #f2f2f2;
+    color: #333333;
+}
+
+.order-nav-item:last-child {
+    border: none;
+}
+
+.order-nav-item image {
+    width: 48rpx;
+    height: 48rpx;
+    display: block;
+    margin: 0 auto 10rpx;
+}

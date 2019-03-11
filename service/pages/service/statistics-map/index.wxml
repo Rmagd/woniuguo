@@ -1,0 +1,82 @@
+<view class="container">
+    <view class="switch-panel">
+        <view class="switch-panel-title">
+            <view bindtap="switchPanel" class="switch-panel-title-item {{panel=='panel1'?'active':''}}" data-panel="panel1">订单统计</view>
+            <view bindtap="switchPanel" class="switch-panel-title-item {{panel=='panel2'?'active':''}}" data-panel="panel2">收入统计</view>
+        </view>
+        <view class="switch-panel-content">
+            <view class="switch-panel-content-item {{panel=='panel1'?'active':''}}">
+                <view class="data-table">
+                    <view class="data-table-item">
+                        <view>今日订单量</view>
+                        <view>{{num.today}}</view>
+                    </view>
+                    <view class="data-table-item">
+                        <view>本周订单量</view>
+                        <view>{{num.week}}</view>
+                    </view>
+                    <view class="data-table-item">
+                        <view>本月订单量</view>
+                        <view>{{num.month}}</view>
+                    </view>
+                    <view class="data-table-item">
+                        <view>累计订单量</view>
+                        <view>{{num.all}}</view>
+                    </view>
+                </view>
+                <view class="map-module ">
+                    <view class="map-module-title">
+                        <text>近一周订单量曲线</text>
+                    </view>
+                    <view class="map-module-content">
+                        <canvas canvasId="order-map1"></canvas>
+                    </view>
+                </view>
+                <view class="map-module">
+                    <view class="map-module-title">
+                        <text>近一月订单量曲线</text>
+                    </view>
+                    <view class="map-module-content">
+                        <canvas canvasId="order-map2"></canvas>
+                    </view>
+                </view>
+            </view>
+            <view class="switch-panel-content-item {{panel=='panel2'?'active':''}}">
+                <view class="data-table">
+                    <view class="data-table-item">
+                        <view>今日收入金额</view>
+                        <view>{{price.today}}</view>
+                    </view>
+                    <view class="data-table-item">
+                        <view>本周收入金额</view>
+                        <view>{{price.week}}</view>
+                    </view>
+                    <view class="data-table-item">
+                        <view>本月收入金额</view>
+                        <view>{{price.month}}</view>
+                    </view>
+                    <view class="data-table-item">
+                        <view>累计收入金额</view>
+                        <view>{{price.all}}</view>
+                    </view>
+                </view>
+                <view class="map-module">
+                    <view class="map-module-title">
+                        <text>近一周收入金额曲线</text>
+                    </view>
+                    <view class="map-module-content">
+                        <canvas canvasId="income-map1"></canvas>
+                    </view>
+                </view>
+                <view class="map-module">
+                    <view class="map-module-title">
+                        <text>近一月收入金额曲线</text>
+                    </view>
+                    <view class="map-module-content">
+                        <canvas canvasId="income-map2"></canvas>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

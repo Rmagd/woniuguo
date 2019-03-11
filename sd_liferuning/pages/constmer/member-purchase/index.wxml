@@ -1,0 +1,25 @@
+<view class="module-item">
+    <view class="module-item-text" id="purchase">
+        <icon></icon>
+        <text>会员购买</text>
+    </view>
+</view>
+<view class="module-item">
+    <view class="money-container">
+        <text bindtap="selectGetMoney" class="{{current_money_index===index&&'active'}}" data-id="{{item.id}}" data-selected="{{index}}" wx:for="{{getMoney}}">{{item.title}}</text>
+    </view>
+</view>
+<view>
+    <button bindtap="pay" class="pay-button" wx:if="{{status!=1}}">立即购买</button>
+    <button bindtap="outpay" class="outpay-button" style="" wx:if="{{status==1}}">申请退款</button>
+    <view class="module-item-text margin-top">
+        <view class="title">会员常见问题</view>
+        <view class="context">1.充值会员了，为什么没有显示会员标识？</view>
+        <view class="answer">答：充值会员后，约30分钟之内会有会员标识显示及信息
+      提示。</view>
+        <view class="context">2.充值会员了，为什么没有显示会员标识？</view>
+        <view></view>
+        <view class="answer">答：充值会员后，约30分钟之内会有会员标识显示及信息
+      提示。</view>
+    </view>
+</view>

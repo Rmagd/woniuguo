@@ -1,0 +1,13 @@
+<view class="view">
+    <view class="title">请选择您的身份</view>
+    <view bindtap="navTo" class="li" data-type="{{item.type}}" style="box-shadow: 0px 3px 10px {{item.color}};background:url({{webRoot}}{{item.bgimg}});" wx:for="{{list}}">
+        <view class="l">
+            <image src="{{webRoot}}{{item.headimg}}"></image>
+        </view>
+        <view class="c">
+            <view class="t">{{item.title}}</view>
+            <view class="t2">{{item.text}}</view>
+        </view>
+        <icon class="r iconfont icon-right white-text"></icon>
+    </view>
+</view>

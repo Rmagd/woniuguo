@@ -1,0 +1,6 @@
+.li {
+    padding: 30rpx 20rpx;
+    font-size: 30rpx;
+    color: #555;
+    border-bottom: 1px solid #ddd;
+}

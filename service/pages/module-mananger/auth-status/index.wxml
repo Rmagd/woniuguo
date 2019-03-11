@@ -1,0 +1,5 @@
+<view class="container">
+    <view class="hint-text">
+    正在审核中，请耐心等待平台审核...
+  </view>
+</view>

@@ -1,0 +1,15 @@
+<view class="">
+    <view class="record-empty" wx:if="{{data.length==0?true:false}}">
+        <view class="record-empty-line"></view>
+        <text>没有找到数据</text>
+    </view>
+    <block wx:else>
+        <view class="record-module" wx:if="{{data.length>0}}">
+            <view class="record-module-item" wx:for="{{data}}" wx:key="{{item.create_time}}">
+                <view class="t1">{{item.create_time}}</view>
+                <view class="t2">[{{item.title}}]</view>
+                <view class="t3">{{item.msg}}</view>
+            </view>
+        </view>
+    </block>
+</view>

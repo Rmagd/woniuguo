@@ -1,0 +1,24 @@
+<view class="container">
+    <view class="select-panel">
+        <view class="input-group">
+            <view class="input-group-addo">
+                <text class="icon iconfont icon-shouji"></text>
+            </view>
+            <view class="input-control">
+                <input bindinput="changeInputData" data-name="phoneNumber" placeholder="请输入新手机号" placeholderClass="placeholder-class" type="text"></input>
+                <button bindtap="getIdentifyingCode" class="getCode" disabled="{{btnType!=1?'disabled':''}}">{{btnType!=1?waitTime:defaultWaitText}}</button>
+            </view>
+        </view>
+        <view class="input-group">
+            <view class="input-group-addo">
+                <text class="icon iconfont icon-yuechi"></text>
+            </view>
+            <view class="input-control">
+                <input bindinput="changeInputData" data-name="identifyingCode" placeholder="请输入验证码" placeholderClass="placeholder-class" type="text"></input>
+            </view>
+        </view>
+    </view>
+    <view class="select-btn-panel">
+        <button bindtap="sendRequest" class="select-btn">登陆</button>
+    </view>
+</view>

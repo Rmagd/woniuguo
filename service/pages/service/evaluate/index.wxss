@@ -1,0 +1,246 @@
+page {
+    background: #f1f2f4;
+    font-family: "黑体";
+}
+
+.user-info-container {
+    width: 100%;
+    height: 190rpx;
+    display: flex;
+    background: #fff;
+    border-bottom: 2rpx solid #eee;
+}
+
+.user-info-container .avatar image {
+    width: 120rpx;
+    height: 120rpx;
+    border-radius: 50%;
+    margin: 25rpx;
+}
+
+.user-info-container .nickname-score {
+    width: 500rpx;
+    height: 60rpx;
+    margin-top: 47rpx;
+}
+
+.user-info-container .nickname {
+    font-size: 32rpx;
+    color: #333;
+}
+
+.user-info-container .score {
+    margin-top: 20rpx;
+    font-size: 26rpx;
+    color: #888;
+}
+
+.user-info-container .score image {
+    width: 24rpx;
+    height: 24rpx;
+    margin-right: 10rpx;
+}
+
+.authority-save {
+    border-bottom: 2rpx solid #eee;
+    width: 100%;
+    height: 90rpx;
+    display: flex;
+    justify-content: space-between;
+    background: #fff;
+    font-size: 26rpx;
+    color: #333;
+    line-height: 90rpx;
+}
+
+.authority-save .authority {
+    width: 50%;
+    text-align: center;
+}
+
+.authority-save .authority image {
+    width: 38rpx;
+    height: 28rpx;
+    margin-right: 20rpx;
+}
+
+.authority-save .save {
+    width: 50%;
+    text-align: center;
+}
+
+.authority-save .save image {
+    width: 38rpx;
+    height: 28rpx;
+    margin-right: 20rpx;
+}
+
+.service-milestron {
+    width: 100%;
+    height: 134rpx;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 2rpx solid #eee;
+    background: #fff;
+    margin-top: 20rpx;
+}
+
+.service-milestron .service {
+    width: 50%;
+    text-align: center;
+    border-right: 2rpx solid #eee;
+    margin-top: 30rpx;
+    margin-bottom: 30rpx;
+}
+
+.service-milestron .service text:first-child {
+    display: block;
+    font-size: 40rpx;
+    color: #20ad20;
+}
+
+.service-milestron .service text:last-child {
+    display: block;
+    font-size: 26rpx;
+    margin-top: 15rpx;
+    color: #555555;
+}
+
+.service-milestron .milestron {
+    width: 50%;
+    text-align: center;
+    margin-top: 30rpx;
+    margin-bottom: 30rpx;
+}
+
+.service-milestron .milestron text:first-child {
+    display: block;
+    font-size: 40rpx;
+    color: #20ad20;
+}
+
+.service-milestron .milestron text:last-child {
+    display: block;
+    font-size: 26rpx;
+    margin-top: 15rpx;
+    color: #555555;
+}
+
+.service-sign {
+    width: 100%;
+    border-bottom: 2rpx solid #eee;
+    background: #fff;
+    height: 240rpx;
+}
+
+.service-sign .title {
+    width: 700rpx;
+    margin: 0 auto;
+    height: 80rpx;
+    line-height: 80rpx;
+}
+
+.service-sign .title icon {
+    background: #20ad20;
+    width: 10rpx;
+    height: 32rpx;
+    margin-right: 10rpx;
+}
+
+.service-sign .sign {
+    width: 640rpx;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 24rpx;
+}
+
+.service-sign .sign text {
+    padding: 8rpx 20rpx;
+    background: #f1f2f4;
+    margin-bottom: 20rpx;
+    border-radius: 5rpx;
+    font-size: 24rpx;
+    color: #333;
+    margin-right: 30rpx;
+}
+
+.evaluate {
+    width: 100%;
+    border-bottom: 2rpx solid #eee;
+    background: #fff;
+    margin-top: 20rpx;
+}
+
+.evaluate .title {
+    width: 700rpx;
+    margin: 0 auto;
+    height: 80rpx;
+    line-height: 80rpx;
+}
+
+.evaluate .title icon {
+    background: #20ad20;
+    width: 10rpx;
+    height: 32rpx;
+    margin-right: 10rpx;
+}
+
+.evaluate-context {
+    width: 640rpx;
+    margin: 0 auto;
+}
+
+.evaluate-context .nickname {
+    display: flex;
+    justify-content: space-between;
+}
+
+.evaluate-context .nickname .left {
+    font-size: 30rpx;
+    color: #333;
+}
+
+.evaluate-context .nickname .right {
+    font-size: 28rpx;
+    color: #555;
+}
+
+.evaluate-context .nickname image {
+    width: 26rpx;
+    height: 26rpx;
+    margin-left: 20rpx;
+}
+
+.evaluate-context .service-context {
+    width: 640rpx;
+    margin: 0 auto;
+    line-height: 44rpx;
+}
+
+.evaluate-context .service-context text:first-child {
+    font-size: 24rpx;
+    color: #888;
+    display: block;
+    margin-top: 20rpx;
+}
+
+.evaluate-context .service-context .last-child {
+    font-size: 30rpx;
+    color: #333333;
+    display: block;
+    margin-top: 20rpx;
+}
+
+.evaluate-context .image-context {
+    width: 640rpx;
+    margin: 0 auto;
+    margin-top: 20rpx;
+    margin-bottom: 20rpx;
+}
+
+.evaluate-context .image-context image {
+    width: 110rpx;
+    height: 110rpx;
+    margin-right: 20rpx;
+}

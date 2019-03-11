@@ -1,0 +1,62 @@
+page {
+    background: #f1f2f4;
+}
+
+.title {
+    font-size: 24rpx;
+    color: #888888;
+    height: 80rpx;
+    line-height: 80rpx;
+    padding: 0 20rpx;
+}
+
+.view {
+    padding: 0 30rpx;
+    border-top: 1px solid #e5e5e5;
+    border-bottom: 1px solid #e5e5e5;
+    background: #fff;
+    margin-bottom: 23rpx;
+}
+
+.item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100rpx;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.item:last-child {
+    border: 0;
+}
+
+.item .l {
+    font-size: 30rpx;
+    font-weight: bold;
+    color: #333;
+}
+
+.item .r {
+    display: flex;
+    align-items: center;
+}
+
+.item .r .img {
+    width: 34rpx;
+    height: 34rpx;
+    display: inline-block;
+    border-radius: 50%;
+}
+
+.item .r text {
+    font-size: 26rpx;
+    margin: 0 20rpx;
+}
+
+.item .r .success {
+    color: #20ad20;
+}
+
+.item .r .error {
+    color: #aaaaaa;
+}

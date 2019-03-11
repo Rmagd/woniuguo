@@ -1,0 +1,3 @@
+<view class="view">
+    <view bindtap="onclick" class="li" data-index="{{index}}" wx:for="{{address_list.address}}">{{item.address}}</view>
+</view>

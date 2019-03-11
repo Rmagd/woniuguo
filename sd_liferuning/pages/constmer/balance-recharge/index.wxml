@@ -1,0 +1,14 @@
+<view class="container">
+    <view class="page-content">
+        <view class="recharge">
+            <view>充值金额： </view>
+            <view class="input-group">
+                <input bindinput="changeInputData" data-name="money" placeholder="输入需要充值的金额"></input>
+            </view>
+        </view>
+        <view class="tip">
+            <view>本卡此次充值 {{money}} 元 </view>
+        </view>
+        <button bindtap="sendRequest" class="sendRequest">确认充值</button>
+    </view>
+</view>

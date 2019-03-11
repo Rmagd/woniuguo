@@ -1,0 +1,65 @@
+.select-panel {
+    width: 90%;
+    border-radius: 10rpx;
+    color: #000000;
+    margin: 20rpx 0;
+}
+
+.input-group {
+    border-bottom: 1rpx solid #B6C0BF;
+    height: 100rpx;
+    line-height: 100rpx;
+    display: flex;
+    width: 100%;
+    font-size: 30rpx;
+}
+
+.input-group-addo {
+    border-right: 1rpx solid #FFFFFF;
+    flex: 1;
+    text-align: center;
+    margin: 15rpx 0;
+    height: 70rpx;
+    line-height: 70rpx;
+}
+
+.input-control {
+    display: flex;
+    flex: 6;
+}
+
+.input-control input {
+    height: 100%;
+    padding: 0 20rpx;
+}
+
+.input-control .getCode {
+    height: 80rpx;
+    line-height: 80rpx;
+    margin-top: 10rpx;
+    margin-right: 5rpx;
+    font-size: 20rpx;
+    background: #F17108;
+    color: #FFFFFF;
+}
+
+.placeholder-class {
+    color: #999999;
+}
+
+.select-btn-panel {
+    margin: 10rpx 0 0 0;
+    width: 90%;
+}
+
+.select-btn {
+    color: #FFFFFF;
+    height: 75rpx;
+    line-height: 75rpx;
+    background: #0B8C2E;
+    font-size: 30rpx;
+}
+
+.select-btn:active {
+    background: #3B8C2E;
+}

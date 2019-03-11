@@ -1,0 +1,18 @@
+<view class="container">
+    <view class="record-empty" wx:if="{{couponArr.length<=0}}">
+        <view class="record-empty-line"></view>
+        <text>暂无优惠券</text>
+    </view>
+</view>
+<view class="list" style="background: url(\"{{webRoot}}/public/WeChat/bg5.png\") no-repeat;background-size:100% 100%;" wx:for="{{couponArr}}" wx:for-item="couponItem">
+    <view class="l">
+        <view class="t">
+            <text>{{couponItem.price}}</text>元</view>
+        <view class="t1">满{{couponItem.min_price}}元可用</view>
+    </view>
+    <view class="c">
+        <view class="t">{{couponItem.name}}</view>
+        <view class="t1">开始时间：{{couponItem.start_time}}</view>
+        <view class="t1">结束时间：{{couponItem.end_time}}</view>
+    </view>
+</view>

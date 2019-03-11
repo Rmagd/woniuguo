@@ -1,0 +1,4 @@
+<view class="container">
+    <textarea bindinput="changeInputData" data-name="summary" placeholder="请输入您的个人简介" value="{{content}}"></textarea>
+    <button bindtap="sendRequest" class="confirm">修改</button>
+</view>

@@ -1,0 +1,43 @@
+/* sd_liferuning/pages/constmer/part-time-jobs-list/index.wxss */
+page {
+    background: #F2F2F2;
+}
+
+.containe .list{
+  width: 100%;
+  background: white;
+  margin-top: 20rpx;
+  padding-top: 30rpx;
+  padding-bottom: 30rpx;
+}
+.job-name,
+.date{
+  margin-left: 20rpx;
+}
+
+.price-count{
+  display: inline-block;
+  color: red;
+  margin-right: 20rpx;
+  float: right;
+}
+.job-type{
+  display: inline-block;
+  border: red 2rpx solid;
+  color: red;
+  margin-left: 20rpx;
+  border-radius: 10rpx;
+  padding: 0 10rpx;
+}
+.date-time{
+  margin-top: 40rpx;
+  font-size: 30rpx;
+}
+.time{
+  float: right;
+  margin-right: 20rpx;
+}
+.empty{
+  text-align: center;
+  margin-top: 45%;
+}

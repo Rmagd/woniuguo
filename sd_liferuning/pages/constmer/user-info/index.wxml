@@ -1,0 +1,13 @@
+<view class="container">
+    <view class="info-module">
+        <navigator class="info-item" url="/sd_liferuning/pages/resetpass/index?userType=1">
+            <view>
+                <text>密码</text>
+            </view>
+            <view>
+        修改
+        <text class="iconfont icon-dayuhao"></text>
+            </view>
+        </navigator>
+    </view>
+</view>

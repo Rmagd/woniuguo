@@ -1,0 +1,47 @@
+<view class="">
+    <view class="record-empty" wx:if="{{data.length<=0}}">
+        <view class="record-empty-line"></view>
+        <text>没有找到数据</text>
+    </view>
+    <view class="c" wx:if="{{data.length>0}}">
+        <view class="list" wx:for="{{data}}">
+            <view class="t1">
+                <view wx:if="{{item.channel==0}}">提现微信零钱</view>
+                <view wx:elif="{{item.channel==1}}">提现银行卡<text>({{item.bcard_num}})</text>
+                </view>
+                <view wx:else>提现支付宝<text>({{item.alipay}})</text>
+                </view>
+                <view>金额： {{item.money}}</view>
+            </view>
+            <view class="t2">
+                <view class="l">{{item.create_time}}</view>
+                <view class="to" wx:if="{{item.status==0}}">正在审核</view>
+                <view class="success" wx:elif="{{item.status==1}}">已提现</view>
+                <view class="err" wx:else>审核拒绝</view>
+            </view>
+        </view>
+    </view>
+    <view class="record-module" wx:if="{{data.length>200}}">
+        <view class="record-module-item" wx:for="{{data}}" wx:key="{{item.time}}">
+            <view class="row-info">
+                <text wx:if="{{item.status==1}}">提现状态：成功 </text>
+                <text wx:else>提现状态：正在审核 </text>
+                <text>时间：{{item.create_time}}</text>
+            </view>
+            <view wx:if="{{item.brank}}">
+                <view class="row-info">
+                    <text>开户行： {{item.bank}}</text>
+                    <text>卡号：{{item.bcard_num}}</text>
+                </view>
+            </view>
+            <view wx:else>
+                <view class="row-info">
+                    <text>支付宝账号： {{item.alipay}}</text>
+                </view>
+            </view>
+            <view class="row-info">
+                <text>金额： {{item.money}}</text>
+            </view>
+        </view>
+    </view>
+</view>

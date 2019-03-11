@@ -1,0 +1,6 @@
+{
+    "component": true,
+    "usingComponents": {
+        "zan-btn": "/sd_liferuning/dist/btn/index"
+    }
+}

@@ -1,0 +1,56 @@
+.address-list-module {
+    width: 100%;
+    padding-bottom: 85rpx;
+}
+
+.address-item {
+    padding: 10rpx 20rpx;
+    border-bottom: 1rpx solid #EDF2F5;
+}
+
+.text-line {
+    font-size: 28rpx;
+    display: block;
+    margin: 10rpx 0 20rpx;
+    font-weight: bold;
+    color: #666;
+}
+
+.address-btn-group {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 30rpx;
+}
+
+.iconfont {
+    font-size: 50rpx;
+    margin: 0 30rpx;
+    color: #666;
+}
+
+.tag {
+    background: #666666;
+    color: #FFF;
+    font-size: 28rpx;
+    padding: 10rpx 30rpx;
+    border-radius: 10rpx;
+}
+
+.address-btn {
+    width: 95%;
+    position: fixed;
+    bottom: 0;
+    margin: 0 auto 10rpx;
+    font-size: 28rpx;
+    overflow: hidden;
+}
+
+.address-btn navigator {
+    height: 75rpx;
+    line-height: 75rpx;
+    text-align: center;
+    background: #20AD20;
+    color: #FFF;
+    display: block;
+    border-radius: 10rpx;
+}

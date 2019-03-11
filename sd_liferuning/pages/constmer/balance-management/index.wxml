@@ -1,0 +1,47 @@
+<view class="container">
+    <view class="balance-model" style="background:url(\"{{webRoot}}/public/WeChat/bg.png\"); background-size:cover;">
+        <view class="balance-item">
+            <view class="balance-item">
+                <view class="title">余额(元)</view>
+                <view class="price">{{money}}</view>
+            </view>
+        </view>
+    </view>
+    <view class="fn-btn-group">
+        <navigator class="fn-btn-item" url="/sd_liferuning/pages/constmer/withdraw-wechat/index?type=0">
+            <image src="{{webRoot}}/public/WeChat/resource/common/image/customer/balance-management/icon1.png"></image>
+            <text>提现</text>
+        </navigator> 
+        <navigator class="fn-btn-item" url="/sd_liferuning/pages/constmer/balance-recharge/index">
+            <image src="{{webRoot}}/public/WeChat/resource/common/image/customer/balance-management/icon2.png"></image>
+            <text>充值</text>
+        </navigator>
+        <!-- <navigator class="fn-btn-item" url="/sd_liferuning/pages/constmer/bankcard-list/index">
+            <image src="{{webRoot}}/public/WeChat/resource/common/image/customer/balance-management/icon3.png"></image>
+            <text>银行卡</text>
+        </navigator> -->
+    </view>
+    <view class="income-module">
+        <view class="income-module-title">
+            <view class="module-left">
+                <view class="title">
+                    <text>收支明细</text>
+                </view>
+                <view class="info">
+                    <text>本月支出: {{price}}元</text>
+                </view>
+            </view>
+            <view class="module-right"></view>
+        </view>
+        <view class="income-module-item" wx:for="{{datas}}">
+            <view class="l">{{item.create_time}}</view>
+            <view class="c">{{item.remarks}}</view>
+            <view class="iconfont r">
+                <text wx:if="{{item.payment===1}}">-</text>
+                <text wx:if="{{item.payment===2}}">+</text>
+          {{item.money}}元
+        </view>
+        </view>
+    </view>
+</view>
+<actionsheet actions="{{actions}}" bind:actionclick="clickAction" bind:cancel="closeActionSheet" cancelText="{{cancelText}}" cancelWithMask="{{cancelWithMask}}" maskClass="tiny" show="{{show}}"></actionsheet>

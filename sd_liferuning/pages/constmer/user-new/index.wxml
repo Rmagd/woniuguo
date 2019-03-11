@@ -1,0 +1,163 @@
+<view class="container">
+    <view class="page-content">
+        <view bindtap="openSharePosterPanel" class="share-poster">
+            <image class="icon" src="{{icons}}/resource/common/image/customer/user/share-icon.png" wx:if="{{icons}}"></image>
+        </view>
+        <view class="share-poster-panel" wx:if="{{sharePosterPanel}}">
+            <view class="share-poster-module">
+                <view class="share-poster-module-head">
+                    <view bindtap="closeSharePosterPanel" class="close-btn">
+                        <image class="icon" src="{{icons}}/resource/common/image/customer/user/panel-close-icon.png" wx:if="{{icons}}"></image>
+                    </view>
+                </view>
+                <view class="share-poster-module-content" style="background:url(\"{{qrcode}}\") no-repeat;background-size:100% 100%;"></view>
+                <view class="share-poster-module-foot">
+                    <button bindtap="saveImage" class="save-img" data-url="{{qrcode}}">保存图片</button>
+                    <view class="tip-text">提示：图片保存至相册</view>
+                </view>
+            </view>
+        </view>
+        <view class="user-face-module" style="background: url('{{userConfig.user_center_bg}}') no-repeat;background-size: cover;">
+            <view class="user-face">
+                <image class="face-image" src="{{head}}"></image>
+                <image class="member-tag" src="{{pic.pic}}" wx:if="{{pic.pic}}"></image>
+            </view>
+            <view class="user-info">
+                <view class="user-name">{{nickname}}</view>
+                <navigator class="tag-group" url="/sd_liferuning/pages/constmer/tag-config/index">
+                    <view class="tag-item" wx:for="{{tag}}">{{item}}</view>
+                    <view class="tag-item" wx:if="{{!tag}}">您还没有标签</view>
+                </navigator>
+            </view>
+        </view>
+        <block wx:if="{{userConfig.menu_style==1}}">
+            <view class="order-nav-group">
+                <navigator class="order-nav-item" url="/sd_liferuning/pages/constmer/order-list/index?currentItemId=1">
+                    <image src="/sd_liferuning/resource/common/image/customer/user/order-icon1.png"></image>
+                    <view>待接单</view>
+                </navigator>
+                <navigator class="order-nav-item" url="/sd_liferuning/pages/constmer/order-list/index?currentItemId=2">
+                    <image src="/sd_liferuning/resource/common/image/customer/user/order-icon2.png"></image>
+                    <view>运行中</view>
+                </navigator>
+                <navigator class="order-nav-item" url="/sd_liferuning/pages/constmer/order-list/index?currentItemId=3">
+                    <image src="/sd_liferuning/resource/common/image/customer/user/order-icon4.png"></image>
+                    <view>已完成</view>
+                </navigator>
+                <navigator class="order-nav-item" url="/sd_liferuning/pages/constmer/order-list/index?currentItemId=4">
+                    <image src="/sd_liferuning/resource/common/image/customer/user/order-icon3.png"></image>
+                    <view>已取消</view>
+                </navigator>
+            </view>
+            <view class="nav-module">
+                <block wx:for="{{userConfig.menus}}" wx:for-item="menuItem">
+                    <navigator class="nav-item" url="{{menuItem.url}}" wx:if="{{menuItem.id=='qianbao'}}">
+                        <view>
+                            <image class="nav-icon" src="{{menuItem.icon}}"></image>
+                            <text>{{menuItem.name}}</text>
+                        </view>
+                        <view>
+                            <image class="nav-flag" src="{{icons}}/resource/common/image/customer/user/flag1.png"></image>
+                        </view>
+                    </navigator>
+                    <navigator class="nav-item" url="{{menuItem.url}}" wx:if="{{menuItem.id=='youhui'}}">
+                        <view>
+                            <image class="nav-icon" src="{{menuItem.icon}}"></image>
+                            <text>{{menuItem.name}}</text>
+                        </view>
+                        <view>
+                            <image class="nav-flag" src="{{icons}}/resource/common/image/customer/user/flag1.png"></image>
+                        </view>
+                    </navigator>
+                    <block wx:if="{{menuItem.id=='lingquan'}}"></block>
+                    <navigator class="nav-item" url="{{menuItem.url}}" wx:if="{{menuItem.id=='adds'}}">
+                        <view>
+                            <image class="nav-icon" src="{{menuItem.icon}}"></image>
+                            <text>{{menuItem.name}}</text>
+                        </view>
+                        <view>
+                            <image class="nav-flag" src="{{icons}}/resource/common/image/customer/user/flag1.png"></image>
+                        </view>
+                    </navigator>
+                </block>
+            </view>
+            <view class="nav-module">
+                <block wx:for="{{userConfig.menus}}" wx:for-item="menuItem">
+                    <navigator class="nav-item" url="{{menuItem.url}}" wx:if="{{menuItem.id=='vip'}}">
+                        <view>
+                            <image class="nav-icon" src="{{menuItem.icon}}"></image>
+                            <text>{{menuItem.name}}</text>
+                        </view>
+                        <view>
+                            <image class="nav-flag" src="{{icons}}/resource/common/image/customer/user/flag1.png"></image>
+                        </view>
+                    </navigator>
+                    <navigator class="nav-item" url="{{menuItem.url}}" wx:if="{{menuItem.id=='mess'}}">
+                        <view>
+                            <image class="nav-icon" src="{{menuItem.icon}}"></image>
+                            <text>{{menuItem.name}}</text>
+                        </view>
+                        <view>
+                            <image class="nav-flag" src="{{icons}}/resource/common/image/customer/user/flag1.png"></image>
+                        </view>
+                    </navigator>
+                </block>
+            </view>
+            <view class="nav-module">
+                <navigator class="nav-item" url="{{menuItem.url}}" wx:if="{{menuItem.id=='pao'}}" wx:for="{{userConfig.menus}}" wx:for-item="menuItem">
+                    <view>
+                        <image class="nav-icon" src="{{menuItem.icon}}"></image>
+                        <text>{{menuItem.name}}</text>
+                    </view>
+                    <view>
+                        <image class="nav-flag" src="{{icons}}/resource/common/image/customer/user/flag1.png"></image>
+                    </view>
+                </navigator>
+                <navigator class="nav-item" url="{{menuItem.url}}" wx:if="{{menuItem.id=='guanli'}}" wx:for="{{userConfig.menus}}" wx:for-item="menuItem">
+                    <view>
+                        <image class="nav-icon" src="{{menuItem.icon}}"></image>
+                        <text>{{menuItem.name}}</text>
+                    </view>
+                    <view>
+                        <image class="nav-flag" src="{{icons}}/resource/common/image/customer/user/flag1.png"></image>
+                    </view>
+                </navigator>
+            </view>
+            <view class="nav-module">
+                <block wx:for="{{userConfig.menus}}" wx:for-item="menuItem">
+                    <navigator class="nav-item" url="{{menuItem.url}}" wx:if="{{menuItem.id=='fankui'}}">
+                        <view>
+                            <image class="nav-icon" src="{{menuItem.icon}}"></image>
+                            <text>{{menuItem.name}}</text>
+                        </view>
+                        <view>
+                            <image class="nav-flag" src="{{icons}}/resource/common/image/customer/user/flag1.png"></image>
+                        </view>
+                    </navigator>
+                    <button class="nav-item" openType="contact" wx:if="{{menuItem.id=='phone'}}">
+                        <view>
+                            <image class="nav-icon" src="{{menuItem.icon}}"></image>
+                            <text>{{menuItem.name}}</text>
+                        </view>
+                        <view>
+                            <image class="nav-flag" src="{{icons}}/resource/common/image/customer/user/flag1.png"></image>
+                        </view>
+                    </button>
+                </block>
+            </view>
+        </block>
+        <view class="table-nav" wx:if="{{userConfig.menu_style==0}}">
+            <block wx:for="{{userConfig.menus}}" wx:for-item="menuItem">
+                <button bindtap="callPhone" class="nav-item" wx:if="{{menuItem.id=='phone'}}">
+                    <image class="nav-icon" src="{{menuItem.icon}}"></image>
+                    <text>{{menuItem.name}}</text>
+                </button>
+                <navigator class="nav-item" url="{{menuItem.url}}" wx:else>
+                    <image class="nav-icon" src="{{menuItem.icon}}"></image>
+                    <text>{{menuItem.name}}</text>
+                </navigator>
+            </block>
+        </view>
+    </view>
+    <include src="/sd_liferuning/template/nav/nav.wxml"></include>
+</view>

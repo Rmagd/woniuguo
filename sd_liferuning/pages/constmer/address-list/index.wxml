@@ -1,0 +1,28 @@
+<view class="container">
+    <view class="con">
+        <view bindtap="radio" class="list" data-id="{{item.id}}" data-index="{{item.id}}" data-select="{{item.default}}" wx:for="{{list}}">
+            <view class="text">
+                <view class="name">
+                    <text>{{item.name}}</text>
+                    <text class="phone">{{item.phone}}</text>
+                </view>
+                <text class="address">{{item.address}}</text>
+            </view>
+            <view class="hr"></view>
+            <view class="bottom">
+                <view class="left">
+                    <icon size="24" type="{{item.default}}"></icon>
+                    <text>设为默认</text>
+                </view>
+                <view class="right">
+                    <icon catchtap="navToEdit" class="iconfont icon-icon_edit" data-id="{{item.id}}"></icon>
+                    <icon catchtap="dellist" class="iconfont icon-shanchu" data-id="{{item.id}}" data-index="{{index}}"></icon>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view style="height:120rpx;"></view>
+    <view class="address-btn">
+        <navigator url="/sd_liferuning/pages/constmer/address-insert/index">添加地址</navigator>
+    </view>
+</view>

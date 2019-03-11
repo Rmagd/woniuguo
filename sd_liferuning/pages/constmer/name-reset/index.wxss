@@ -1,0 +1,41 @@
+page {
+    background: #EDF2F5;
+}
+
+.container {
+    padding: 0 20rpx;
+}
+
+.input-group {
+    width: 100%;
+    display: flex;
+    background: #FFFFFF;
+    margin: 20rpx 0;
+    border-radius: 10rpx;
+}
+
+.container input {
+    height: 80rpx;
+    line-height: 80rpx;
+    padding: 0 20rpx;
+    font-size: 30rpx;
+    flex: 1;
+}
+
+.input-addo {
+    height: 80rpx;
+    line-height: 80rpx;
+    font-size: 30rpx;
+    color: #666;
+    padding: 0 15rpx;
+}
+
+.confim {
+    width: 100%;
+    background: #20AD20;
+    color: #FFF;
+    height: 75rpx;
+    line-height: 75rpx;
+    margin-top: 10rpx;
+    font-size: 30rpx;
+}

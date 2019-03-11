@@ -1,0 +1,25 @@
+<view class="evaluate">
+    <view class="title">您觉得我们的服务怎么样</view>
+    <view class="chose_star">
+        <image bindtap="show_this" class="star" data-num="1" src="{{imgurl}}star_gray.png">
+            <image bindtap="hide_this" class="_star" data-num="1" src="{{imgurl}}star_select_03.png" style="display:{{display_1}}"></image>
+        </image>
+        <image bindtap="show_this" class="star" data-num="2" src="{{imgurl}}star_gray.png">
+            <image bindtap="hide_this" class="_star" data-num="2" src="{{imgurl}}star_select_03.png" style="display:{{display_2}}"></image>
+        </image>
+        <image bindtap="show_this" class="star" data-num="3" src="{{imgurl}}star_gray.png">
+            <image bindtap="hide_this" class="_star" data-num="3" src="{{imgurl}}star_select_03.png" style="display:{{display_3}}"></image>
+        </image>
+        <image bindtap="show_this" class="star" data-num="4" src="{{imgurl}}star_gray.png">
+            <image bindtap="hide_this" class="_star" data-num="4" src="{{imgurl}}star_select_03.png" style="display:{{display_4}}"></image>
+        </image>
+        <image bindtap="show_this" class="star" data-num="5" src="{{imgurl}}star_gray.png">
+            <image bindtap="hide_this" class="_star" data-num="5" src="{{imgurl}}star_select_03.png" style="display:{{display_5}}"></image>
+        </image>
+    </view>
+    <view class="evaluate-container">
+        <textarea bindinput="text" placeholder="有什么想补充的？" rows="5"></textarea>
+    </view>
+</view>
+<button bindtap="subbtn" class="btn">匿名提交</button>
+<view class="evaluate-text">您的评价有助于我们更好的改善跑腿服务平台</view>

@@ -1,0 +1,10 @@
+<view class="container">
+    <view bindtap="checkItem" class="address-list-module" data-id="1">
+        <view class="address-item" wx:for="{{data}}">
+            <view>
+                <text class="text-line">{{item.phone}}</text>
+                <text class="text-line">{{item.address}}</text>
+            </view>
+        </view>
+    </view>
+</view>

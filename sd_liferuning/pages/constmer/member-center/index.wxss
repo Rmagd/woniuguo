@@ -1,0 +1,193 @@
+page {
+    background: #F2F2F2;
+}
+
+.page-content {
+    padding-bottom: 0rpx;
+}
+
+.user-face-module {
+    height: 300rpx;
+    overflow: hidden;
+}
+
+.user_head {
+    width: 150rpx;
+    height: 150rpx;
+    display: block;
+    margin: 30rpx auto;
+    box-shadow: 0 0 10rpx #333;
+    position: relative;
+}
+
+.user_head .user-face {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+.user_head .biaoshi {
+    width: 38rpx;
+    height: 38rpx;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+.user-name {
+    text-align: center;
+    display: block;
+    color: #FFF;
+    font-size: 28rpx;
+}
+
+.user-level-mark {
+    width: 33rpx;
+    height: 30rpx;
+}
+
+.both-block {
+    display: flex;
+    color: #FFF;
+    font-size: 25rpx;
+    text-align: center;
+    width: 400rpx;
+    margin: 10rpx auto;
+}
+
+.both-block view {
+    flex: 1;
+    text-align: center;
+}
+
+.sub-title-panel {
+    width: 100%;
+    background: #FFF;
+    margin-bottom: 20rpx;
+}
+
+.sub-title-panel .title {
+    height: 80rpx;
+    line-height: 80rpx;
+    font-size: 28rpx;
+    border-bottom: 1rpx solid #ddd;
+    padding: 0 20rpx;
+    color: #444;
+    overflow: hidden;
+}
+
+.color-block {
+    background: #20AD20;
+    height: 30rpx;
+    width: 8rpx;
+    display: inline-block;
+    position: relative;
+    top: 6rpx;
+    margin: 0 5rpx;
+}
+
+.sub-title-panel .content {
+    overflow: hidden;
+}
+
+.level-module {
+    margin: 50rpx 0;
+}
+
+.level-prog {
+    width: 700rpx;
+    margin: 0 auto;
+    display: block;
+}
+
+.level-group {
+    width: 700rpx;
+    margin: 0 auto;
+    display: flex;
+}
+
+.level-item {
+    flex: 1;
+}
+
+.level-item .icon {
+    width: 30rpx;
+    height: 33rpx;
+    float: left;
+    position: relative;
+    left: -5rpx;
+    margin: 10rpx 0;
+}
+
+.level-mark {
+    width: 700rpx;
+    margin: 0 auto;
+    position: relative;
+}
+
+.mark {
+    width: 65rpx;
+    height: 60rpx;
+    position: relative;
+    left: 0;
+}
+
+.mark .icon {
+    width: 100%;
+    height: 100%;
+}
+
+.user-integral {
+    position: absolute;
+    left: 0;
+    width: 65rpx;
+    text-align: center;
+    font-size: 20rpx;
+    color: #FFF;
+}
+
+.level-tip-font {
+    font-size: 23rpx;
+    padding: 0 20rpx;
+    margin: 20rpx 0;
+    color: #999;
+}
+
+.nav-group {
+    padding: 0 20rpx;
+    display: flex;
+}
+
+.nav-item {
+    width: 150rpx;
+    padding: 20rpx;
+}
+
+.nav-item-img {
+    width: 80rpx;
+    height: 80rpx;
+    display: block;
+    margin: 20rpx auto;
+}
+
+.nav-item-title {
+    font-size: 25rpx;
+    text-align: center;
+    margin: 20rpx 0;
+}
+
+.tip-group {
+    padding: 30rpx 20rpx;
+}
+
+.tip-title,.tip-content {
+    font-size: 24rpx;
+    line-height: 2em;
+    color: #444;
+}
+
+.tip-content {
+    text-indent: 2em;
+    font-size: 22rpx;
+    color: #555;
+}

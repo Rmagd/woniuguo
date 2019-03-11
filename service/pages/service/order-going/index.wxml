@@ -1,0 +1,68 @@
+<map showLocation bindcontroltap="controltap" bindmarkertap="markertap" bindregionchange="regionchange" controls="{{controls}}" id="map" latitude="{{lat}}" longitude="{{lng}}" markers="{{markers}}" polyline="{{polyline}}" scale="15" style="width: 750rpx; height: {{order.class_id===3||order.class_id===5||order.class_id===6?'81':'69.5'}}vh;">
+    <cover-image bindtap="get_address_LatLntHandler" class="cover-img" src="{{imgurl}}frash.png" style="top:{{order.class_id===3||order.class_id===5||order.class_id===6?'800':'700'}}rpx"></cover-image>
+</map>
+<view class="address" style="height: {{order.class_id===3||order.class_id===5||order.class_id===6?'19':'30.5'}}vh;">
+    <block wx:if="{{order.class_id==3||order.class_id==5||order.class_id==6}}"></block>
+    <block wx:else>
+        <view bindtap="onmap" class="star-addresss" data-type="0">
+            <view class="l">
+                <image src="{{imgurl}}buy_dt_01.png" wx:if="{{order.class_id===1}}"></image>
+                <image src="{{imgurl}}buy_dt_02.png" wx:if="{{order.class_id===2}}"></image>
+                <block wx:if="{{order.class_id===4}}">
+                    <icon></icon>
+                    <image src="{{imgurl}}driver_dt_01.png"></image>
+                </block>
+                <image src="{{imgurl}}runingqu.png" wx:if="{{order.class_id===7}}"></image>
+                <view class="center c" wx:if="{{order.class_id==2}}">{{order.target_adds}}</view>
+                <view class="center c" wx:elif="{{order.class_id==7}}">{{order.target_adds}}</view>
+                <view class="center c" wx:else>{{order.start_adds}}</view>
+            </view>
+            <image bindtap="start_address" class="r" src="{{imgurl}}location_icon.png" wx:if="{{order.class_id===4}}"></image>
+            <block wx:else>
+                <image bindtap="end_address" class="r" src="{{imgurl}}location-icon2.png" wx:if="{{order.class_id===2}}"></image>
+                <image bindtap="start_address" class="r" src="{{imgurl}}location-icon1.png" wx:else></image>
+            </block>
+        </view>
+        <view class="border-bottom"></view>
+    </block>
+    <view bindtap="onmap" class="star-addresss" data-type="1">
+        <view class="l">
+            <image src="{{imgurl}}buy_dt_02.png" wx:if="{{order.class_id===1}}"></image>
+            <image src="{{imgurl}}runingqu.png" wx:if="{{order.class_id===2}}"></image>
+            <icon class="yellow" wx:if="{{order.class_id===3}}"></icon>
+            <image src="{{imgurl}}driver_dt_02.png" wx:if="{{order.class_id===4}}"></image>
+            <icon class="yellow" wx:if="{{order.class_id===5}}"></icon>
+            <icon class="yellow" wx:if="{{order.class_id===6}}"></icon>
+            <image src="{{imgurl}}buy_dt_02.png" wx:if="{{order.class_id===7}}"></image>
+            <view class="center c" wx:if="{{order.class_id==2}}">{{order.start_adds}}</view>
+            <view class="center c" wx:elif="{{order.class_id==7}}">{{order.start_adds}}</view>
+            <view class="center c" wx:else>{{order.target_adds}}</view>
+        </view>
+        <image bindtap="start_address" class="r" src="{{imgurl}}location-icon1.png" wx:if="{{order.class_id===2}}"></image>
+        <image bindtap="end_address" class="r" src="{{imgurl}}location-icon2.png" wx:elif="{{order.class_id===3}}"></image>
+        <image bindtap="end_address" class="r" src="{{imgurl}}location-icon2.png" wx:else></image>
+    </view>
+    <view class="send-btn">
+        <button bindtap="send_handler" wx:if="{{order.is_service===0}}">
+            <block wx:if="{{order.class_id==1||order.class_id==2}}">确认送达</block>
+            <block wx:else>确认订单完成</block>
+        </button>
+        <button class="send-finished" wx:else>
+            <block wx:if="{{order.class_id==1||order.class_id==2}}">已送达</block>
+            <block wx:else>订单已完成</block>
+        </button>
+    </view>
+</view>
+<view class="warp" style="height: {{order.class_id===3||order.class_id===5||order.class_id===6?'19':'30.5'}}vh;" wx:if="{{wap}}">
+    <view bindtap="close" class="close">
+        <image src="{{imgurl}}close.png"></image>
+    </view>
+    <view class="title">请输入收货码</view>
+    <view class="body">
+        <view class="list">
+            <text wx:for="{{input}}">{{item.num}}</text>
+            <input bindinput="input" maxlength="4" selectionEnd="900px" selectionStart="890px" type="number"></input>
+        </view>
+    </view>
+    <view bindtap="confirm" class="subbtn">确认</view>
+</view>

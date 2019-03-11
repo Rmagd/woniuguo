@@ -1,0 +1,147 @@
+page {
+    width: 100%;
+    height: 100%;
+    background: #F2F2F2;
+}
+
+.page-content {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.user-face-module {
+    overflow: hidden;
+    background: #FFF;
+    height: 270rpx;
+    background: linear-gradient(90deg,#86D7F2,#90BBF0);
+}
+
+.user-face {
+    width: 150rpx;
+    height: 150rpx;
+    border-radius: 150rpx;
+    box-shadow: 0 0 10rpx #333;
+    background: #FFF;
+    display: block;
+    margin: 30rpx auto 0;
+}
+
+.get-module {
+    background: green;
+    color: #fff;
+    display: block;
+    width: 200rpx;
+    height: 50rpx;
+    line-height: 50rpx;
+    font-size: 25rpx;
+    margin-top: 10rpx;
+    padding: 5rpx 10rpx;
+    margin: 20rpx auto 0;
+    border-radius: 10rpx;
+    text-align: center;
+}
+
+.user-face1 {
+    width: 50rpx;
+    height: 50rpx;
+    border-radius: 150rpx;
+    box-shadow: 0 0 10rpx #333;
+    background: #FFF;
+    display: block;
+}
+
+.switch-panel {
+    width: 100%;
+    height: 950rpx;
+    position: relative;
+    font-size: 28rpx;
+    overflow: hidden;
+}
+
+.switch-panel-title {
+    background: #fff;
+    color: #333;
+    display: flex;
+    height: 100rpx;
+    line-height: 100rpx;
+    margin: 0 0 15rpx;
+    overflow: hidden;
+}
+
+.switch-panel-title .active {
+    border-bottom: 1rpx solid #17ab1b;
+    color: #17ab1b;
+}
+
+.switch-panel-title-item {
+    flex: 1;
+    text-align: center;
+}
+
+.switch-panel-swiper {
+    width: 100%;
+    height: 820rpx;
+}
+
+.switch-panel-content {
+    width: 100%;
+    height: 820rpx;
+}
+
+.item-not-push,.item-pushed {
+    background: #FFF;
+    padding: 20rpx;
+    height: 250rpx;
+}
+
+.push-btn {
+    width: 130rpx;
+    height: 130rpx;
+    border-radius: 130rpx;
+    line-height: 130rpx;
+    background: #16AAEF;
+    color: #FFF;
+    margin: 40rpx auto 40rpx;
+    font-size: 24rpx;
+}
+
+.push-time {
+    color: #888;
+    font-size: 22rpx;
+}
+
+.item-info {
+    width: 450rpx;
+    float: left;
+}
+
+.item-info view {
+    font-size: 24rpx;
+    line-height: 50rpx;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.item-status {
+    float: right;
+}
+
+.gray-color {
+    color: red;
+}
+
+.item-pushed .push-time {
+    position: relative;
+    top: 165rpx;
+}
+
+.item-pushed .icon {
+    width: 30rpx;
+    height: 30rpx;
+    padding-right: 5rpx;
+    position: relative;
+    top: 5rpx;
+}

@@ -1,0 +1,132 @@
+page {
+    background: #F7F7F7;
+}
+
+.iconfont {
+    font-size: 30rpx;
+}
+
+.balance-model {
+    width: 100%;
+    height: 300rpx;
+    color: #FFF;
+}
+
+.balance-item {
+    margin: 70rpx 40rpx 0;
+}
+
+.balance-item .title {
+    font-size: 28rpx;
+}
+
+.balance-item .price {
+    font-size: 80rpx;
+    margin-top: 20rpx;
+}
+
+.fn-btn-group {
+    width: 100%;
+    background: #FFF;
+    padding: 15rpx 0;
+    margin: 15rpx 0;
+    display: flex;
+}
+
+.fn-btn-item {
+    flex: 1;
+    text-align: center;
+    font-size: 28rpx;
+    float: left;
+    border-right: 1rpx solid #f2f2f2;
+}
+
+.fn-btn-item:last-child {
+    border-right: none;
+}
+
+.fn-btn-item image {
+    width: 50rpx;
+    height: 50rpx;
+    display: block;
+    margin: 15rpx auto;
+}
+
+.income-module {
+    width: 100%;
+    color: #666;
+    margin-bottom: 20rpx;
+}
+
+.income-module-title {
+    display: flex;
+    justify-content: space-between;
+    padding: 10rpx 20rpx;
+}
+
+.module-left {
+    overflow: hidden;
+}
+
+.module-left .title {
+    margin: 10rpx 0;
+    font-size: 30rpx;
+    color: #000;
+}
+
+.module-left .info {
+    font-size: 25rpx;
+}
+
+.module-left .info text:first-child {
+    margin-right: 30rpx;
+}
+
+.module-right {
+    overflow: hidden;
+}
+
+.module-right .icon {
+    width: 50rpx;
+    height: 50rpx;
+    margin-top: 20rpx;
+}
+
+.income-module-item {
+    display: flex;
+    align-items: center;
+    background: #FFF;
+    justify-content: space-around;
+    font-size: 27rpx;
+    text-align: left;
+    padding: 0 20rpx;
+    line-height: 70rpx;
+    border-bottom: 1rpx solid #F7F7F7;
+    overflow: hidden;
+}
+
+.income-module-item .l {
+    width: 45%;
+}
+
+.income-module-item .c {
+    width: 30%;
+    text-align: center;
+}
+
+.income-module-item .r {
+    width: 35%;
+    text-align: right;
+}
+
+.income-module-item text {
+    flex: 1;
+}
+
+.income-module-item text:first-child {
+    text-align: left;
+}
+
+.income-module-item text:last-child {
+    text-align: right;
+}

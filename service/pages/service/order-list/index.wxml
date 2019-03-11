@@ -1,0 +1,49 @@
+<view class="switch-panel">
+    <view class="content">
+        <view class="empty-data {{finished_order.length>0?'none':' '}}">
+            <image class="no-data-tip" src="{{webRoot}}/public/WeChat/resource/common/image/status/no-data-tip.png"></image>
+            <text class="no-data-text">您还没有订单</text>
+        </view>
+        <view bindtap="navto" class="order-module" data-id="{{item.id}}" data-order="{{item}}" wx:for="{{finished_order}}">
+            <view class="orderInformation">
+                <view class="orderStyle">
+                    <view class="orderStyleTtile">
+                        <text>{{item.goods}}</text>
+                    </view>
+                    <view class="orderStatus">
+                        <text class="blur-text">已完成</text>
+                        <icon class="iconfont icon-right blur-text"></icon>
+                    </view>
+                </view>
+                <view class="orderTime">
+                    <text wx:if="{{item.class_id==3?true:false}}">{{item.time_group===''?'暂无':item.time_group}}</text>
+                    <text wx:elif="{{item.class_id==5?true:false}}">{{item.time_group===''?'暂无':item.time_group}}</text>
+                    <text wx:else>{{item.expect_time===''?'暂无':item.expect_time}}</text>
+                </view>
+                <view class="address">
+                    <view class="address-item" wx:if="{{item.class_id==3||item.class_id==5||item.class_id==6?false:true}}">
+                        <view class="icon">
+                            <icon class="start_address"></icon>
+                        </view>
+                        <text wx:if="{{item.class_id!==2}}">{{item.start_adds===''?'暂无':item.start_adds}}</text>
+                        <text wx:else>{{item.target_adds===''?'暂无':item.target_adds}}</text>
+                    </view>
+                    <view class="address-item">
+                        <view class="icon">
+                            <icon class="end_address"></icon>
+                        </view>
+                        <text wx:if="{{item.class_id!==2}}">{{item.target_adds===''?'暂无':item.target_adds}}</text>
+                        <text wx:else>{{item.start_adds===''?'暂无':item.start_adds}}</text>
+                    </view>
+                </view>
+                <view class="border-top"></view>
+                <view class="orderId">
+                    <view>订单号：{{item.order_no}}</view>
+                    <view>订单金额：
+              <text class="font-weight">{{item.total_price}}</text>元
+              </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,31 @@
+<!--sd_liferuning/pages/constmer/part-time-jobs-user/index.wxml-->
+<view class='containe'>
+
+  <view class='wechatInfo'>
+    <image class="avatar" src="{{userinfo.avatar_url}}"></image>
+    <view class='nickname'>
+      <text>{{userinfo.nickname}}</text>
+      <text wx:if="{{userinfo.sex==1}}">/男</text>
+      <text wx:if="{{userinfo.sex==2}}">/女</text>
+    </view>
+  </view>
+  <view class='info-item'>
+    <text>{{school[schoolNum]}}</text>
+  </view>
+  <view class='info-item'>
+    <input placeholder='请输入姓名' bindinput='usernameInput' value='{{username}}'></input>
+  </view>
+  <view class='info-item'>
+    <input placeholder='请输入手机号' value='{{phone}}' bindinput='phoneInput'  value='{{phone}}'></input>
+  </view>
+
+  <view class='info-item' style='height:80px;'>
+  <label>身高(可选)：(cm)<slider bindchange="slider4change" min="140" max="200" value='{{height}}' show-value /></label>
+  </view>
+
+  <view class='submit'>
+    <button type='primary' bindtap='submitInfo'>保存</button>
+  </view>
+
+  <include src="/sd_liferuning/template/job-nav/index.wxml"></include>
+</view>

@@ -1,0 +1,60 @@
+<view class="container">
+    <view class="column">
+        <view class="cell cell-title">
+            <view>
+        服务费
+      </view>
+            <view>
+        {{cost.base_price}}
+      </view>
+        </view>
+        <view class="cell cell-info">
+            <view>
+        积分抵扣
+      </view>
+            <view>
+        {{cost.reduce_price}}
+      </view>
+        </view>
+        <view class="cell cell-info">
+            <view>
+        会员折扣
+      </view>
+            <view>
+        {{cost.discount}}
+      </view>
+        </view>
+        <view class="cell cell-info">
+            <view>
+        订单保险
+      </view>
+            <view>
+         {{cost.secure_price}}
+      </view>
+        </view>
+        <view class="cell cell-info">
+            <view>
+        小费
+      </view>
+            <view>
+        {{cost.stepper}}
+      </view>
+        </view>
+        <view class="cell cell-info">
+            <view>
+        优惠券
+      </view>
+            <view>
+        {{cost.coupon}}
+      </view>
+        </view>
+        <view class="cell cell-title">
+            <view>
+        跑腿费用共计(元）
+      </view>
+            <view>
+        {{cost.lastPrice}}
+      </view>
+        </view>
+    </view>
+</view>

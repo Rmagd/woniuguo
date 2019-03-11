@@ -1,0 +1,73 @@
+.module-item {
+    border-top: 1rpx solid #EEEEEE;
+    border-bottom: 1rpx solid #EEEEEE;
+    width: 100%;
+    display: flex;
+    padding: 10rpx 0 0;
+    margin-bottom: 10rpx;
+}
+
+.pay-button {
+    background: green;
+    color: #FFF;
+    height: 75rpx;
+    line-height: 75rpx;
+    margin: 20rpx 0;
+}
+
+.module-item .face {
+    width: 80rpx;
+    height: 80rpx;
+    border-radius: 80rpx;
+    background: #EEEEEE;
+    margin: 0 30rpx 0 20rpx;
+}
+
+.module-item .user {
+    flex: 1;
+}
+
+.module-item .username,.module-item .phonenumber {
+    display: block;
+    font-size: 30rpx;
+    margin: 5rpx 0;
+}
+
+.module-item .username {
+    font-size: 35rpx;
+}
+
+.module-item-text {
+    line-height: 80rpx;
+    font-size: 30rpx;
+    flex: 1;
+    margin: 0 10rpx 0 20rpx;
+}
+
+.module-item-text-left {
+    color: #111;
+}
+
+.module-item-text .status {
+    color: #666;
+}
+
+.module-item-text-right {
+    color: #1DABF3;
+    float: right;
+}
+
+.module-item .iconfont {
+    line-height: 80rpx;
+    float: right;
+    margin-right: 15rpx;
+}
+
+picker.module-item {
+    display: block;
+}
+
+picker.module-item .iconfont {
+    margin-right: 5rpx;
+    margin-left: 10rpx;
+}

@@ -1,0 +1,290 @@
+page {
+    background: #f2f2f2;
+}
+
+.column,.column-normal {
+    margin-bottom: 20rpx;
+    width: 100%;
+    overflow: hidden;
+}
+
+.column {
+    background: #FFF;
+}
+
+.column-radio {
+    transform: scale(.7);
+    margin-right: 10rpx;
+    position: relative;
+    right: -10rpx;
+}
+
+.icon {
+    width: 100%;
+    height: 100%;
+}
+
+.textarea-module {
+    width: 540rpx;
+    background: #FFF;
+    float: left;
+}
+
+.textarea-module textarea {
+    width: 95%;
+    margin: 10rpx auto;
+    height: 120rpx;
+    font-size: 28rpx;
+}
+
+.multi-media-module {
+    width: 200rpx;
+    height: 160rpx;
+    float: left;
+    border-left: 1rpx solid #eee;
+    margin: 40rpx 0;
+}
+
+.takePictrue,.soundRecording {
+    width: 50rpx;
+    height: 50rpx;
+    display: block;
+    margin: 20rpx auto 15rpx;
+}
+
+.soundRecording {
+    margin: 30rpx auto 15rpx;
+}
+
+.soundRecordingPlay {
+    height: 60rpx;
+    width: 80%;
+    margin: 20rpx auto;
+    border-radius: 60rpx;
+    font-size: 20rpx;
+    line-height: 60rpx;
+    background: #eee;
+    padding: 0 5%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.soundRecordingPlay-left {
+    display: flex;
+}
+
+.soundRecording-icon {
+    width: 30rpx;
+    height: 30rpx;
+    padding: 15rpx;
+    display: inline-block;
+}
+
+.address-module {
+    font-size: 30rpx;
+    width: 100%;
+    background: #FFF;
+}
+
+.address-item {
+    border-bottom: 1rpx solid #eaeff3;
+    line-height: 80rpx;
+    display: flex;
+    padding: 20rpx;
+}
+
+.item-addo {
+    width: 58rpx;
+    height: 58rpx;
+    margin-right: 20rpx;
+    position: relative;
+    top: 30rpx;
+}
+
+.item-addo-img {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    top: -7rpx;
+}
+
+.item-title {
+    font-size: 28rpx;
+    margin: 0;
+    padding: 0 15rpx 0 0;
+    position: relative;
+    top: -8rpx;
+}
+
+.item-content {
+    font-size: 28rpx;
+    flex: 1;
+    padding: 5rpx 0 15rpx;
+}
+
+.content-lines {
+    padding: 0;
+    margin: 0;
+    height: 40rpx;
+    line-height: 40rpx;
+}
+
+.user-info-group {
+    position: absolute;
+    left: 80rpx;
+    overflow: hidden;
+}
+
+.user-info {
+    float: left;
+    overflow: hidden;
+    display: flex;
+    width: 350rpx;
+    line-height: 50rpx;
+}
+
+.user-info:first-child {
+    width: 250rpx;
+}
+
+.user-info:last-child {
+    border: none;
+}
+
+.user-info image {
+    width: 30rpx;
+    height: 30rpx;
+    margin: 0 10rpx;
+    position: relative;
+    top: 12rpx;
+}
+
+.selected-addo {
+    min-width: 35rpx;
+    height: 35rpx;
+    padding-top: 10rpx;
+    float: right;
+}
+
+.selected-addo-btn {
+    background: #1EAE24;
+    color: #FFF;
+    width: 80rpx;
+    height: 50rpx;
+    line-height: 50rpx;
+    border-radius: 10rpx;
+    font-size: 26rpx;
+    display: inline-block;
+    padding: 0;
+    margin: 20rpx 10rpx 0;
+}
+
+.time-module {
+    margin-bottom: 15rpx;
+    width: 100%;
+}
+
+.picker-module {
+    display: flex;
+    font-size: 30rpx;
+    justify-content: space-between;
+    margin: 0 20rpx;
+    border-bottom: 1rpx solid #eaeff3;
+    background: #FFF;
+    padding: 30rpx 0;
+    line-height: 60rpx;
+}
+
+.picker-module-icon {
+    width: 35rpx;
+    height: 35rpx;
+    margin-right: 10rpx;
+    position: relative;
+    top: 8rpx;
+}
+
+.picker-module-radio {
+    transform: scale(0.7);
+    position: relative;
+    left: -5rpx;
+}
+
+.picker-module view:last-child .nav-icon,.font-success .nav-icon {
+    margin-right: 13rpx;
+}
+
+.nav-icon {
+    width: 22rpx;
+    height: 22rpx;
+}
+
+.picker-input {
+    width: 600rpx;
+    position: relative;
+    top: 3rpx;
+    height: 40rpx;
+    line-height: 40rpx;
+}
+
+.picker-weight-input {
+    display: flex;
+}
+
+.picker-weight-input input {
+    width: 80rpx;
+    margin-right: 15rpx;
+}
+
+.user-hint {
+    color: #666;
+}
+
+.btn-modulefill {
+    height: 200rpx;
+}
+
+.btn-module {
+    position: fixed;
+    bottom: 110rpx;
+    display: flex;
+    justify-content: space-between;
+    height: 100rpx;
+    line-height: 100rpx;
+    box-shadow: 0 0 3rpx #999;
+    width: 100%;
+    font-size: 28rpx;
+    background: #FFF;
+    z-index: 999;
+}
+
+.btn-module .price-font {
+    font-size: 40rpx;
+    color: #20AF1F;
+}
+
+.price-info {
+    padding: 0 0 0 20rpx;
+}
+
+.btn-navigator {
+    display: inline-block;
+    font-size: 23rpx;
+    color: #666;
+    margin-left: 30rpx;
+    height: 100%;
+}
+
+.btn-module .btn {
+    height: 60rpx;
+    width: 230rpx;
+    background: #20ad20;
+    color: #fff;
+    font-size: 30rpx;
+    line-height: 60rpx;
+    border-radius: 10rpx;
+    margin: 20rpx;
+}
+
+.none {
+    display: none;
+}

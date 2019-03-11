@@ -1,0 +1,3 @@
+<view class="list">
+    <image bindtap="lookimg" data-index="{{index}}" src="{{item}}" wx:for="{{arrimg}}"></image>
+</view>

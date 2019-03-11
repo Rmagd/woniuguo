@@ -1,0 +1,91 @@
+<form wx:if="{{formindex==0}}">
+  <view class="view">
+    <view class="item">
+      <view class="l">姓名</view>
+      <view class="r">
+        <input bindinput="changeInputData" data-name="name" placeholder="请输入您的姓名" value="{{name}}"></input>
+      </view>
+    </view>
+    <view class="item">
+      <view class="l">身份证号</view>
+      <view class="r">
+        <input bindinput="changeInputData" data-name="identity" placeholder="请输入您的身份证号" type="idcard" value="{{identity}}"></input>
+      </view>
+    </view>
+
+    <view class="item">
+      <view class="l">学校</view>
+      <view class="r">
+         
+  <text>{{myschool}}</text>
+      </view>
+    </view>
+
+  </view>
+  <view class="c_view">
+    <view class="title">学生证照片</view>
+    <view class="v_img">
+      <view bindtap="upimg" class="v_img_o" data-type="0" wx:if="{{card_front==''}}">
+        <image src="{{imgurl}}add.png"></image>
+        <view>添加学生证(学生卡)正面照片</view>
+      </view>
+      <image bindtap="upimg" class="img" data-type="0" src="{{card_front}}" wx:if="{{card_front!=''}}"></image>
+    </view>
+    <view class="v_img">
+      <view bindtap="upimg" class="v_img_o" data-type="1" wx:if="{{card_back==''}}">
+        <image src="{{imgurl}}add.png"></image>
+        <view>添加自己的照片</view>
+      </view>
+      <image bindtap="upimg" class="img" data-type="1" src="{{card_back}}" wx:if="{{card_back!=''}}"></image>
+    </view>
+    <view class="foot">
+      <view class="titles">拍摄学生证须知：</view>
+      <view class="text">
+        <view class="p">必须为本人有效的学生证。</view>
+        <view class="p">信息保存后将无法修改，请认真填写。</view>
+        <view class="p">拍摄时须确保学生证（学生卡）的
+          <text>边框完整</text>、
+          <text>字体清晰</text>、
+          <text>亮度均匀</text>。</view>
+      </view>
+    </view>
+  </view>
+  <view class="kongbai"></view>
+  <view class="btn">
+    <button bindtap="subbtn">保存</button>
+  </view>
+</form>
+<form wx:if="{{formindex==1}}">
+  <view class="view_vh">
+    <view class="view_kuai"></view>
+    <view class="content">
+      <view class="title">电话认证</view>
+      <view class="p">
+        <text>为了更好的使用跑腿服务</text>
+        <text>请您填写以下的电话号码信息</text>
+      </view>
+      <view class="item_input">
+        <view class="l">
+          <view class="t">电话号码</view>
+          <input bindinput="blur" data-name="phone" disabled="{{inputdisabled}}" name="phone" placeholder="请输入手机号" type="number" value="{{phone}}"></input>
+        </view>
+        <view class="r"></view>
+      </view>
+      <view class="item_input">
+        <view class="l">
+          <view class="t">验证码</view>
+          <input bindinput="blur" data-name="yz" name="yz" placeholder="请输入短信验证码" type="number" value="{{yhmima}}"></input>
+        </view>
+        <view class="r">
+          <view bindtap="btn" class="t" wx:if="{{show}}">获取验证码</view>
+          <view class="t2" wx:if="{{!show}}">重新发送:{{time}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="btn">
+    <button bindtap="subbtn" wx:if="{{inputdisabled==false}}">保存</button>
+    <button bindtap="Change" style="background:#ee3112" wx:else>解绑</button>
+  </view>
+</form>
+

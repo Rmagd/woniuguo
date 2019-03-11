@@ -1,0 +1,41 @@
+@import "../../../../wxParse/wxParse.wxss";
+
+page view {
+    overflow: visible;
+}
+
+.container {
+    width: 100%;
+    color: #333;
+}
+
+.title {
+    font-size: 30rpx;
+    font-weight: bold;
+    margin: 15rpx 0;
+}
+
+.notifaction-time {
+    font-size: 20rpx;
+    margin: 15rpx 0;
+    color: #666;
+}
+
+.content {
+    text-align: left;
+    width: 95%;
+    margin: 0 2.5%;
+    font-weight: normal;
+    font-size: 28rpx;
+    line-height: 1.8em;
+}
+
+.content text {
+    display: block;
+    margin: 10rpx 0;
+}
+
+.title {
+    font-size: 28rpx;
+    font-weight: bold;
+}

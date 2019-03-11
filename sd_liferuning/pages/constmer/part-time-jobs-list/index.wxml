@@ -1,0 +1,28 @@
+<!--sd_liferuning/pages/constmer/part-time-jobs/index.wxml-->
+<view class='containe'>
+
+<view class='list' wx:if="{{jobs}}" wx:for="{{jobs}}" wx:for-index="index" wx:key="index" wx:for-item="item">
+<navigator url='/sd_liferuning/pages/constmer/part-time-jobs-detail/index?jobid={{item.id}}'>
+<view>
+  <text class='job-name'>{{item.name}}</text>
+
+  <view class='price-count'>
+    <text class='price'>￥{{item.price}}</text>
+    <text class='count'>{{jobCount[item.count]}}</text>
+  </view>
+
+</view>
+
+<view class='date-time'>
+  <text class='date'>{{item.date}}</text>
+  <view class='job-type'><text>{{jobType[item.type]}}</text></view>
+  <text class='time'>{{item.time}}</text>
+</view>
+</navigator>
+</view>
+
+<view wx:if="{{empty}}" class='empty'>{{empty}}</view>
+
+<include src="/sd_liferuning/template/job-nav/index.wxml"></include>
+</view>
+

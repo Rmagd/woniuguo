@@ -1,0 +1,136 @@
+page {
+    background: #F2F2F2;
+}
+
+.page-content {
+    padding-bottom: 0rpx;
+}
+
+.sign-in-module {
+    height: 400rpx;
+    overflow: hidden;
+}
+
+.sign-in-btn,.is-sign-btn {
+    width: 200rpx;
+    height: 200rpx;
+    border-radius: 200rpx;
+    margin: 78rpx auto 20rpx;
+    line-height: 200rpx;
+    color: #ff1531;
+    font-size: 38rpx;
+    background: none;
+    text-align: center;
+}
+
+.is-sign-btn {
+    line-height: normal;
+    overflow: hidden;
+    color: #15AA13;
+    font-size: 32rpx;
+}
+
+.is-sign-btn view {
+    line-height: 60rpx;
+    margin: 10rpx 20rpx 0;
+    padding: 10rpx 0;
+}
+
+.is-sign-btn view:first-child {
+    border-bottom: 1rpx solid #eee;
+}
+
+.sign-in-tip {
+    color: #FFF;
+    text-align: center;
+    font-size: 28rpx;
+    line-height: 100rpx;
+}
+
+.sub-title-panel {
+    width: 100%;
+    background: #FFF;
+    margin-bottom: 20rpx;
+    margin: 20rpx 0;
+}
+
+.sub-title-panel .title {
+    height: 80rpx;
+    line-height: 80rpx;
+    font-size: 30rpx;
+    padding: 0 20rpx;
+    color: #070707;
+}
+
+.sub-title-panel .title .icon {
+    width: 36rpx;
+    height: 33rpx;
+    margin-right: 20rpx;
+    position: relative;
+    top: 5rpx;
+}
+
+.sub-title-panel .content {
+    overflow: hidden;
+}
+
+.calendar-module {
+    padding: 30rpx;
+    font-size: 26rpx;
+    color: #070707;
+}
+
+.calendar-head {
+    width: 400rpx;
+    display: flex;
+    margin: 0 auto;
+}
+
+.calendar-head view {
+    flex: 1;
+    text-align: center;
+    padding: 20rpx 0;
+}
+
+.calendar-body {
+    padding: 20rpx 0;
+}
+
+.calendar-title {
+    overflow: hidden;
+    margin-bottom: 30rpx;
+}
+
+.calendar-title-item {
+    float: left;
+    width: 14.28%;
+    text-align: center;
+}
+
+.calendar-time {
+    overflow: hidden;
+}
+
+.calendar-time-item {
+    float: left;
+    width: 14.28%;
+    text-align: center;
+    margin: 20rpx 0;
+    position: relative;
+}
+
+.calendar-time-item .flag {
+    width: 10rpx;
+    height: 10rpx;
+    border-radius: 10rpx;
+    background: #0C81FE;
+    margin: 0 auto;
+    position: absolute;
+    left: 47rpx;
+}
+
+.page-tip {
+    color: #202020;
+    font-size: 22rpx;
+    padding: 0 20rpx;
+}

@@ -1,0 +1,71 @@
+page {
+    background: #f1f2f4;
+    font-family: "黑体";
+}
+
+.title {
+    width: 700rpx;
+    margin: 25rpx auto;
+    font-size: 26rpx;
+    color: #888;
+}
+
+.input-group {
+    width: 700rpx;
+    padding-left: 25rpx;
+    padding-right: 25rpx;
+    display: flex;
+    align-items: center;
+    height: 90rpx;
+    line-height: 90rpx;
+    font-size: 30rpx;
+    background: #fff;
+    border-bottom: 1rpx solid #dadada;
+    color: #666;
+}
+
+.input-addo {
+    width: 150rpx;
+    padding: 0 10rpx;
+    display: inline-block;
+    text-align: left;
+    color: #333;
+}
+
+.input-control {
+    height: 80rpx;
+    line-height: 80rpx;
+    font-size: 28rpx;
+    display: inline-block;
+    width: 470rpx;
+    margin-left: 20rpx;
+}
+
+.confirm {
+    background: #20ad20;
+    width: 700rpx;
+    height: 90rpx;
+    color: #FFF;
+    line-height: 90rpx;
+    margin: 0 auto;
+    font-size: 30rpx;
+}
+
+.debug {
+    color: #FFF;
+}
+
+.margin-top {
+    margin-top: 40rpx;
+}
+
+.margin-top-btn {
+    margin-top: 90rpx;
+}
+
+.contact-text {
+    text-align: center;
+    margin-top: 40rpx;
+    font-size: 24rpx;
+    color: #888888;
+}

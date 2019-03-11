@@ -1,0 +1,182 @@
+<web-view src="{{service_url}}" wx:if="{{service_url}}"></web-view>
+<view class="containers">
+    <view class="page-content">
+        <view class="switch-panel">
+            <view class="switch-panel-title">
+                <view bindtap="selectSwiper" class="switch-panel-title-item {{currentItemId=='0'?'active':''}}" data-listid="0">
+                    <text>待完成</text>
+                </view>
+                <view bindtap="selectSwiper" class="switch-panel-title-item {{currentItemId=='1'?'active':''}}" data-listid="1">
+                    <text>已完成</text>
+                </view>
+                <view bindtap="selectSwiper" class="switch-panel-title-item {{currentItemId=='2'?'active':''}}" data-listid="2">
+                    <text>已取消</text>
+                </view>
+            </view>
+            <swiper bindanimationfinish="animationfinish" bindchange="changeSwiper" class="switch-panel-swiper" currentItemId="{{currentItemId}}">
+                <swiper-item itemId="0">
+                    <scroll-view bindscrolltolower="refreshData" class="switch-panel-content" data-index="0" data-type="1" scrollY="true">
+                        <view class="empty-data" wx:if="{{wait_finished.length===0}}">
+                            <image class="no-data-tip" src="{{webRoot}}/public/WeChat/resource/common/image/status/no-data-tip.png"></image>
+                            <text class="no-data-text">暂无数据</text>
+                        </view>
+                        <view bindtap="navto" class="order-module" data-id="{{item.id}}" data-order="{{item}}" wx:for="{{wait_finished}}" wx:key="index">
+                            <view class="orderInformation">
+                                <view class="orderStyle">
+                                    <view class="orderStyleTtile">
+                                        <text>{{class_id[item.class_id-1]}}</text>
+                                    </view>
+                                    <view class="orderStatus">
+                      订单号：<text>#</text>{{item.r_order_no==''?item.order_no:item.r_order_no}}
+                      </view>
+                                </view>
+                                <view class="border-top"></view>
+                                <view class="address">
+                                    <block wx:if="{{item.class_id==3?true:false}}"></block>
+                                    <block wx:elif="{{item.class_id==5?true:false}}"></block>
+                                    <block wx:elif="{{item.class_id==6?true:false}}"></block>
+                                    <view class="address-item" wx:else>
+                                        <view class="icon">
+                                            <icon class="start_address"></icon>
+                                        </view>
+                                        <text wx:if="{{item.class_id==7}}">{{item.target_adds===''?'暂无':item.target_adds}}</text>
+                                        <text wx:else>{{item.start_adds===''?'暂无':item.start_adds}}</text>
+                                    </view>
+                                    <view class="address-item">
+                                        <view class="icon">
+                                            <icon class="end_address"></icon>
+                                        </view>
+                                        <text wx:if="{{item.class_id==7}}">{{item.start_adds===''?'暂无':item.start_adds}}</text>
+                                        <text wx:else>{{item.target_adds===''?'暂无':item.target_adds}}</text>
+                                    </view>
+                                </view>
+                                <view class="border-top"></view>
+                                <view class="orderId">
+                                    <view wx:if="{{item.class_id==3||item.class_id==5?true:false}}">{{item.time_group===''?'暂无':item.time_group}}</view>
+                                    <block wx:else>
+                                        <view wx:if="{{item.run_now==0}}">{{item.expect_time===''?'暂无':item.expect_time+'预计送达'}}</view>
+                                        <view wx:else>立即派单</view>
+                                    </block>
+                                    <view>订单金额：
+                    <text class="font-weight">{{item.runner_profit}}</text>元
+                    </view>
+                                </view>
+                            </view>
+                        </view>
+                        <view class="{{model==1?'huaweikuai':'kuai'}}"></view>
+                    </scroll-view>
+                </swiper-item>
+                <swiper-item itemId="1">
+                    <scroll-view bindscrolltolower="refreshData" class="switch-panel-content" data-index="1" data-type="2" scrollY="true">
+                        <view class="empty-data" wx:if="{{finished_order.length===0}}">
+                            <image class="no-data-tip" src="{{webRoot}}/public/WeChat/resource/common/image/status/no-data-tip.png"></image>
+                            <text class="no-data-text">暂无数据</text>
+                        </view>
+                        <view bindtap="navto" class="order-module" data-id="{{item.id}}" data-order="{{item}}" wx:for="{{finished_order}}" wx:key="index">
+                            <view class="orderInformation">
+                                <view class="orderStyle">
+                                    <view class="orderStyleTtile">
+                                        <text>{{class_id[item.class_id-1]}}</text>
+                                    </view>
+                                    <view class="orderStatus">
+                                        <text>订单号：{{item.order_no}}</text>
+                                    </view>
+                                </view>
+                                <view class="border-top"></view>
+                                <view class="address">
+                                    <block wx:if="{{item.class_id==3?true:false}}"></block>
+                                    <block wx:elif="{{item.class_id==5?true:false}}"></block>
+                                    <block wx:elif="{{item.class_id==6?true:false}}"></block>
+                                    <view class="address-item" wx:else>
+                                        <view class="icon">
+                                            <icon class="start_address"></icon>
+                                        </view>
+                                        <text wx:if="{{item.class_id==7}}">{{item.target_adds===''?'暂无':item.target_adds}}</text>
+                                        <text wx:else>{{item.start_adds===''?'暂无':item.start_adds}}</text>
+                                    </view>
+                                    <view class="address-item">
+                                        <view class="icon">
+                                            <icon class="end_address"></icon>
+                                        </view>
+                                        <text wx:if="{{item.class_id==7}}">{{item.start_adds===''?'暂无':item.start_adds}}</text>
+                                        <text wx:else>{{item.target_adds===''?'暂无':item.target_adds}}</text>
+                                    </view>
+                                </view>
+                                <view class="border-top"></view>
+                                <view class="orderId">
+                                    <view>{{item.expect_time===''?'暂无':item.expect_time+'预计送达'}}</view>
+                                    <view>订单金额：
+                      <text class="font-weight">{{item.runner_profit}}</text>元
+                     </view>
+                                </view>
+                            </view>
+                        </view>
+                        <view class="{{model==1?'huaweikuai':'kuai'}}"></view>
+                    </scroll-view>
+                </swiper-item>
+                <swiper-item itemId="2">
+                    <scroll-view bindscrolltolower="refreshData" class="switch-panel-content" data-index="2" data-type="3" scrollY="true">
+                        <view class="empty-data" wx:if="{{delete_order.length===0}}">
+                            <image class="no-data-tip" src="{{webRoot}}/public/WeChat/resource/common/image/status/no-data-tip.png"></image>
+                            <text class="no-data-text">暂无数据</text>
+                        </view>
+                        <view bindtap="navto" class="order-module" data-id="{{item.id}}" data-order="{{item}}" wx:for="{{delete_order}}" wx:key="index">
+                            <view class="orderInformation">
+                                <view class="orderStyle">
+                                    <view class="orderStyleTtile">
+                                        <text>{{class_id[item.class_id-1]}}</text>
+                                    </view>
+                                    <view class="orderStatus">
+                                        <text>订单号：{{item.order_no}}</text>
+                                    </view>
+                                </view>
+                                <view class="border-top"></view>
+                                <view class="address">
+                                    <block wx:if="{{item.class_id==3?true:false}}"></block>
+                                    <block wx:elif="{{item.class_id==5?true:false}}"></block>
+                                    <block wx:elif="{{item.class_id==6?true:false}}"></block>
+                                    <view class="address-item" wx:else>
+                                        <view class="icon">
+                                            <icon class="start_address"></icon>
+                                        </view>
+                                        <text wx:if="{{item.class_id==7}}">{{item.target_adds===''?'暂无':item.target_adds}}</text>
+                                        <text wx:else>{{item.start_adds===''?'暂无':item.start_adds}}</text>
+                                    </view>
+                                    <view class="address-item">
+                                        <view class="icon">
+                                            <icon class="end_address"></icon>
+                                        </view>
+                                        <text wx:if="{{item.class_id==7}}">{{item.start_adds===''?'暂无':item.start_adds}}</text>
+                                        <text wx:else>{{item.target_adds===''?'暂无':item.target_adds}}</text>
+                                    </view>
+                                </view>
+                                <view class="border-top"></view>
+                                <view class="orderId">
+                                    <view>{{item.expect_time===''?'暂无':item.expect_time+'预计送达'}}</view>
+                                    <view>订单金额：
+                      <text class="font-weight">{{item.runner_profit}}</text>元
+                     </view>
+                                </view>
+                            </view>
+                        </view>
+                        <view class="{{model==1?'huaweikuai':'kuai'}}"></view>
+                    </scroll-view>
+                </swiper-item>
+            </swiper>
+        </view>
+    </view>
+    <view class="btn-group">
+        <navigator class="btn-item" openType="redirect" url="/service/pages/service/get-order/index">
+            <image class="btn-group-icon" src="{{webRoot}}/public/WeChat/resource/common/image/nav-icon/icon0.png"></image>
+            <text>抢单</text>
+        </navigator>
+        <navigator class="btn-item active" openType="redirect" url="/service/pages/service/index/index">
+            <image class="btn-group-icon" src="{{webRoot}}/public/WeChat/resource/common/image/nav-icon/icon1-1.png"></image>
+            <text>订单</text>
+        </navigator>
+        <navigator class="btn-item" openType="redirect" url="/service/pages/service/user/index">
+            <image class="btn-group-icon" src="{{webRoot}}/public/WeChat/resource/common/image/nav-icon/icon2.png"></image>
+            <text>个人</text>
+        </navigator>
+    </view>
+</view>

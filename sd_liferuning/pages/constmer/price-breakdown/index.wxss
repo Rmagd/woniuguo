@@ -1,0 +1,20 @@
+.column {
+    width: 100%;
+}
+
+.cell {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 30rpx;
+    height: 80rpx;
+    line-height: 80rpx;
+}
+
+.cell-title {
+    font-size: 30rpx;
+}
+
+.cell-info {
+    border-top: 1rpx solid #f3f3f3;
+    font-size: 26rpx;
+}

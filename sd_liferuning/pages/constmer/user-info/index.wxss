@@ -1,0 +1,29 @@
+.info-module {
+    width: 100%;
+}
+
+.info-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 10rpx;
+    font-size: 30rpx;
+    color: #666;
+    border-bottom: 1rpx solid #EDF2F5;
+    height: 80rpx;
+    line-height: 80rpx;
+}
+
+.info-item .iconfont {
+    margin-right: 20rpx;
+    color: #20AD20;
+}
+
+.user-face {
+    width: 60rpx;
+    height: 60rpx;
+    border-radius: 60rpx;
+    display: inline-block;
+    position: relative;
+    top: 15rpx;
+    box-shadow: 0 0 3rpx #000;
+}

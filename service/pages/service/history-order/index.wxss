@@ -1,0 +1,29 @@
+page {
+    background: #F7F7F7;
+}
+
+.page-module {
+    width: 100%;
+    font-size: 30rpx;
+}
+
+.module-title {
+    color: #666;
+    line-height: 80rpx;
+    padding: 0 20rpx;
+}
+
+.module-content {
+    background: #FFF;
+}
+
+.module-info-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 20rpx;
+}
+
+.module-info-item text {
+    font-size: 30rpx;
+    color: #666;
+}

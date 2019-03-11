@@ -1,0 +1,39 @@
+.phone-text,.help-info {
+    font-size: 30rpx;
+    margin: 10rpx 0;
+}
+
+.help-info {
+    color: #666;
+}
+
+.input-group {
+    width: 95%;
+    margin: 10rpx 2.5%;
+    display: flex;
+    font-size: 30rpx;
+}
+
+.input-group input {
+    flex: 1;
+    border: 1rpx solid #14B5FA;
+    height: 80rpx;
+    line-height: 80rpx;
+    padding: 0 20rpx;
+    border-radius: 10rpx;
+}
+
+.input-group .getCode {
+    background: #14B5FA;
+    color: #FFF;
+    height: 85rpx;
+    font-size: 30rpx;
+    line-height: 85rpx;
+}
+
+.input-group .confirm {
+    background: #14B5FA;
+    width: 100%;
+    color: #FFF;
+    font-size: 30rpx;
+}

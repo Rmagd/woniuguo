@@ -1,0 +1,13 @@
+<view class="container">
+    <view class="show-pic">
+        <image class="img" src="{{src}}"></image>
+    </view>
+    <view class="page-btn-group">
+        <view bindtap="deletePic" class="page-btn">
+      删除
+    </view>
+        <view bindtap="goBack" class="page-btn">
+      确定
+    </view>
+    </view>
+</view>

@@ -1,0 +1,115 @@
+page {
+    background: #f1f2f4;
+}
+
+.evaluate {
+    width: 100%;
+    background: #fff;
+    padding-top: 60rpx;
+    padding-bottom: 40rpx;
+}
+
+.title {
+    width: 100%;
+    padding: 60rpx auto;
+    text-align: center;
+    font-size: 30rpx;
+    color: #555;
+}
+
+.star-container {
+    width: 480rpx;
+    display: flex;
+    justify-content: space-between;
+    margin: 70rpx auto;
+}
+
+.star-container image {
+    width: 78rpx;
+    height: 74rpx;
+}
+
+.context-container {
+    width: 564rpx;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 0 auto;
+}
+
+.context-container text {
+    padding: 22rpx 70rpx;
+    border: 3rpx solid #20ad20;
+    border-radius: 5rpx;
+    font-size: 30rpx;
+    color: #20ad20;
+    margin-bottom: 40rpx;
+}
+
+.evaluate-container {
+    width: 600rpx;
+    height: 250rpx;
+    font-size: 26rpx;
+    color: #888;
+    background: #f1f2f4;
+    margin: 0 auto;
+    padding-top: 10rpx;
+    padding-left: 10rpx;
+    padding-bottom: 40rpx;
+    position: relative;
+}
+
+.evaluate-container textarea {
+    width: 600rpx;
+    height: 250rpx;
+}
+
+.evaluate-container image {
+    width: 88rpx;
+    height: 88rpx;
+    position: absolute;
+    bottom: 17rpx;
+    left: 17rpx;
+}
+
+.btn {
+    width: 700rpx;
+    margin: 0 auto;
+    background: #20ad20;
+    color: #fff;
+    border-radius: 15rpx;
+    height: 90rpx;
+    line-height: 90rpx;
+    margin-top: 20rpx;
+}
+
+.evaluate-text {
+    font-size: 24rpx;
+    color: #888;
+    text-align: center;
+    margin-top: 20rpx;
+}
+
+.chose_star {
+    width: 710rpx;
+    padding: 0 20rpx;
+    text-align: center;
+}
+
+.star {
+    width: 60rpx;
+    height: 60rpx;
+    padding-top: 20rpx;
+    margin-right: 20rpx;
+    position: relative;
+    top: 0;
+    left: 0;
+}
+
+._star {
+    width: 60rpx;
+    height: 60rpx;
+    position: absolute;
+    top: 20rpx;
+    left: 0;
+}

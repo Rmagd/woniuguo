@@ -1,0 +1,11 @@
+.list {
+    width: 100%;
+    padding: 20rpx 0;
+}
+
+image {
+    display: inline-block;
+    width: 223rpx;
+    height: 223rpx;
+    margin-left: 20rpx;
+}

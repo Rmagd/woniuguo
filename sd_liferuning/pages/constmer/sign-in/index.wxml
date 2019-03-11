@@ -1,0 +1,52 @@
+<view class="container">
+    <view class="page-content">
+        <view class="sign-in-module" style="background:url(\"https://www.135k.com/addons/sd_liferuning/tp/public/uploads/background/resource/common/image/customer/sign-in/bg.png\");background-size:100% 100%;">
+            <block wx:if="{{!isSign}}">
+                <view bindtap="signIn" class="sign-in-btn">点击签到</view>
+                <view class="sign-in-tip">点击签到</view>
+            </block>
+            <block wx:if="{{isSign}}">
+                <view class="is-sign-btn">
+                    <view>已签到</view>
+                    <view>连续{{data.continue}}天</view>
+                </view>
+                <view class="sign-in-tip">今日已签到，获得{{data.grow}}成长值</view>
+            </block>
+        </view>
+        <view class="sub-title-panel">
+            <view class="title">
+                <image class="icon" src="https://www.135k.com/addons/sd_liferuning/tp/public/uploads/background/resource/common/image/customer/sign-in/icon.png"></image>
+                <text>我的会员</text>
+            </view>
+            <view class="content">
+                <view class="calendar-module">
+                    <view class="calendar-head">
+                        <view>
+              {{dateArr.year}} 年 {{dateArr.month}} 月
+            </view>
+                    </view>
+                    <view class="calendar-body">
+                        <view class="calendar-title">
+                            <view class="calendar-title-item">日</view>
+                            <view class="calendar-title-item">一</view>
+                            <view class="calendar-title-item">二</view>
+                            <view class="calendar-title-item">三</view>
+                            <view class="calendar-title-item">四</view>
+                            <view class="calendar-title-item">五</view>
+                            <view class="calendar-title-item">六</view>
+                        </view>
+                        <view class="calendar-time" wx:for="{{monthArr}}" wx:for-item="monthItem">
+                            <view class="calendar-time-item" wx:for="{{monthItem}}" wx:for-item="dayItem">
+                                <view>{{dayItem.value}}</view>
+                                <view class="flag" wx:if="{{dayItem.flag}}"></view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="page-tip">
+     本月已签到{{data.data.length}}次，目前拥有{{data.hyintegral}}成长值,再接再厉哦。
+    </view>
+    </view>
+</view>

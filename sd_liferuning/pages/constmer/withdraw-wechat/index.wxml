@@ -1,0 +1,25 @@
+<view class="withdraw">
+    <view class="title">
+        <view class="l">提现微信余额</view>
+    </view>
+    <view class="input">
+        <text>￥</text>
+        <input bindinput="changeInputData" data-name="money" focus="true" maxlength="5" placeholder="" type="number"></input>
+    </view>
+    <view class="tip">本次提现 {{money}} 元 ，最多可提现 {{balance}} 元</view>
+    <view bindtap="sendRequest" class="subbtn">确认提现</view>
+</view>
+<view class="container" hidden="true">
+    <view class="page-content">
+        <view class="recharge">
+            <view>提现金额： </view>
+            <view class="input-group">
+                <input bindinput="changeInputData" data-name="money" placeholder="输入需要提现的金额"></input>
+            </view>
+        </view>
+        <view class="tip">
+            <view>本卡此次提现 {{money}} 元 ，最多可提现 {{balance}} 元</view>
+        </view>
+        <button bindtap="sendRequest" class="sendRequest">确认提现</button>
+    </view>
+</view>

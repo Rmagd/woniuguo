@@ -1,0 +1,140 @@
+<view class="container">
+    <view class="auth-view" wx:if="{{!authStatus}}">
+        <view class="authorize">
+            <image src="{{authorize}}"></image>
+            <button bindgetuserinfo="getUserInfo" class="authorize-btn" openType="getUserInfo" wx:if="{{canIUse}}">关闭1</button>
+            <button bindtap="closePanel" class="authorize-btn" wx:if="{{!canIUse}}">关闭2</button>
+        </view>
+    </view>
+
+<view class='picker'>
+<picker bindchange="bindPickerChange" value="0" range="{{school}}">
+<view>
+    <text>当前订单列表：<text style='color:#0d8cfd'>{{curSchool}}</text></text><image class="arrow-icon" src="/assets/resource/business/place-order/arrow-icon1.png"></image>
+    </view>
+    
+      </picker>
+      </view>
+
+    <view class="empty-data" wx:if="{{data.length===0}}">
+        <image class="no-data-tip" src="{{webRoot}}/public/WeChat/resource/common/image/status/no-data-tip.png"></image>
+        <text class="no-data-text">暂无数据</text>
+    </view>
+    <block wx:else>
+
+        <view class="module" wx:for="{{data}}" wx:key="{{data}}">
+            <view class="title">
+                <text>{{school[item.school+1]}} - {{class_id[item.class_id-1]}}</text>
+                <text>订单金额：{{item.runner_profit}}元</text>
+            </view>
+            <view class="subtitle">
+                <text>订单编号：{{item.order_no}}</text>
+                <text>发布于{{item.timebefore}}</text>
+            </view>
+            <view class="border-bottom"></view>
+            <view class="address-item" wx:if="{{item.class_id==1?true:false}}">
+                <image src="{{imgurl}}buy_01.png"></image>
+                <text>{{item.start_adds}}</text>
+            </view>
+            <view class="address-item" wx:if="{{item.class_id==1?true:false}}">
+                <image src="{{imgurl}}buy_02.png"></image>
+                <text>{{item.target_adds}}</text>
+            </view>
+            <view class="address-item" wx:if="{{item.class_id==2?true:false}}">
+                <image src="{{imgurl}}help_02.png"></image>
+                <text>{{item.start_adds}}</text>
+            </view>
+            <view class="address-item" wx:if="{{item.class_id==2?true:false}}">
+                <image src="{{imgurl}}help_01.png"></image>
+                <text>{{item.target_adds}}</text>
+            </view>
+            <view class="address-item" wx:if="{{item.class_id==3?true:false}}">
+                <view class="icon">
+                    <icon class="end_address"></icon>
+                </view>
+                <text>{{item.target_adds}}</text>
+            </view>
+            <view class="address-item" wx:if="{{item.class_id==4?true:false}}">
+                <image src="{{imgurl}}start.png"></image>
+                <text>{{item.start_adds}}</text>
+            </view>
+            <view class="address-item" wx:if="{{item.class_id==4?true:false}}">
+                <image src="{{imgurl}}end.png"></image>
+                <text>{{item.target_adds}}</text>
+            </view>
+            <view class="address-item" wx:elif="{{item.class_id==5?true:false}}">
+                <view class="icon">
+                    <icon class="end_address"></icon>
+                </view>
+                <text>{{item.target_adds}}</text>
+            </view>
+            <view class="address-item" wx:elif="{{item.class_id==6?true:false}}">
+                <view class="icon">
+                    <icon class="end_address"></icon>
+                </view>
+                <text>{{item.target_adds}}</text>
+            </view>
+            <view class="address-item" wx:if="{{item.class_id==7?true:false}}">
+                <image src="{{imgurl}}help_02.png"></image>
+                <text>{{item.target_adds}}</text>
+            </view>
+            <view class="address-item" wx:if="{{item.class_id==7?true:false}}">
+                <image src="{{imgurl}}help_01.png"></image>
+                <text>{{item.start_adds}}</text>
+            </view>
+            <view class="border-bottom"></view>
+            <view class="item" wx:if="{{item.class_id==3||item.class_id==5}}">
+                <text class="field">预约时间：</text>
+                <text class="context">{{item.time_group}} ( <text class="green-text">服务时间</text> ）</text>
+            </view>
+            <view class="item" wx:else>
+                <text class="field">送达时间：</text>
+                <text class="context">{{item.expect_time}} ( <text class="green-text">预约送达</text> ）</text>
+            </view>
+            <view class="item">
+                <text class="field">订单内容：</text>
+                <text class="context">{{item.goods}}</text>
+            </view>
+            <view class="item flex" wx:if="{{item.voice!==''&&true}}">
+                <text class="field">订单语音：</text>
+                <view bindtap="soundRecordingPlay" class="voice" data-index="{{index}}" data-src="{{item.voice}}" wx:if="{{item.voice?true:false}}">
+                    <image src="{{imgurl}}voice.png"></image>
+                    <view class="time">{{item.voice_time}}S</view>
+                </view>
+            </view>
+            <view class="item" wx:if="{{item.pic!==''&&true}}">
+                <text class="field">订单图片：</text>
+                <view class="context">
+                    <image bindtap="previewPic" class="goods-image" data-src="{{item.pic}}" src="{{item.pic}}" wx:if="{{item.pic?true:false}}"></image>
+                </view>
+            </view>
+            <view class="item" wx:if="{{item.pics}}">
+                <text class="field">图片合集：</text>
+                <text bindtap="lookimg" class="green" data-index="{{index}}">点击查看图片</text>
+            </view>
+            <view class="item" wx:if="{{item.remark}}">
+                <text class="field">订单备注：</text>
+                <text>{{item.remark}}</text>
+            </view>
+            <view class="container-btn">
+                <button bindtap="get_order_handler" class="btn" data-id="{{item.id}}">抢单</button>
+            </view>
+        </view>
+        <view class="{{model==1?'huaweikuai':'kuai'}}"></view>
+    </block>
+    <view style="height:90rpx"></view>
+    <view class="btn-group">
+        <navigator class="btn-item active" openType="redirect" url="/service/pages/service/get-order/index">
+            <image class="btn-group-icon" src="{{webRoot}}/public/WeChat/resource/common/image/nav-icon/icon0-1.png"></image>
+            <text>抢单</text>
+        </navigator>
+        <navigator class="btn-item" openType="redirect" url="/service/pages/service/index/index">
+            <image class="btn-group-icon" src="{{webRoot}}/public/WeChat/resource/common/image/nav-icon/icon1.png"></image>
+            <text>订单</text>
+        </navigator>
+        <navigator class="btn-item " openType="redirect" url="/service/pages/service/user/index">
+            <image class="btn-group-icon" src="{{webRoot}}/public/WeChat/resource/common/image/nav-icon/icon2.png"></image>
+            <text>个人</text>
+        </navigator>
+    </view>
+</view>

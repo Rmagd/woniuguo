@@ -1,0 +1,11 @@
+.page-content {
+    text-align: center;
+    margin: 50rpx 0;
+}
+
+.tip-font {
+    font-size: 30rpx;
+    position: relative;
+    top: -20rpx;
+    margin: 0 30rpx;
+}

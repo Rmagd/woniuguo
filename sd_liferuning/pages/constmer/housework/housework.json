@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "actionsheet": "/sd_liferuning/dist/actionsheet/index",
+    "btn": "/sd_liferuning/dist/btn/index",
+    "stepper": "/sd_liferuning/dist/stepper/index"
+  }
+}

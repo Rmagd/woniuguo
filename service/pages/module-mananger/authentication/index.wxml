@@ -1,0 +1,41 @@
+<view class="container">
+    <view class="page-content" style="background:url(\"http://h.hiphotos.baidu.com/image/pic/item/b999a9014c086e064a76b12f0f087bf40bd1cbfc.jpg\") no-repeat center bottom">
+        <view class="title">
+            <view class="font-big">
+        欢迎进入模块订单管理系统
+      </view>
+            <view class="font-small">
+        Welcome into the modular management of running errands
+      </view>
+        </view>
+        <view class="form-group">
+            <form bindsubmit="formSubmit">
+                <picker bindchange="bindModulePickerChange" class="input-group" name="j_name" range="{{moduleArr}}" rangeKey="j_name" value="{{moduleArr[moduleIndex].joint_id}}">
+                    <view class="picker">
+            对接模块：{{moduleArr[moduleIndex].j_name}}
+          </view>
+                </picker>
+                <view class="input-group">
+                    <radio-group bindchange="userTypeBindChange" name="userType">
+            是否为店铺管理员：
+            <radio value="0">是</radio>
+                        <radio checked="checked" value="1">否</radio>
+                    </radio-group>
+                </view>
+                <view class="input-group">
+                    <input name="wechatID" placeholder="请输入小程序ID号"></input>
+                </view>
+                <view class="input-group">
+                    <input name="appID" placeholder="请输入App ID号"></input>
+                </view>
+                <view class="input-group">
+                    <input name="appName" placeholder="请输入小程序名称"></input>
+                </view>
+                <view class="input-group" wx:if="{{isShow}}">
+                    <input name="shopName" placeholder="请输入店铺名称"></input>
+                </view>
+                <button class="form-btn" formType="submit">提交申请</button>
+            </form>
+        </view>
+    </view>
+</view>

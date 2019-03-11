@@ -1,0 +1,14 @@
+<view class="container">
+    <view class="page-content">
+        <view class="sub-title-panel" wx:for="{{tagArr}}" wx:for-item="tagArrItem">
+            <view class="title">
+          {{tagArrItem.title}}
+        </view>
+            <view class="content">
+                <view class="tag-group">
+                    <view bindtap="chooseTag" class="tag-item {{tagItem.select?'active':''}}" data-id="{{tagItem.id}}" data-select="{{tagItem.select}}" wx:for="{{tagArrItem.tagGroup}}" wx:for-item="tagItem">{{tagItem.name}}</view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

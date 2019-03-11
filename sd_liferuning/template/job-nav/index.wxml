@@ -1,0 +1,25 @@
+<!--sd_liferuning/template/job-nav/index.wxml-->
+<view class='navbar'>
+<navigator open-type='redirect' url='/sd_liferuning/pages/constmer/part-time-jobs-list/index'>
+<view>
+<image class='navbar-icon' src='https://wn.meripet.cn/addons/sd_135K/core/public/WeChat/resource/common/image/ptj/jobs.png'></image>
+<view class='navbar-text'>兼职</view>
+</view>
+</navigator>
+
+
+
+<navigator open-type='redirect'  url='/sd_liferuning/pages/constmer/part-time-jobs-enroll/index'>
+<view>
+<image class='navbar-icon' src='https://wn.meripet.cn/addons/sd_135K/core/public/WeChat/resource/common/image/ptj/enrolled.png'></image>
+<view class='navbar-text'>已报名</view>
+</view>
+</navigator>
+
+<navigator open-type='redirect'  url='/sd_liferuning/pages/constmer/part-time-jobs-user/index'>
+<view>
+<image class='navbar-icon' src='https://wn.meripet.cn/addons/sd_135K/core/public/WeChat/resource/common/image/ptj/me.png'></image>
+<view class='navbar-text'>我的</view>
+</view>
+</navigator>
+</view>

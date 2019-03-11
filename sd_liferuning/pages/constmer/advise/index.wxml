@@ -1,0 +1,28 @@
+<view class="container">
+    <view class="chose_star" wx:if="{{xingshow}}">
+        <image bindtap="show_this" class="star" data-num="1" src="{{imgurl}}star_gray.png">
+            <image bindtap="hide_this" class="_star" data-num="1" src="{{imgurl}}star_select_03.png" style="display:{{display_1}}"></image>
+        </image>
+        <image bindtap="show_this" class="star" data-num="2" src="{{imgurl}}star_gray.png">
+            <image bindtap="hide_this" class="_star" data-num="2" src="{{imgurl}}star_select_03.png" style="display:{{display_2}}"></image>
+        </image>
+        <image bindtap="show_this" class="star" data-num="3" src="{{imgurl}}star_gray.png">
+            <image bindtap="hide_this" class="_star" data-num="3" src="{{imgurl}}star_select_03.png" style="display:{{display_3}}"></image>
+        </image>
+        <image bindtap="show_this" class="star" data-num="4" src="{{imgurl}}star_gray.png">
+            <image bindtap="hide_this" class="_star" data-num="4" src="{{imgurl}}star_select_03.png" style="display:{{display_4}}"></image>
+        </image>
+        <image bindtap="show_this" class="star" data-num="5" src="{{imgurl}}star_gray.png">
+            <image bindtap="hide_this" class="_star" data-num="5" src="{{imgurl}}star_select_03.png" style="display:{{display_5}}"></image>
+        </image>
+    </view>
+    <view class="page-content">
+        <view class="advise-module">
+            <view class="user-advise">
+                <textarea bindinput="userInput" maxlength="200" placeholder="请输入您的意见建议......"></textarea>
+                <view class="user-tip">{{userAdvise.cursor}}/200</view>
+            </view>
+            <button bindtap="message">提交</button>
+        </view>
+    </view>
+</view>

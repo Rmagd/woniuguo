@@ -1,0 +1,86 @@
+page {
+    background: #f1f2f4;
+}
+
+.module-item {
+    background: #fff;
+    width: 100%;
+    margin: 20rpx auto;
+}
+
+.item {
+    width: 700rpx;
+    height: 100rpx;
+    margin: 0 auto;
+    line-height: 100rpx;
+    font-size: 32rpx;
+    color: #333;
+    display: flex;
+    justify-content: space-between;
+}
+
+.selected,.select {
+    width: 46rpx;
+    height: 46rpx;
+    margin-top: 27rpx;
+}
+
+.more {
+    width: 17rpx;
+    height: 32rpx;
+    margin-top: 34rpx;
+}
+
+.carmer {
+    width: 88rpx;
+    height: 88rpx;
+}
+
+.border-bottom {
+    border-bottom: 2rpx solid #eee;
+}
+
+.btn-container {
+    position: fixed;
+    bottom: 34rpx;
+    width: 100%;
+    height: 90rpx;
+    line-height: 90rpx;
+    margin: 0 auto;
+}
+
+.btn-container button {
+    width: 700rpx;
+    border-radius: 15rpx;
+    background: #20ad20;
+    color: #fff;
+    font-size: 40rpx;
+    text-align: center;
+}
+
+.delete-context {
+    width: 700rpx;
+    height: 155rpx;
+    margin: 0 auto;
+    line-height: 100rpx;
+    font-size: 28rpx;
+    color: #555;
+    display: flex;
+    justify-content: space-between;
+}
+
+.carmer-context {
+    width: 700rpx;
+    height: 288rpx;
+    margin: 0 auto;
+    line-height: 100rpx;
+    font-size: 28rpx;
+    color: #888;
+}
+
+.information {
+    width: 700rpx;
+    height: 138rpx;
+    margin: 0 auto;
+    padding-top: 20rpx;
+}

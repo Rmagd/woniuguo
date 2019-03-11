@@ -1,0 +1,172 @@
+<view class="container">
+    <view class="user-face-module">
+        <view class="l">
+            <view>
+                <image class="user-face" src="{{order.user.avatar_url}}"></image>
+            </view>
+            <view class="user-info">
+                <view class="info">
+                    <text>{{order.user.nickname}}
+            </text>
+                    <image class="nav-icon" src="{{imgurl}}vip{{order.user.member_grade}}.png"></image>
+                </view>
+            </view>
+        </view>
+        <view class="phone-image">
+            <image bindtap="toPhone" data-phone="{{order.phone}}" src="{{imgurl}}runingphone.png"></image>
+        </view>
+    </view>
+    <view class="module-context">
+        <view class="left">
+            <text>{{order.apart}}km</text>
+            <text>订单距离您</text>
+        </view>
+        <view class="right">
+            <text class="order_status">{{order.reward_price}}元</text>
+            <text>服务费（不含商品）</text>
+        </view>
+    </view>
+    <view class="module">
+        <view class="border-bottom"></view>
+        <block wx:if="{{order.class_id==3||order.class_id==5||order.class_id==6?true:false}}"></block>
+        <block wx:else>
+            <view class="address-item">
+                <image src="{{imgurl}}buy_dt_01.png" wx:if="{{order.class_id===1}}"></image>
+                <image src="{{imgurl}}runingqu.png" wx:if="{{order.class_id===2}}"></image>
+                <image src="{{imgurl}}driver_dt_01.png" wx:if="{{order.class_id===4}}"></image>
+                <image src="{{imgurl}}runingqu.png" wx:if="{{order.class_id===7}}"></image>
+                <text wx:if="{{order.class_id===7}}">{{order.target_adds}}</text>
+                <text wx:else>{{order.start_adds}}</text>
+            </view>
+            <view class="distance">
+                <image src="{{imgurl}}runingcirfcle.png"></image>
+                <text>路程约{{order.apart}}km</text>
+            </view>
+        </block>
+        <view class="address-item">
+            <image src="{{imgurl}}buy_dt_02.png" wx:if="{{order.class_id===1}}"></image>
+            <image src="{{imgurl}}buy_dt_02.png" wx:if="{{order.class_id===2}}"></image>
+            <icon class="end_address" wx:if="{{order.class_id===3}}"></icon>
+            <image src="{{imgurl}}driver_dt_02.png" wx:if="{{order.class_id===4}}"></image>
+            <icon class="end_address" wx:if="{{order.class_id===5}}"></icon>
+            <icon class="end_address" wx:if="{{order.class_id===6}}"></icon>
+            <image src="{{imgurl}}buy_dt_02.png" wx:if="{{order.class_id===7}}"></image>
+            <text wx:if="{{order.class_id===7}}">{{order.start_adds}}</text>
+            <text wx:else>{{order.target_adds}}</text>
+        </view>
+        <view class="border-bottom"></view>
+    </view>
+    <view class="module">
+        <view class="border-bottom"></view>
+        <view class="item">
+            <text class="field">下单人姓名</text>
+            <text class="context">{{order.name}}</text>
+        </view>
+        <view class="border-bottom"></view>
+        <view class="item">
+            <text class="field">订单状态</text>
+            <text class="context order_status" wx:if="{{order.order_status==1||order.order_status==2||order.order_status==3}}">待完成</text>
+            <text class="context order_status" wx:if="{{order.order_status==4}}">已完成</text>
+            <text class="context order_status" wx:if="{{order.order_status==5}}">用户取消</text>
+        </view>
+        <view class="border-bottom"></view>
+        <block wx:if="{{order.class_id==2}}">
+            <view class="item">
+                <text class="field">收货人姓名</text>
+                <text bindtap="toPhone" class="context" data-phone="{{order.take_phone}}">{{order.take_name}}</text>
+            </view>
+            <view class="border-bottom"></view>
+            <view class="item">
+                <text class="field">收货人电话</text>
+                <text bindtap="toPhone" class="context" data-phone="{{order.take_phone}}">{{order.take_phone}}</text>
+            </view>
+        </block>
+        <block wx:elif="{{order.class_id==7}}">
+            <view class="item">
+                <text class="field">取货人姓名</text>
+                <text bindtap="toPhone" class="context" data-phone="{{order.take_phone}}">{{order.take_name}}</text>
+            </view>
+            <view class="border-bottom"></view>
+            <view class="item">
+                <text class="field">取货人电话</text>
+                <text bindtap="toPhone" class="context" data-phone="{{order.take_phone}}">{{order.take_phone}}</text>
+            </view>
+        </block>
+        <view class="border-bottom"></view>
+        <view class="item">
+            <text class="field">订单号</text>
+            <text class="context">{{order.order_no}}</text>
+        </view>
+        <view class="border-bottom"></view>
+        <view class="item" wx:if="{{order.class_id==3||order.class_id==5?true:false}}">
+            <text class="field">服务时间</text>
+            <text class="context">{{order.time_group}}</text>
+        </view>
+        <view class="item" wx:else>
+            <text class="field">服务时间</text>
+            <text class="context">{{order.expect_time}}</text>
+        </view>
+        <view class="border-bottom"></view>
+        <view class="item">
+            <text class="field">订单内容</text>
+            <text class="context"> {{order.goods}}</text>
+        </view>
+        <view class="border-bottom"></view>
+        <view class="item" wx:if="{{order.voice!==''&&true}}">
+            <text class="field flex">订单语音</text>
+            <view bindtap="soundRecordingPlay" class="voice" data-src="{{order.voice}}" wx:if="{{order.voice?true:false}}">
+                <image src="{{imgurl}}voice.png"></image>
+                <view class="time">{{order.voice_time}}S</view>
+            </view>
+        </view>
+        <view class="border-bottom"></view>
+        <view class="item" wx:if="{{order.pic!==''&&true}}">
+            <text class="field">商品图片</text>
+            <view class="context">
+                <image bindtap="previewPic" class="img" data-src="{{order.pic}}" src="{{order.pic}}" wx:if="{{order.pic?true:false}}"></image>
+            </view>
+        </view>
+        <view class="border-bottom"></view>
+        <view class="item" wx:if="{{order.pics}}">
+            <text class="field">图片集合</text>
+            <view class="contexts">
+                <image bindtap="previewPics" class="img" data-index="{{index}}" data-src="{{item}}" src="{{item}}" wx:for="{{order.pics}}"></image>
+            </view>
+        </view>
+        <block wx:if="{{order.express_key}}">
+            <view class="border-bottom"></view>
+            <view class="item">
+                <text class="field">取货码</text>
+                <text class="context"> {{order.express_key}}</text>
+            </view>
+        </block>
+        <block wx:if="{{order.express_name}}">
+            <view class="border-bottom"></view>
+            <view class="item">
+                <text class="field">收货人姓名</text>
+                <text class="context"> {{order.express_name}}</text>
+            </view>
+        </block>
+        <view class="border-bottom"></view>
+        <view class="item">
+            <text class="field">订单备注</text>
+            <text class="context"> {{order.remark}}</text>
+        </view>
+        <view class="border-bottom"></view>
+        <view class="item">
+            <text class="field">支付状态</text>
+            <text class="context"> 已支付</text>
+        </view>
+        <view class="border-bottom"></view>
+    </view>
+    <view class="confirm-order {{confirmCodeStatus?'confirm-order-show':''}}">
+        <input bindinput="inputConfirmCode" class="input-text" placeholder="请输入订单完成验证码" type="text"></input>
+        <button bindtap="OkOrder" class="btn" data-id="{{data.id}}">确认</button>
+        <button bindtap="changeConfirmCodeStatus" class="btn default">取消</button>
+    </view>
+    <view class="btn-container">
+        <button bindtap="into_polyline" data-url="/service/pages/service/order-going/index">
+      查看路线
+    </button>
+    </view>
+</view>

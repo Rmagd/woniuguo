@@ -1,0 +1,24 @@
+<map showLocation bindcontroltap="controltap" bindmarkertap="markertap" bindregionchange="regionchange" controls="{{controls}}" enable3D="true" id="map" latitude="{{lat}}" longitude="{{lng}}" markers="{{markers}}" polyline="{{polyline}}" scale="15" style="width: 750rpx; height: 74.5vh;">
+    <cover-view class="warning-info" wx:if="{{order.class_id==3||order.class_id==5||order.class_id==6?false:true}}">
+      距离目的地{{distance}}公里
+    </cover-view>
+    <cover-image bindtap="get_address_LatLntHandler" class="cover-img" src="{{imgurl}}frash.png"></cover-image>
+</map>
+<view class="address">
+    <view class="user-face-module">
+        <view>
+            <image class="user-face" src="{{order.user.avatar_url}}"></image>
+        </view>
+        <view class="user-info">
+            <view class="info">
+                <view>{{order.user.nickname}}</view>
+                <view>订单号：{{order.order_no}}</view>
+            </view>
+        </view>
+    </view>
+    <view class="button-container">
+        <button bindtap="curry_order">催单</button>
+        <button bindtap="callPhone" data-phone="{{order.rphone}}">联系跑腿</button>
+        <button bindtap="callPhone" data-phone="{{order.store_phone}}">联系客服</button>
+    </view>
+</view>

@@ -1,0 +1,32 @@
+<view class="container">
+    <view class="data-list">
+        <view class="data-item" wx:for="{{data}}">
+            <view class="bank-info">
+                <image class="bank-icon" src="{{item.icon}}"></image>
+                <view>
+                    <view class="bank-name">{{item.title}}</view>
+                    <view>储蓄卡（{{item.bank_number}}）</view>
+                </view>
+            </view>
+            <view class="select-status" wx:if="{{item.is_default==1}}">
+                <view class="default-font">（默认）</view>
+            </view>
+            <view class="select-status" wx:if="{{item.is_default==0}}">
+                <view>
+                    <button bindtap="bankSetup" class="checked-btn" data-id="{{item.id}}" data-name="{{item.name}}">默认</button>
+                </view>
+                <view>
+                    <button bindtap="del" class="del-btn" data-id="{{item.id}}" style="">删除</button>
+                </view>
+            </view>
+        </view>
+        <navigator class="data-item" url="/service/pages/service/bankcard-binding/index">
+            <view class="bank-info">
+                <image class="bank-icon" src="{{webRoot}}/public/WeChat/resource/common/image/customer/bankcard-list/icon2.png" wx:if="{{icons}}"></image>
+                <view class="add-bank">
+          添加银行卡
+        </view>
+            </view>
+        </navigator>
+    </view>
+</view>

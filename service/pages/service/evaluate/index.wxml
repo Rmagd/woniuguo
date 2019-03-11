@@ -1,0 +1,71 @@
+<view class="evaluate-container">
+    <view class="user-info-container">
+        <view class="avatar">
+            <image src="/we7/resource/images/runningavatar.png"></image>
+        </view>
+        <view class="nickname-score">
+            <view class="nickname">用户昵称</view>
+            <view class="score">
+                <image src="/we7/resource/images/star.png"></image>
+                <text>4.9</text>
+                <text>好评率98.5%</text>
+            </view>
+        </view>
+    </view>
+    <view class="authority-save">
+        <view class="authority">
+            <image src="/we7/resource/images/auth.png"></image>
+            <text>已实名认证</text>
+        </view>
+        <view class="save">
+            <image src="/we7/resource/images/save.png"></image>
+            <text>保障金500元</text>
+        </view>
+    </view>
+    <view class="service-milestron">
+        <view class="service">
+            <text>230</text>
+            <text>服务次数（次）</text>
+        </view>
+        <view class="milestron">
+            <text>1230</text>
+            <text>总里程（km）</text>
+        </view>
+    </view>
+    <view class="service-sign">
+        <view class="title">
+            <icon></icon>服务标签
+    </view>
+        <view class="sign">
+            <text>服务好 50</text>
+            <text>服务好 50</text>
+            <text>服务好 50</text>
+            <text>服务好 50</text>
+            <text>服务好 50</text>
+        </view>
+    </view>
+    <view class="evaluate">
+        <view class="title">
+            <icon></icon>评论
+    </view>
+        <view class="evaluate-context">
+            <view class="nickname">
+                <view class="left">
+                    <text>用户昵称</text>
+                    <image src="/we7/resource/images/vip_2.png"></image>
+                </view>
+                <view class="right">
+                    <text>1天前</text>
+                </view>
+            </view>
+            <view class="service-context">
+                <text>服务内容：黄金叶 x1 ; 打火机x1 ;  可乐x1 ;</text>
+                <text class="last-child">送货很及时，热情礼貌，挺好的。</text>
+                <view class="image-context">
+                    <image src="/we7/resource/images/avatar_01.png"></image>
+                    <image src="/we7/resource/images/avatar_02.png"></image>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

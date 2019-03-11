@@ -1,0 +1,18 @@
+textarea {
+    width: 89%;
+    margin: 20rpx 2.5%;
+    border: 1rpx solid #14B5FA;
+    border-radius: 10rpx;
+    padding: 2.5%;
+    font-size: 30rpx;
+}
+
+.confirm {
+    background: #14B5FA;
+    color: #FFF;
+    height: 80rpx;
+    line-height: 80rpx;
+    width: 95%;
+    margin: 0 2.5%;
+    font-size: 30rpx;
+}

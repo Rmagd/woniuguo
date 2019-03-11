@@ -1,0 +1,230 @@
+<view class="page-content">
+    <view class="title-context">
+        <view class="title">
+            <view class="l">
+                <block wx:if="{{data.order_status==1}}">
+                    <image src="{{imgurl}}success-01.png"></image> 订单进行中</block>
+                <block wx:if="{{data.order_status==4}}">
+                    <image src="{{imgurl}}success.png"></image> 订单已完成</block>
+                <block wx:if="{{data.order_status==5}}">
+                    <image src="{{imgurl}}error.png"></image> 订单已取消</block>
+            </view>
+            <view bindtap="go_to_ordergoing" class="r" wx:if="{{data.order_status==1}}">
+                <block wx:if="{{data.is_send==1}}">
+          查看位置<icon class="iconfont icon-right"></icon>
+                </block>
+            </view>
+        </view>
+        <view class="status-container">
+            <view class="order-going-status">
+                <block wx:if="{{data.order_status==4||data.order_status==5}}"></block>
+                <text class="{{dta.is_send===0?'error':'success'}}" wx:else>{{data.is_send===0?'待接单':'已接单'}}</text>
+            </view>
+            <view class="status">
+                <block wx:if="{{data.is_send==0}}">
+                    <view bindtap="cancelOrder" data-id="{{data.id}}" wx:if="{{data.order_status==1}}">取消订单</view>
+                </block>
+                <block wx:if="{{data.is_send==1}}">
+                    <view bindtap="confirmOrder" class="s1" data-id="{{data.id}}" wx:if="{{data.order_status==1}}">完成订单</view>
+                </block>
+                <view bindtap="feedback_order" data-id="{{data.id}}" wx:if="{{data.order_status==4}}">订单评价</view>
+            </view>
+        </view>
+    </view>
+    <view class="border-top"></view>
+    <view class="data-table">
+        <view class="data-item">
+        配送信息
+      </view>
+        <view class="data-item">
+            <view class="data-item-label">
+          订单内容
+        </view>
+            <view class="data-item-info">
+          {{data.goods}}
+        </view>
+        </view>
+        <view class="data-item" wx:if="{{data.voice!==''&&true}}">
+            <view class="data-item-label">
+          订单语音</view>
+            <view class="data-item-info">
+                <view class="soundRecordingPlay" wx:if="{{data.yinpin!=''&&data.yinpin!=0}}">
+                    <view bindtap="soundRecordingPlay" class="soundRecordingPlay-left" data-src="">
+                        <image class="soundRecording-icon" name="yinpin" src="{{imgurl}}voice.png" wx:if="{{!soundRecording.isPlay}}"></image>
+                        <image class="soundRecording-icon" src="{{icons}}/resource/common/image/customer/icon/play-icon2.gif" wx:if="{{soundRecording.isPlay}}"></image>
+                        <view class="time">{{data.voice_time}}S</view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="data-item" wx:if="{{data.pic!==''&&true}}">
+            <view class="data-item-label">
+          订单照片</view>
+            <view class="image-group image-group-right">
+                <image catchtap="previewPic" class="image-item" data-value="{{data.xphoto}}" src="{{data.pic}}"></image>
+            </view>
+        </view>
+        <view class="data-item" wx:if="{{data.pics}}">
+            <view class="data-item-label">照片集合</view>
+            <view class="image-group">
+                <image catchtap="previewPics" class="image-item" data-index="{{index}}" src="{{item}}" wx:for="{{data.pics}}"></image>
+            </view>
+        </view>
+        <view class="data-item " wx:if="{{data.imgurl[0]!=''}}">
+            <view class="data-item-label">
+          服务时间</view>
+            <view class="data-item-labe">
+                <text wx:if="{{data.class_id==3?true:false}}">{{data.time_group===''?'暂无':data.time_group}}</text>
+                <text wx:elif="{{data.class_id==5?true:false}}">{{data.time_group===''?'暂无':data.time_group}}</text>
+                <text wx:else>{{data.expect_time===''?'暂无':data.expect_time}}</text>
+            </view>
+        </view>
+        <block wx:if="{{data.class_id==3||data.class_id==5||data.class_id==6?true:false}}"></block>
+        <view class="data-item" wx:elif="{{data.class_id==4}}">
+            <view class="data-item-label">
+            代驾起点
+          </view>
+            <view class="data-item-info">
+            {{data.start_adds}}
+          </view>
+        </view>
+        <view class="data-item" wx:elif="{{data.class_id==1}}">
+            <view class="data-item-label">
+            购买地址
+          </view>
+            <view class="data-item-info">
+            {{data.start_adds}}
+          </view>
+        </view>
+        <view class="data-item" wx:elif="{{data.class_id==2}}">
+            <view class="data-item-label">
+            收货地址
+          </view>
+            <view class="data-item-info">
+            {{data.target_adds}}
+          </view>
+        </view>
+        <view class="data-item" wx:elif="{{data.class_id==7}}">
+            <view class="data-item-label">
+            取货地址
+          </view>
+            <view class="data-item-info">
+            {{data.target_adds}}
+          </view>
+        </view>
+        <view class="data-item" wx:else>
+            <view class="data-item-label">
+            起始地址
+          </view>
+            <view class="data-item-info">
+            {{data.start_adds}}
+          </view>
+        </view>
+        <view class="data-item" wx:if="{{data.class_id==4}}">
+            <view class="data-item-label">
+            代驾终点
+          </view>
+            <view class="data-item-info">
+            {{data.target_adds}}
+          </view>
+        </view>
+        <view class="data-item" wx:elif="{{data.class_id==3||data.class_id==5||data.class_id==6}}">
+            <view class="data-item-label">
+            服务地址
+          </view>
+            <view class="data-item-info">
+            {{data.target_adds}}
+          </view>
+        </view>
+        <view class="data-item" wx:elif="{{data.class_id==2}}">
+            <view class="data-item-label">
+            取货地址
+          </view>
+            <view class="data-item-info">
+            {{data.start_adds}}
+          </view>
+        </view>
+        <view class="data-item" wx:elif="{{data.class_id==7}}">
+            <view class="data-item-label">
+            收货地址
+          </view>
+            <view class="data-item-info">
+            {{data.start_adds}}
+          </view>
+        </view>
+        <view class="data-item" wx:else>
+            <view class="data-item-label">
+            收货地址
+          </view>
+            <view class="data-item-info">
+            {{data.target_adds}}
+          </view>
+        </view>
+        <view class="data-item" wx:if="{{data.is_send==1}}">
+            <view class="data-item-label">
+            服务人员
+          </view>
+            <view bindtap="toPhone" class="data-item-info runingphone" data-phone="{{data.rphone}}">
+                <image src="{{imgurl}}runingphone.png"></image>
+            {{data.rname}}
+          </view>
+        </view>
+    </view>
+</view>
+<view class="page-content">
+    <view class="title">
+        <text>订单详情</text>
+    </view>
+    <view class="data-table">
+        <view class="data-item">
+            <view class="data-item-label">
+          订单号码
+        </view>
+            <view class="data-item-info">
+        {{data.order_no}}
+        </view>
+        </view>
+        <block wx:if="{{(data.class_id===1||data.class_id===2||data.class_id===7)&&true}}">
+            <view class="data-item" wx:if="{{code==1}}">
+                <view class="data-item-label">
+            收货码
+          </view>
+                <view class="data-item-info">
+          {{data.confirm_code}}
+          </view>
+            </view>
+        </block>
+        <view class="data-item" wx:if="{{data.express_key}}">
+            <view class="data-item-label">
+            取货码
+          </view>
+            <view class="data-item-info">
+          {{data.express_key}}
+          </view>
+        </view>
+        <view class="data-item" wx:if="{{data.express_name}}">
+            <view class="data-item-label">
+            收货人姓名
+          </view>
+            <view class="data-item-info">
+          {{data.express_name}}
+          </view>
+        </view>
+        <view class="data-item">
+            <view class="data-item-label">
+          订单金额
+        </view>
+            <view class="data-item-info">
+         {{data.total_price}}
+        </view>
+        </view>
+        <view class="data-item">
+            <view class="data-item-label">
+          订单备注
+        </view>
+            <view class="data-item-info">
+         {{data.remark}}
+        </view>
+        </view>
+    </view>
+</view>

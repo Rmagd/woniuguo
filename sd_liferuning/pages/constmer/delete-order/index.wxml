@@ -1,0 +1,36 @@
+<view class="module-item">
+    <view class="item">
+        <text>仅退单</text>
+        <image class="select" src="{{selected}}"></image>
+    </view>
+    <view class="border-bottom"></view>
+    <view class="item">
+        <text>仅退单</text>
+        <image class="select" src="/we7/resource/images/selected.png"></image>
+    </view>
+    <view class="border-bottom"></view>
+</view>
+<view class="module-item">
+    <view class="item">
+        <text>退货商品</text>
+    </view>
+    <view class="border-bottom"></view>
+    <view class="delete-context">
+        <text>黄金叶  x1；打火机  x1；可乐  x1;</text>
+    </view>
+</view>
+<view class="module-item">
+    <view class="item">
+        <text>选择退款原因</text>
+        <image class="more" src="/we7/resource/images/more.png"></image>
+    </view>
+    <view class="border-bottom"></view>
+    <view class="carmer-context">
+        <textarea class="information" placeholder="请填写您补充的信息"></textarea>
+        <image class="carmer" src="/we7/resource/images/carmer.gif"></image>
+    </view>
+    <view class="border-bottom"></view>
+</view>
+<view class="btn-container">
+    <button>提交</button>
+</view>
