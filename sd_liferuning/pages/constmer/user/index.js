@@ -60,10 +60,14 @@ Page({
     },
     check_phone: function(e) {
         var a = this, t = e.currentTarget.dataset.url;
+      console.log('this is t '+t);
+
         app.request({
             url: api.user.wx_official_openid,
             method: "POST",
             success: function(e) {
+              
+
                 1 == e.code ? a.setData({
                     weburl: e.data.url,
                     webview: !0
@@ -71,7 +75,7 @@ Page({
                     url: api.apply.check,
                     method: "POST",
                     success: function(e) {
-                        console.log(e), 2 === e.code ? app.navTo("/sd_liferuning/pages/constmer/juese/index") : 3 === e.code ? wx.showModal({
+                      console.log(e), 2 === e.code ? app.navTo("/sd_liferuning/pages/constmer/setup/index") : 3 === e.code ? wx.showModal({
                             title: "提示",
                             content: e.msg,
                             showCancel: !1,
@@ -98,7 +102,7 @@ Page({
                             showCancel: !0,
                             confirmText: "确定",
                             success: function(e) {}
-                        }) : wx.reLaunch({
+                        }) : wx.navigateTo({
                             url: t
                         });
                     }
@@ -111,7 +115,6 @@ Page({
             userinfo: wx.getStorageSync("user"),
             schoolImg: 'https://wn.meripet.cn/addons/sd_135K/core/public/WeChat/schools/' + wx.getStorageSync("school") + '.png'
         });
-        console.log(this.data.schoolImg);
     },
     openSharePosterPanel: function() {
         var a = this;

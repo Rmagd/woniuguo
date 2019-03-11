@@ -44,6 +44,32 @@ Page({
             }
         });
     },
+  renzheng: function () {
+    app.request({
+      url: api.apply.infoRunnerApply,
+      method: "post",
+      data: {},
+      success: function (e) {
+        0 == e.code ? wx.showModal({
+          title: "提示",
+          content: e.msg,
+          showCancel: !0,
+          confirmText: "认证",
+          success: function (e) {
+            e.confirm && app.navTo("/sd_liferuning/pages/constmer/setup/index");
+          }
+        }) : (wx.showToast({
+          title: "申请成功,等待后台人员审核",
+          icon: "none",
+          mask: !0
+        }), setTimeout(function () {
+          wx.navigateBack({
+            delta: 2
+          });
+        }, 1500)), console.log(e);
+      }
+    });
+  },
     onHide: function() {},
     onUnload: function() {},
     onPullDownRefresh: function() {},

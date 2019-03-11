@@ -9,3 +9,4 @@
         </view>
     </view>
 </view>
+<button bindtap='renzheng'>申请为服务人员</button>

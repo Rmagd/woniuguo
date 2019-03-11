@@ -103,8 +103,9 @@ Page({
                             url: api.apply.check,
                             method: "POST",
                             success: function(e) {
-                                console.log("current_id", e), 1 === e.code && wx.reLaunch({
-                                    url: "../index/index"
+                              
+                                console.log("current_id", e), 1 === e.code && wx.navigateTo({
+                                    url: "../get-order/index"
                                 }), 3 === e.code ? app.navTo("../../../../service/pages/service/authentication/index") : 3 === e.code ? wx.showModal({
                                     title: "提示",
                                     content: e.msg,
