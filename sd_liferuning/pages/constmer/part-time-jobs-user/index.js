@@ -16,13 +16,21 @@ Page({
       "广东药科大学",
       "广州中医药大学",
       "广东外语外贸大学"],
-      height:140
+      height:140,
+    preUrl: "https://wn.meripet.cn/addons/sd_135K/core/public/WeChat/resource/common/image/ptj",
+    meColor: 'color:#20ad20'      
   },
 
   /**
    * Lifecycle function--Called when page load
    */
   onLoad: function (options) {
+    var pages = getCurrentPages() //获取加载的页面
+    var currentPage = pages[pages.length - 1] //获取当前页面的对象
+    this.setData({
+      currentPage: currentPage.route,//当前页面url
+    })
+    
     this.setData({
       userinfo: wx.getStorageSync("user"),
       schoolNum:wx.getStorageSync("school")

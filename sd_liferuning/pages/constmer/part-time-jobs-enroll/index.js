@@ -6,13 +6,21 @@ Page({
    */
   data: {
     jobType: ['现场结', '日结', '次日结', '周结', '月结'],
-    jobCount: ['元/小时', '元/天', '元/周', '元/月']
+    jobCount: ['元/小时', '元/天', '元/周', '元/月'],
+    preUrl: "https://wn.meripet.cn/addons/sd_135K/core/public/WeChat/resource/common/image/ptj",
+    enrollColor: 'color:#20ad20'
   },
 
   /**
    * Lifecycle function--Called when page load
    */
   onLoad: function () {
+    var pages = getCurrentPages() //获取加载的页面
+    var currentPage = pages[pages.length - 1] //获取当前页面的对象
+    this.setData({
+      currentPage: currentPage.route,//当前页面url
+    })
+
     if (wx.getStorageSync('myuserid')) {
     var t = this;
     var reqData= {
@@ -22,7 +30,7 @@ Page({
 
       wx.request({
         method: 'POST',
-        url: 'https://wn.meripet.cn/addons/sd_135K/core/app/home/controller/getJobsDetail.php',
+        url: 'https://wn.meripet.cn/addons/sd_135K/core/app/home/controller/pj/getJobsDetail.php',
         header: {
           'content-type': "application/x-www-form-urlencoded;charset=UTF-8"
         },

@@ -9,6 +9,8 @@ page {
   margin-top: 20rpx;
   padding-top: 30rpx;
   padding-bottom: 30rpx;
+  border-top:solid 2rpx #eeeeee;
+  border-bottom:solid 2rpx #eeeeee;
 }
 .job-name,
 .date{
@@ -23,8 +25,8 @@ page {
 }
 .job-type{
   display: inline-block;
-  border: red 2rpx solid;
-  color: red;
+  border: #f6a140 2rpx solid;
+  color: #f6a140;
   margin-left: 20rpx;
   border-radius: 10rpx;
   padding: 0 10rpx;

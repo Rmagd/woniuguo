@@ -50,9 +50,8 @@
     "sd_liferuning/pages/constmer/housework/housework",
     "sd_liferuning/pages/constmer/part-time-jobs-enroll/index",
     "sd_liferuning/pages/constmer/part-time-jobs-detail/index",
-        "sd_liferuning/pages/constmer/part-time-jobs-list/index",
-        "sd_liferuning/pages/constmer/part-time-jobs-user/index"  
-    
+    "sd_liferuning/pages/constmer/part-time-jobs-user/index",
+    "sd_liferuning/pages/constmer/part-time-jobs-list/index"
   ],
   "permission": {
     "scope.userLocation": {

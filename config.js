@@ -15,13 +15,6 @@ module.exports = {
         loading: !1
     } ],
     extract: [ 
-  //  {
-  //       name: "提现到支付宝",
-  //       subname: "提现到支付宝余额中",
-  //       img: imgurl + "icon_1.png",
-  //       className: "action-class",
-  //       loading: !1
-  //   },
   {
         name: "提现到余额",
         subname: "提现到微信余额中",
