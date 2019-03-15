@@ -37,7 +37,7 @@
                                     <text>{{item.pay_time===''?'暂无':item.pay_time}}</text>
                                 </view>
                                 <view class="address">
-                                    <view class="address-item" wx:if="{{item.class_id==3||item.class_id==5||item.class_id==6?false:true}}">
+                   <view class="address-item" wx:if="{{item.class_id==3||item.class_id==5||item.class_id==6?false:true||item.class_id==8?false:true}}">
                                         <view class="icon">
                                             <icon class="start_address"></icon>
                                         </view>

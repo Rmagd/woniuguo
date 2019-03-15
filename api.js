@@ -83,7 +83,7 @@ var _api_root = "{$_api_root}", api = {
         DrivePay: _api_root + "payment/DrivePay",
         agencyPay: _api_root + "payment/agencyPay",
         HomeWorkPay: _api_root + "payment/HomeWorkPay",
-        PaperWorkPay: _api_root + "payment/PaperWorkPay",
+        otherPay: _api_root + "payment/otherPay",
         payVip: _api_root + "payment/payVip",
         getGoodsPay: _api_root + "payment/getGoodsPay"
     },

@@ -291,3 +291,11 @@ button::after {
 
 .tag-groups {
 }
+.red-dot{
+width: 15rpx;
+height: 15rpx;
+text-align: center;
+border-radius: 50%;
+background-color: #e64340;
+margin: 0rpx 63% -15rpx;
+}

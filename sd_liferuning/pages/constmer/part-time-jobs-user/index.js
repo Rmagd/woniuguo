@@ -1,6 +1,5 @@
 // sd_liferuning/pages/constmer/part-time-jobs-user/index.js
 Page({
-
   /**
    * Page initial data
    */

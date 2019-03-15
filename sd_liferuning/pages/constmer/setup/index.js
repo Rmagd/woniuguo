@@ -8,7 +8,15 @@ Page({
     navTo: function(a) {
         app.navTo(a.currentTarget.dataset.url);
     },
-    onLoad: function(a) {},
+    onLoad: function(a) {
+        app.request({
+          url: api.apply.check,
+          method: "POST",
+          success: function (t) {
+            console.log(t);
+          }
+        });
+    },
     onReady: function() {},
     onShow: function() {
         var n = this;
@@ -50,14 +58,8 @@ Page({
       method: "post",
       data: {},
       success: function (e) {
-        0 == e.code ? wx.showModal({
-          title: "提示",
-          content: e.msg,
-          showCancel: !0,
-          confirmText: "认证",
-          success: function (e) {
-            e.confirm && app.navTo("/sd_liferuning/pages/constmer/setup/index");
-          }
+        0 == e.code ? wx.showToast({
+          title: '已经是服务人员了哦！'
         }) : (wx.showToast({
           title: "申请成功,等待后台人员审核",
           icon: "none",

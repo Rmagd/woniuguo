@@ -110,60 +110,83 @@ Page({
   data: (_data = {
     order: void 0,
     webRoot: app.webRoot,
-    timeArrs: [[], [], []],
-    cid: ""
-  }, _defineProperty(_data, "webRoot", app.webRoot), _defineProperty(_data, "rewardArr", [{
+    timeArr: [[], []],
+    cid: "",
+    rewardArr: [{
+      price: 0,
+      text: "0元"
+    }, {
+      price: 1,
+      text: "1元"
+    }, {
+      price: 2,
+      text: "2元"
+    }, {
+      price: 3,
+      text: "3元"
+    }, {
+      price: 4,
+      text: "4元"
+    }, {
+      price: 5,
+      text: "6元"
+    }, {
+      price: 10,
+      text: "10元"
+    }, {
+      price: 15,
+      text: "15元"
+    }, {
+      price: 20,
+      text: "20元"
+    }],
+    couponArr: [{
+      price: 0,
+      text: ""
+    }],
+    stepper: {
+      stepper: 0
+    },
+    txtmaxlength: 40,
+    time: "",
+    vipprice: "",
     price: 0,
-    text: "0元"
-  }, {
-    price: 1,
-    text: "1元"
-  }, {
-    price: 2,
-    text: "2元"
-  }, {
-    price: 3,
-    text: "3元"
-  }, {
-    price: 4,
-    text: "4元"
-  }, {
-    price: 5,
-    text: "6元"
-  }, {
-    price: 10,
-    text: "10元"
-  }, {
-    price: 15,
-    text: "15元"
-  }, {
-    price: 20,
-    text: "20元"
-  }]), _defineProperty(_data, "couponArr", [{
-    price: 0,
-    text: ""
-  }]), _defineProperty(_data, "stepper", {
-    stepper: 0
-  }), _defineProperty(_data, "txtmaxlength", 40), _defineProperty(_data, "time", ""),
-    _defineProperty(_data, "full_money", ""), _defineProperty(_data, "price", 0), _defineProperty(_data, "reward", 0),
-    _defineProperty(_data, "coupon", 0), _defineProperty(_data, "lastPrice", 0), _defineProperty(_data, "vipprice", ""),
-    _defineProperty(_data, "btis", 0), _defineProperty(_data, "detail_info", ""), _defineProperty(_data, "addressId", ""),
-    _defineProperty(_data, "wareText", ""), _defineProperty(_data, "didianprice", 0),
-    _defineProperty(_data, "timeprice", 0), _defineProperty(_data, "inputAddressText", ""),
-    _defineProperty(_data, "isReadProtocol", !0), _defineProperty(_data, "isBargaining", !1),
-    _defineProperty(_data, "isOpenPreference", !1), _defineProperty(_data, "isOpenIntegralDeduction", !1),
-    _defineProperty(_data, "integral", 0), _defineProperty(_data, "show", !1), _defineProperty(_data, "cancelWithMask", !0),
-    _defineProperty(_data, "yinpin", ""), _defineProperty(_data, "proxy_id", 0), _defineProperty(_data, "pictrueTempPath", ""),
-    _defineProperty(_data, "soundRecording", {
+    reward: 0,
+    coupon: 0,
+    lastPrice: 0,
+    weight_price: "",
+    full_money: "",
+    integral: "",
+    min_price: 0,
+    yinpin: "",
+    detail_info: "",
+    addressId: "",
+    wareText: "",
+    didianprice: 0,
+    timeprice: 0,
+    inputAddressText: "",
+    isReadProtocol: !0,
+    weighprice: 0,
+    isBargaining: !1,
+    isOpenPreference: !1,
+    isOpenIntegralDeduction: !1,
+    show: !1,
+    prices: 0,
+    cancelWithMask: !0,
+    pictrueTempPath: "",
+    weight: 0,
+    soundRecording: {
       tempPath: "",
       duration: "",
       isPlay: !1
-    }), _defineProperty(_data, "actions", config.actions), _defineProperty(_data, "cancelText", "取消"),
+    },
+    actions: config.actions,
+    cancelText: "取消"
+  }, _defineProperty(_data, "integral", 0), _defineProperty(_data, "bargaining", 0),
     _defineProperty(_data, "time_index", {
       column: "",
       value: ""
-    }), _defineProperty(_data, "time_stamp", [0, 0, 0]), _defineProperty(_data, "bargaining", 0),
-    _data),
+    }), _data),
   xphoto: function () {
     var a = this, i = (a.data.xphoto, app.siteInfo.acid);
     wx.chooseImage({
@@ -213,15 +236,28 @@ Page({
   },
   onLoad: function (e) {
     var t = this;
-    wx.removeStorageSync("cost"), app.location(t), app.order_template(this);
-    var a = t.data.timeArrs, i = t.data.pageConfig.time;
-    if (a[0] = i, a[1] = i[0].time, a[2] = i[0].time, t.setData({
-      timeArrs: a
+    app.location(t), app.order_template(this), wx.removeStorageSync("cost");
+    var a = t.data.timeArr, i = t.data.pageConfig.time;
+    if (a[0] = i, a[1] = i[0].time, t.setData({
+      timeArr: a
     }), t.setData({
       icons: wx.getStorageSync("site") + "/addons/sd_liferuning/tp/public/uploads/background"
     }), "非会员用户" == wx.getStorageSync("huiyuan") && t.setData({
       huiyuan: 1
-    }), e.addressId ? t.setData({
+    }), e.cid && t.setData({
+      cid: e.cid
+    }), e.type_id && (t.setData({
+      typeid: e.type_id
+    }), t.setData({
+      type_status: e.type
+    })), t.data.typeid) {
+      var r = t.data.typeid;
+      t.data.type_status;
+      t.setData({
+        typeid: r
+      });
+    }
+    if (e.addressId ? t.setData({
       time: e.time,
       price: e.price,
       reward: e.reward,
@@ -236,15 +272,16 @@ Page({
       wareText: e.wareText ? e.wareText : "",
       txtlength: e.wareText.length
     }), e.tags) {
-      var r = e.tags.split(",");
+      var n = e.tags.split(",");
       this.setData({
-        tags: r
+        tags: n
       });
     }
   },
-  onShow: function (e) {
-    var t = this;
-    1 == app.defaultadd && (t.setData({
+  onShow: function () {
+    var i = this;
+    1 == app.defaultadd && (i.setData({
+      detail_infose: "",
       expect_time: "",
       time: ""
     }), app.defaultadd = 0), app.request({
@@ -254,101 +291,20 @@ Page({
         default: 1
       },
       success: function (e) {
-        console.log("地址", e), "" == e.data ? (app.navtoaddress(), app.address_type = !1) : t.setData({
+        console.log("地址", e), "" == e.data ? (app.navtoaddress(), app.address_type = !1) : i.setData({
           detail_info: e.data.address_name,
           username: e.data.name,
           phone: e.data.phone,
-          uid: e.data.uid
+          uaid: e.data.uid
         });
       }
-    });
-    var a = app.pageOperate;
-    a && 1 == a && this.setData({
-      pictrueTempPath: ""
-    });
-  },
-  GetAddress: function () {
-    var i = this;
-    wx.chooseLocation({
+    }), app.request({
+      url: api.order.getAgencyRules,
+      method: "post",
+      data: {},
       success: function (e) {
-        i.setData({
-          hasLocation: !0,
-          location: {
-            longitude: e.longitude,
-            latitude: e.latitude
-          },
-          detail_infos: e.address,
-          wd: e.latitude,
-          jd: e.longitude
-        });
-      },
-      complete: function (e) {
-        if ("" != i.data.detail_info && null != i.data.wd && null != i.data.jd && "" != i.data.detail_infos && "" != i.data.wd && "" != i.data.jd) {
-          var t = i.data.wd, a = i.data.jd;
-          new QQMapWX({
-            key: "EKJBZ-72L3P-FHXDL-VSLEP-JEAGJ-JTFSD"
-          }).geocoder({
-            address: i.data.detail_info,
-            success: function (e) {
-              app.request({
-                url: api.default.addprice,
-                metho: "post",
-                data: {
-                  myaddsjd: e.result.location.lng,
-                  myaddswd: e.result.location.lat,
-                  mudaddswd: t,
-                  mudaddsjd: a,
-                  bid: wx.getStorageSync("bid")
-                },
-                success: function (e) {
-                  var t = i.data.didianprice;
-                  console.log(t), console.log("金额", e), i.setData({
-                    didianprice: e.data.price,
-                    price: i.data.price - t + e.data.price,
-                    proxy_id: e.data.proxy_id ? e.data.proxy_id : 0
-                  }), i.countPrice();
-                }
-              });
-            }
-          });
-        }
-      }
-    });
-  },
-  pickerSelector: function (e) {
-    var i = this, t = e.currentTarget.dataset.type, a = i.data.time_stamp, r = e.detail.value;
-    if ("time" == t) {
-      if (app.adddetails(), !app.address_type) return !1;
-      if (console.log(i.data.time_stamp, "---val"), console.log(i.data.timeArrs, "-----"),
-        console.log(i.data.timeArrs[1][a[1]].stamp, "----"), console.log(i.data.timeArrs[2][a[2]].stamp, "----"),
-        i.data.timeArrs[1][a[1]].stamp >= i.data.timeArrs[2][a[2]].stamp) return wx.showToast({
-          icon: "none",
-          title: "请至少间隔半个小时的服务时间"
-        }), !1;
-      i.setData({
-        time: {
-          week: i.data.timeArrs[0][a[0]],
-          firstHour: i.data.timeArrs[1][a[1]],
-          lastHour: i.data.timeArrs[2][a[2]]
-        },
-        start_time: i.data.timeArrs[1][a[1]].stamp,
-        end_time: i.data.timeArrs[2][a[2]].stamp
-      }), console.log(i.data.time), app.request({
-        url: api.order.getHomeWorkRules,
-        method: "post",
-        data: {
-          pid: i.data.pid,
-          start_time: i.data.start_time,
-          end_time: i.data.end_time
-        },
-        success: function (e) {
-          var t = e.data;
-          if (console.log(e), 1 != e.code) return wx.showToast({
-            title: e.msg,
-            icon: "none"
-          }), i.setData({
-            time: ""
-          }), !1;
+        var t = e.data;
+        if (1 == e.code) {
           if (0 === t.discount ? i.setData({
             discount: "无折扣"
           }) : i.setData({
@@ -369,75 +325,131 @@ Page({
             types: 0
           }), i.countPrice();
         }
-      });
-    }
-    "reward" == t && i.setData({
-      reward: i.data.rewardArr[r].price
-    }), "coupon" == t && ("0" == i.data.couponArr[r].id ? i.setData({
-      coupon: i.data.couponArr[r].price,
-      full_money: i.data.couponArr[r].min_price,
-      useid: i.data.couponArr[r].id,
-      types: 0
-    }) : i.setData({
-      coupon: i.data.couponArr[r].price,
-      full_money: i.data.couponArr[r].min_price,
-      useid: i.data.couponArr[r].id,
-      types: 1
-    })), i.countPrice();
+        console.log("地址2：", e);
+      }
+    });
   },
-  bindColumnChange: function (e) {
-    var t = this.data.pageConfig.time, a = this.data.time_stamp, i = this.data.timeArrs, r = e.detail.column, o = e.detail.value, n = this.data.time_index;
-    console.log("修改的列为", e.detail.column, "，值为", e.detail.value), 0 == r && (i[1] = t[o].time,
-      i[2] = t[o].time), a[r] = e.detail.value, n.column = r, n.value = o, console.log(n),
-      this.setData({
-        timeArrs: i,
-        time_index: n,
-        time_stamp: a
-      });
+  GetAddress: function () {
+    var t = this;
+    console.log("----------", t.data.detail_info), wx.chooseLocation({
+      success: function (e) {
+        t.setData({
+          hasLocation: !0,
+          location: {
+            longitude: e.longitude,
+            latitude: e.latitude
+          },
+          detail_infose: e.name,
+          detail_infos: e.address + e.name,
+          wd: e.latitude,
+          jd: e.longitude
+        });
+      }
+    });
+  },
+  priceSliderChanging: function (e) {
+    var t = e.detail.value;
+    this.setData({
+      prices: t
+    });
   },
   priceSliderChange: function (e) {
-    var t = this, a = e.detail.value;
-    if (!t.data.time) return wx.showToast({
+    var t = e.detail.value;
+    this.setData({
+      prices: t,
+      lastPrice: Number(t) + Number(this.data.price)
+    }), console.log(t), console.log(this.data.price, "---_this.data.price"), this.countPrice();
+  },
+  pickerSelector: function (e) {
+    var t = this, a = e.currentTarget.dataset.type, i = e.detail.value;
+    "time" == a && (t.setData({
+      time: {
+        week: t.data.timeArr[0][i[0]],
+        hour: t.data.timeArr[1][i[1]]
+      },
+      expect_time: t.data.timeArr[1][i[1]].stamp
+    }), console.log(t.data.expect_time)), "reward" == a && t.setData({
+      reward: t.data.rewardArr[i].price
+    }), "coupon" == a && (Number(t.data.prices) < Number(t.data.couponArr[i].min_price) ? (wx.showToast({
+      title: "此优惠券无法使用",
       icon: "none",
-      title: "请先选择时间"
-    }), !1;
-    var i = (t.data.time.lastHour.timechuo - t.data.time.firstHour.timechuo) / 3600;
-    console.log(i), console.log(a), t.setData({
-      price: a,
-      btis: i
-    }), t.countPrice();
+      duration: 1e3
+    }), t.setData({
+      coupon: 0,
+      min_price: 0,
+      useid: 0,
+      types: 0
+    })) : "0" == t.data.couponArr[i].id ? t.setData({
+      coupon: t.data.couponArr[i].price,
+      min_price: t.data.couponArr[i].min_price,
+      useid: t.data.couponArr[i].id,
+      types: 0
+    }) : t.setData({
+      coupon: t.data.couponArr[i].price,
+      min_price: t.data.couponArr[i].min_price,
+      useid: t.data.couponArr[i].id,
+      types: 1
+    })), t.countPrice();
+  },
+  bindColumnChange: function (e) {
+    var t = this.data.pageConfig.time, a = this.data.timeArr, i = e.detail.column, r = e.detail.value, n = this.data.time_index;
+    console.log("修改的列为", e.detail.column, "，值为", e.detail.value), 0 == i && (a[1] = t[r].time),
+      n.column = i, n.value = r, this.setData({
+        timeArr: a,
+        time_index: n
+      });
   },
   countPrice: function () {
     var e = this;
-    if (null == e.data.order) return !1;
-    console.log(e.data.order, "--------------");
-    var t = e.data.types, a = e.data.order.base_price ? e.data.order.base_price : 0, i = e.data.order.discount_price, r = e.data.stepper.stepper, o = e.data.coupon, n = e.data.order.reduce_price, s = e.data.order.secure_price, d = e.data.isOpenIntegralDeduction, c = 0;
-    console.log(Number(a) + "---" + Number(r) + "---" + Number(o) + "---" + Number(n) + "---" + Number(0) + "---" + Number(s)),
-      0 === t ? (console.log("折扣价"), console.log(d, "折扣状态"), d ? (e.setData({
-        discount: e.data.order.discount + "折"
-      }), c = Number(a) - Number(i) + Number(r) - Number(n) + Number(s) + Number(0)) : (e.setData({
-        discount: e.data.order.discount + "折"
-      }), c = Number(a) - Number(i) + Number(r) + Number(s) + Number(0))) : (console.log("优惠价"),
-        console.log(d, "折扣状态"), d ? (e.setData({
-          discount: "无折扣"
-        }), c = Number(a) + Number(r) - Number(o) - Number(n) + Number(s) + Number(0)) : (e.setData({
-          discount: "无折扣"
-        }), c = Number(a) + Number(r) - Number(o) + Number(s) + Number(0)));
-    var u = {
-      lastPrice: c || 0,
+    if (console.log(e.data.order, "------that.data.order"), null == e.data.order) return !1;
+    var t = e.data.types, a = e.data.prices, i = e.data.order.discount, r = e.data.stepper.stepper, n = e.data.coupon, o = e.data.min_price, s = e.data.order.reduce_price, c = e.data.order.integral_max_price, d = e.data.order.secure_price, u = e.data.isOpenIntegralDeduction, p = 0;
+    0 === t ? (console.log("折扣价"), console.log(u, "折扣状态"), u ? (Number(a) >= Number(c) ? p = Number(a) - Number(i) * Number(a) - Number(s) + Number(r) + Number(d) : (e.setData({
+      integral: 0,
+      jf: "",
+      isOpenIntegralDeduction: !1
+    }), p = Number(a) - Number(i) * Number(a) + Number(r) + Number(d)), e.setData({
+      discount: e.data.order.discount + "折"
+    })) : (e.setData({
+      discount: e.data.order.discount + "折"
+    }), p = Number(a) - Number(i) * Number(a) + Number(r) + Number(d))) : (console.log("优惠价"),
+      console.log(u, "折扣状态"), Number(a) < Number(o) ? (e.setData({
+        coupon: 0,
+        min_price: 0,
+        useid: 0,
+        types: 0
+      }), u ? (Number(a) >= Number(c) ? p = Number(a) + Number(r) - Number(n) - Number(s) + Number(d) : (e.setData({
+        integral: 0,
+        jf: "",
+        isOpenIntegralDeduction: !1
+      }), p = Number(a) + Number(r) + Number(d)), e.setData({
+        discount: "无折扣"
+      })) : (e.setData({
+        discount: "无折扣"
+      }), p = Number(a) + Number(r) + Number(d))) : u ? (Number(a) >= Number(c) ? p = Number(a) + Number(r) - Number(n) - Number(s) + Number(d) : (e.setData({
+        integral: 0,
+        jf: "",
+        isOpenIntegralDeduction: !1
+      }), p = Number(a) + Number(r) - Number(n) + Number(d)), e.setData({
+        discount: "无折扣"
+      })) : (e.setData({
+        discount: "无折扣"
+      }), p = Number(a) + Number(r) - Number(n) + Number(d)));
+    var l = {
+      lastPrice: p || 0,
       base_price: a || 0,
       discount: t ? e.data.order.discount : 0,
-      secure_price: s || 0,
-      reduce_price: d ? n : 0,
-      coupon: o || 0,
+      secure_price: d || 0,
+      reduce_price: u ? s : 0,
+      coupon: n || 0,
       stepper: r || 0,
-      type: 5
+      type: 6
     };
-    wx.setStorageSync("cost", u), e.setData({
-      lastPrice: c.toFixed(2)
+    wx.setStorageSync("cost", l), e.setData({
+      lastPrice: p.toFixed(2)
     });
   },
   changeInputData: function (e) {
+    console.log("地址", e);
     var t = e.currentTarget.dataset.name, a = e.detail.value, i = this.data.txtmaxlength;
     "wareText" == t && (console.log(a.length), a.length > i ? this.setData({
       wareText: a
@@ -448,23 +460,49 @@ Page({
       inputAddressText: a
     });
   },
+  weight: function (e) {
+    console.log(e.detail.value);
+    var t = this;
+    app.request({
+      url: api.default.WeightPrice,
+      data: {
+        bid: wx.getStorageSync("bid"),
+        weight: e.detail.value
+      },
+      success: function (e) {
+        "" != e.data && (t.setData({
+          weighprice: e.data,
+          price: t.data.price + e.data - weighprice
+        }), t.countPrice());
+      }
+    });
+  },
   formSubmit: function (e) {
-    return console.log("微信支付", api), console.log(e.detail.value), e.detail.value.voice || e.detail.value.goods ? 1 != this.data.pageConfig.mainConfig.templet5.timeConfig.enabled || "" != e.detail.value.start_time && "" != e.detail.value.end_time ? this.data.isReadProtocol ? (this.setData({
-      formData: e.detail.value,
-      formId: e.detail.formId
-    }), void this.openActionsheet()) : (wx.showToast({
-      title: "未同意协议，无法下单。",
+    return console.log(e.detail.value), e.detail.value.voice || e.detail.value.goods ? "" == e.detail.value.address ? (wx.showToast({
+      title: "地址未选择",
       icon: "none",
-      duration: 1e3
-    }), !1) : (wx.showToast({
-      title: "信息不完善，无法下单。",
+      duration: 1500
+    }), !1) : 1 == this.data.pageConfig.mainConfig.templet4.timeConfig.enabled && "" == e.detail.value.expect_time ? (wx.showToast({
+      title: "请选择收货约时间",
       icon: "none",
-      duration: 1e3
-    }), !1) : (wx.showToast({
-      title: "请输入信息",
+      duration: 1500
+    }), !1) : 0 == e.detail.value.prices ? (wx.showToast({
+      title: "请选择代办费用",
       icon: "none",
-      mask: !0
-    }), !1);
+      duration: 1500
+    }), !1) : this.data.isReadProtocol ? (console.log(e.detail.formId, " e.detail.formId"),
+      this.setData({
+        formData: e.detail.value,
+        formId: e.detail.formId
+      }), void this.openActionsheet()) : (wx.showToast({
+        title: "未同意协议，无法下单。",
+        icon: "none",
+        duration: 1e3
+      }), !1) : (wx.showToast({
+        title: "请输入信息",
+        icon: "none",
+        mask: !0
+      }), !1);
   },
   addWareItem: function (e) {
     var t = e.currentTarget.dataset.tag, a = this.data.wareText, i = "" == a.trim() ? t : a + ", " + t;
@@ -477,12 +515,6 @@ Page({
     var t = this.data.isReadProtocol;
     this.setData({
       isReadProtocol: !t
-    });
-  },
-  radioChanged: function (e) {
-    var t = e.detail.value;
-    "bargaining" == e.currentTarget.dataset.name && this.setData({
-      bargaining: t
     });
   },
   openActionsheet: function () {
@@ -513,29 +545,35 @@ Page({
     }, 100);
   },
   wechatPay: function () {
-    var e = this.data.formData;
-    console.log("表单数据=>", e), app.request({
-      url: api.payment.HomeWorkPay,
+    var t = this, e = t.data.formData, a = t.data.type_status;
+    if (a); else;
+    app.request({
+      url: api.payment.otherPay,
       method: "post",
       data: {
+        address: e.address + e.mudaddsinfos,
         remark: e.remark,
         pic: e.pic,
         voice: e.voice,
         goods: "" == e.goods ? "语音下单" : e.goods,
+        expect_time: e.expect_time,
         reward_price: e.reward_price,
         coupon_id: e.coupon_id ? e.coupon_id : 0,
         integral: e.integral,
         bargaining: e.bargaining,
         pay_type: 1,
-        start_time: e.start_time,
-        end_time: e.end_time,
-        voice_time: this.data.soundRecording.duration,
+        price: t.data.prices,
+        longitude: t.data.location.longitude,
+        latitude: t.data.location.latitude,
+        voice_time: t.data.soundRecording.duration,
         laiyuan_id: 0,
         old_order_no: 0,
-        pid: this.data.pid
+        pid: t.data.pid,
+        run_now: 0 == e.expect_time ? 1 : 0
       },
       success: function (e) {
-        1 == e.code ? wx.requestPayment({
+        if (0 == e.code) return app.Showmodal(), !1;
+        wx.requestPayment({
           timeStamp: e.data.timeStamp,
           nonceStr: e.data.nonceStr,
           package: e.data.package,
@@ -545,9 +583,8 @@ Page({
             wx.showToast({
               title: "支付成功",
               icon: "success",
-              duration: 1e3,
               success: function () {
-                app.sendSocketMessage_104(3), setTimeout(function () {
+                app.sendSocketMessage_104(1), setTimeout(function () {
                   wx.reLaunch({
                     url: "/sd_liferuning/pages/constmer/order-list/index"
                   });
@@ -558,65 +595,76 @@ Page({
           fail: function () {
             wx.showToast({
               title: "支付失败",
-              icon: "none",
-              duration: 1500
+              icon: "none"
             });
           },
-          complete: function (e) { }
-        }) : wx.showToast({
-          title: res.msg,
-          icon: "none"
+          complete: function (e) {
+            t.setData({
+              clickpay: !0
+            });
+          }
         });
       }
     });
   },
   balancePay: function () {
-    var t = this, a = t.data.formData, i = t.data.formId;
-    console.log("表单数据=>", a), wx.showModal({
+    var t = this, a = this, i = t.data.formData, r = t.data.formId, e = t.data.type_status;
+    if (e); else;
+    wx.showModal({
       title: "余额支付",
       content: "是否支付" + t.data.lastPrice + "元",
       success: function (e) {
         e.confirm ? (wx.showLoading({
           title: "正在支付"
         }), app.request({
-          url: api.payment.HomeWorkPay,
+          url: api.payment.otherPay,
           method: "post",
           data: {
-            remark: a.remark,
-            pic: a.pic,
-            voice: a.voice,
-            goods: "" == a.goods ? "语音下单" : a.goods,
-            reward_price: a.reward_price,
-            coupon_id: a.coupon_id ? a.coupon_id : 0,
-            integral: a.integral,
-            bargaining: a.bargaining,
+            address: i.address + i.mudaddsinfos,
+            remark: i.remark,
+            pic: i.pic,
+            voice: i.voice,
+            goods: "" == i.goods ? "语音下单" : i.goods,
+            expect_time: i.expect_time,
+            reward_price: i.reward_price,
+            coupon_id: i.coupon_id ? i.coupon_id : 0,
+            integral: i.integral,
+            bargaining: i.bargaining,
             pay_type: 2,
-            start_time: a.start_time,
-            end_time: a.end_time,
-            form_id: i,
+            price: a.data.prices,
+            form_id: r,
+            longitude: a.data.location.longitude,
+            latitude: a.data.location.latitude,
             voice_time: t.data.soundRecording.duration,
             laiyuan_id: 0,
             old_order_no: 0,
-            pid: t.data.pid
+            pid: t.data.pid,
+            run_now: 0 == i.expect_time ? 1 : 0
           },
           success: function (e) {
-            return wx.hideLoading(), console.log(e), 0 == e.code ? wx.showToast({
-              title: e.msg,
-              icon: "none"
-            }) : wx.showToast({
+            if (wx.hideLoading(), console.log(e), 0 == e.code) {
+              if ("没有添加默认地址" == e.msg) return app.Showmodal(), !1;
+              wx.showToast({
+                title: e.msg,
+                icon: "none"
+              });
+            } else wx.showToast({
               title: "支付成功",
               icon: "success",
               success: function () {
-                app.sendSocketMessage_104(3), setTimeout(function () {
+                app.sendSocketMessage_104(1), setTimeout(function () {
                   wx.reLaunch({
                     url: "/sd_liferuning/pages/constmer/order-list/index"
                   });
                 }, 1500);
               }
-            }), !1;
+            });
+            a.setData({
+              clickpay: !0
+            });
           },
           fail: function (e) {
-            t.setData({
+            a.setData({
               clickpay: !0
             });
           }
@@ -635,7 +683,7 @@ Page({
     });
   },
   soundRecordingEnd: function () {
-    var r = this, o = app.siteInfo.acid;
+    var r = this, n = app.siteInfo.acid;
     recorderManager.stop(), recorderManager.onStop(function (e) {
       var t = e.tempFilePath, a = Math.ceil(e.duration / 1e3);
       innerAudioContext.src = t, r.setData({
@@ -647,7 +695,7 @@ Page({
       });
       var i = r.data.soundRecording.tempPath;
       i && (console.log("tempPath", i), wx.uploadFile({
-        url: api.order.upload + "&_acid=" + o + "&access_token=" + wx.getStorageSync("access_token"),
+        url: api.order.upload + "&_acid=" + n + "&access_token=" + wx.getStorageSync("access_token"),
         filePath: i,
         name: "file",
         success: function (e) {
@@ -675,6 +723,20 @@ Page({
         tempPath: "",
         duration: "",
         isPlay: !1
+      }
+    });
+  },
+  takePictrue: function () {
+    var a = this;
+    wx.chooseImage({
+      count: 1,
+      sizeType: ["original", "compressed"],
+      sourceType: ["album", "camera"],
+      success: function (e) {
+        var t = e.tempFilePaths;
+        a.setData({
+          pictrueTempPath: t[0]
+        });
       }
     });
   },
@@ -710,16 +772,25 @@ Page({
     });
   },
   isOpenIntegralDeduction: function () {
-    var e = this.data.isOpenIntegralDeduction, t = this.data.order;
-    e ? (this.setData({
+    var e = this, t = e.data.prices, a = this.data.isOpenIntegralDeduction, i = e.data.order;
+    if (!(Number(t) > Number(e.data.order.integral_max_price))) return wx.showToast({
+      title: "未达到使用积分抵扣价格",
+      icon: "none",
+      duration: 1e3
+    }), e.setData({
       integral: 0,
       jf: "",
-      isOpenIntegralDeduction: !e
-    }), console.log("关闭")) : this.setData({
+      isOpenIntegralDeduction: a
+    }), !1;
+    console.log("大于"), a ? (e.setData({
+      integral: 0,
+      jf: "",
+      isOpenIntegralDeduction: !a
+    }), console.log("关闭")) : e.setData({
       integral: 1,
-      jf: "（剩余积分：" + t.integral + "，抵扣积分：" + t.reduce_integral + "）",
-      isOpenIntegralDeduction: !e
-    }), this.countPrice();
+      jf: "（剩余积分：" + i.integral + "，抵扣积分：" + i.reduce_integral + "）",
+      isOpenIntegralDeduction: !a
+    }), e.countPrice();
   },
   onUnload: function () {
     app.default = 0;

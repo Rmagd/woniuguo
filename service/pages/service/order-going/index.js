@@ -168,9 +168,13 @@ Page((_defineProperty(_Page = {
                 title: "确认送达成功",
                 icon: "none"
             }), setTimeout(function() {
-                wx.navigateBack({
-                    delta: 2
-                });
+                // wx.navigateBack({
+                //     delta: 2
+                // });
+                console.log('这里应该返回到订单列表');
+              // wx.redirectTo({
+              //   url: "../index/index"
+              // });
             }, 1e3)) : 0 == t.code && wx.showToast({
                 title: t.msg,
                 icon: "none"
@@ -197,6 +201,7 @@ Page((_defineProperty(_Page = {
                 wx.redirectTo({
                     url: "../index/index"
                 });
+                console.log('走你');
             }, 1e3)) : 0 == t.code && wx.showToast({
                 title: t.msg
             });
@@ -218,9 +223,9 @@ Page((_defineProperty(_Page = {
                 title: "确认订单完成",
                 icon: "none"
             }), setTimeout(function() {
-                wx.navigateBack({
-                    delta: 2
-                });
+              wx.redirectTo({
+                url: "../index/index"
+              });
             }, 1e3)) : 0 == t.code && wx.showToast({
                 title: t.msg,
                 icon: "none"

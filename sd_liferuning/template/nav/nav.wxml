@@ -39,6 +39,7 @@
         </navigator>
         <navigator class="flex-grow-1 flex-y-center" data-open_type="{{item.open_type}}" openType="redirect" url="{{item.url}}" wx:else>
             <view>
+            <view class='red-dot' wx:if="{{item.text=='我的'}}"></view>
                 <image class="navbar-icon" data-ss="{{item.active}}" src="{{item.active?item.active_icon:item.icon}}"></image>
                 <view class="navbar-text" style="color: {{item.active?item.active_color:item.color}};">{{item.text}}
                     </view>

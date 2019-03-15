@@ -195,6 +195,18 @@ page {
     line-height: 60rpx;
 }
 
+.input-module .r {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.input-module input {
+    text-align: right;
+    padding: 0 10rpx;
+    margin-right: 5rpx;
+}
+
 .picker-module-icon {
     width: 35rpx;
     height: 35rpx;
@@ -233,6 +245,20 @@ page {
 .picker-weight-input input {
     width: 80rpx;
     margin-right: 15rpx;
+}
+
+.slider-module {
+    padding: 30rpx 20rpx;
+}
+
+.slider-info {
+    font-size: 28rpx;
+    color: #333;
+    margin: 20rpx 0 0 40rpx;
+}
+
+.slider-info text {
+    color: #20AF1F;
 }
 
 .user-hint {
@@ -287,22 +313,4 @@ page {
 
 .none {
     display: none;
-}
-
-.slider-module {
-    padding: 30rpx 20rpx;
-}
-
-.slider-info {
-    font-size: 28rpx;
-    color: #333;
-    margin: 20rpx 0 0 40rpx;
-}
-
-.slider-info text {
-    color: #20AF1F;
-}
-
-.picker-module .jf {
-    font-size: 24rpx;
 }

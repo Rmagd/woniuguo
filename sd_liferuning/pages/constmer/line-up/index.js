@@ -99,6 +99,9 @@ var DateFactory = function() {
 }(), dateFactory = new DateFactory();
 
 dateFactory.init();
+var recorderManager = wx.getRecorderManager(), innerAudioContext = wx.createInnerAudioContext();
+
+innerAudioContext.obeyMuteSwitch = !1;
 
 var config = require("../../../../config.js"), api = require("../../../../api.js"), QQMapWX = require("../../../../qqmap-wx.js"), app = getApp();
 
@@ -145,6 +148,7 @@ Page({
         stepper: {
             stepper: 0
         },
+        txtmaxlength: 40,
         huiyuan: "",
         full_money: "",
         time: "",
@@ -181,6 +185,12 @@ Page({
         integral: 0,
         show: !1,
         cancelWithMask: !0,
+      pictrueTempPath: "",
+      soundRecording: {
+        tempPath: "",
+        duration: "",
+        isPlay: !1
+      },
         actions: config.actions,
         cancelText: "取消",
         time_index: {
@@ -189,6 +199,56 @@ Page({
         },
         time_stamp: [ 0, 0, 0 ]
     },
+    // 自家代码区域
+  xphoto: function () {
+    var a = this, i = (a.data.xphoto, app.siteInfo.acid);
+    wx.chooseImage({
+      count: 1,
+      sizeType: ["original", "compressed"],
+      sourceType: ["album", "camera"],
+      success: function (e) {
+        var t = e.tempFilePaths;
+        wx.saveFile({
+          tempFilePath: t[0],
+          success: function (e) {
+            var t = e.savedFilePath;
+            wx.uploadFile({
+              url: api.order.upload + "&_acid=" + i + "&access_token=" + wx.getStorageSync("access_token"),
+              filePath: t,
+              header: {
+                "content-type": "application/x-www-form-urlencoded"
+              },
+              name: "file",
+              success: function (e) {
+                var t = JSON.parse(e.data);
+                if (console.log("图片:", t), 1 == t.code) {
+                  a.setData({
+                    pictrueTempPath: t.data
+                  });
+                } else wx.showModal({
+                  title: "提示",
+                  content: "图片上传失败",
+                  showCancel: !1
+                });
+              },
+              fail: function (e) {
+                console.log("res fail", e);
+              }
+            });
+          }
+        });
+      }
+    });
+  },
+  xphotos: function (e) {
+    console.log("eee", e);
+    var t = e.currentTarget.id;
+    wx.navigateTo({
+      url: "/sd_liferuning/pages/constmer/choose-pic/index?src=" + t
+    });
+  },
+  // 自家代码区结束
+
     onLoad: function(e) {
       console.log(e);
         var t = this, a = this, i = e.tags;
@@ -213,7 +273,7 @@ Page({
             wareText: e.wareText,
             cid: e.cid
         }) : a.setData({
-            wareText: e.wareText ? e.wareText : a.data.tags[0]
+            txtlength: 0
         });
         e.id;
     },
@@ -362,14 +422,27 @@ Page({
             lastPrice: u.toFixed(2)
         });
     },
-    changeInputData: function(e) {
-        var t = e.currentTarget.dataset.name, a = e.detail.value;
-        "wareText" == t && this.setData({
-            wareText: a
-        }), "inputAddressText" == t && this.setData({
-            inputAddressText: a
-        });
-    },
+    // 原函数
+    // changeInputData: function(e) {
+    //     var t = e.currentTarget.dataset.name, a = e.detail.value;
+    //     "wareText" == t && this.setData({
+    //         wareText: a
+    //     }), "inputAddressText" == t && this.setData({
+    //         inputAddressText: a
+    //     });
+    // },
+  changeInputData: function (e) {
+    console.log("地址", e);
+    var t = e.currentTarget.dataset.name, a = e.detail.value, i = this.data.txtmaxlength;
+    "wareText" == t && (console.log(a.length), a.length > i ? this.setData({
+      wareText: a
+    }) : this.setData({
+      wareText: a,
+      txtlength: a.length
+    })), "inputAddressText" == t && this.setData({
+      inputAddressText: a
+    });
+  },
     formSubmit: function(e) {
         return console.log(e.detail.value), "" == e.detail.value.address ? (wx.showToast({
             title: "信息不完善，无法下单。",
@@ -387,12 +460,20 @@ Page({
             duration: 1e3
         }), !1);
     },
-    addWareItem: function(e) {
-        var t = e.currentTarget.dataset.tag, a = this.data.wareText;
-        this.setData({
-            wareText: a + ", " + t
-        });
-    },
+    // 原函数
+    // addWareItem: function(e) {
+    //     var t = e.currentTarget.dataset.tag, a = this.data.wareText;
+    //     this.setData({
+    //         wareText: a + ", " + t
+    //     });
+    // },
+  addWareItem: function (e) {
+    var t = e.currentTarget.dataset.tag, a = this.data.wareText, i = "" == a.trim() ? t : a + ", " + t;
+    i.length > this.data.txtmaxlength || this.setData({
+      wareText: i,
+      txtlength: i.length
+    });
+  },
     isRead: function(e) {
         var t = this.data.isReadProtocol;
         this.setData({
@@ -559,6 +640,76 @@ Page({
             }
         }), console.log("余额支付");
     },
+    // 后加代码开始
+  soundRecordingStart: function () {
+    recorderManager.start({
+      duration: 6e4,
+      sampleRate: 44100,
+      numberOfChannels: 1,
+      encodeBitRate: 192e3,
+      format: "mp3",
+      frameSize: 50
+    });
+  },
+  soundRecordingEnd: function () {
+    var r = this, n = app.siteInfo.acid;
+    recorderManager.stop(), recorderManager.onStop(function (e) {
+      var t = e.tempFilePath, a = Math.ceil(e.duration / 1e3);
+      innerAudioContext.src = t, r.setData({
+        soundRecording: {
+          tempPath: t,
+          duration: a,
+          isPlay: !1
+        }
+      });
+      var i = r.data.soundRecording.tempPath;
+      i && (console.log("tempPath", i), wx.uploadFile({
+        url: api.order.upload + "&_acid=" + n + "&access_token=" + wx.getStorageSync("access_token"),
+        filePath: i,
+        name: "file",
+        success: function (e) {
+          r.setData({
+            yinpin: JSON.parse(e.data)
+          });
+        }
+      }));
+    });
+  },
+  soundRecordingPlay: function () {
+    var t = this, e = innerAudioContext.paused, a = t.data.soundRecording;
+    e ? (innerAudioContext.play(), a.isPlay = !0, setTimeout(function () {
+      var e = t.data.soundRecording;
+      e.isPlay = !1, t.setData({
+        soundRecording: e
+      });
+    }, 1e3 * a.duration)) : (innerAudioContext.stop(), a.isPlay = !1), t.setData({
+      soundRecording: a
+    });
+  },
+  soundRecordingRemove: function () {
+    innerAudioContext.stop(), this.setData({
+      soundRecording: {
+        tempPath: "",
+        duration: "",
+        isPlay: !1
+      }
+    });
+  },
+  takePictrue: function () {
+    var a = this;
+    wx.chooseImage({
+      count: 1,
+      sizeType: ["original", "compressed"],
+      sourceType: ["album", "camera"],
+      success: function (e) {
+        var t = e.tempFilePaths;
+        a.setData({
+          pictrueTempPath: t[0]
+        });
+      }
+    });
+  },
+    // 后加代码结束
     handleStepperChange: function(e) {
         var t = e.detail, a = e.target.dataset.componentId;
         this.setData(_defineProperty({}, a + ".stepper", t)), this.countPrice();

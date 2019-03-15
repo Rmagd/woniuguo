@@ -1,13 +1,47 @@
 <form bindsubmit="formSubmit" reportSubmit="true">
     <view class="container">
-        <view class="service-module">
+        <!-- <view class="service-module">
             <view class="service-title" style="color:{{pageConfig.mainConfig.templet3.serviceConfig.titleFontColor}};">{{pageConfig.mainConfig.templet3.serviceConfig.title}}</view>
             <view class="service-group">
                 <button bindtap="selectionService" class="service-item {{index==selectionService?'active':''}}" data-index="{{index}}" wx:for="{{tags}}">
           {{item}}</button>
                 <input class="item-content none" name="goods" type="text" value="{{wareText}}"></input>
             </view>
+        </view> -->
+        <view class="column">
+            <view class="textarea-module">
+                <textarea bindinput="changeInputData" data-name="wareText" maxlength="{{txtmaxlength}}" placeholder="请输入代排队要求" value="{{wareText}}"></textarea>
+                <input class="item-content none" name="goods" type="text" value="{{wareText}}"></input>
+                <input class="item-content none" name="old_order_no" type="text" value="{{old_order_no}}"></input>
+                <view class="txtlength">{{txtlength}}/{{txtmaxlength}}</view>
+                <view class="hot-ware">
+                    <view bindtap="addWareItem" class="ware-tag" data-tag="{{item}}" wx:for="{{tags}}">{{item}}</view>
+                </view>
+            </view>
+            <view class="multi-media-module">
+                <view bindtap="xphoto" class="takePictrue" wx:if="{{pictrueTempPath.length<=0}}">
+                    <image class="icon" src="{{pageConfig.mainConfig.templet4.commodityConfig.tackPictureIcon}}"></image>
+                </view>
+                <view bindtap="xphotos" class="takePictrue" id="{{pictrueTempPath}}" wx:if="{{pictrueTempPath.length>0}}">
+                    <image class="icon" name="xphoto" src="{{pictrueTempPath}}"></image>
+                </view>
+                <view bindtouchend="soundRecordingEnd" bindtouchstart="soundRecordingStart" class="soundRecording" wx:if="{{soundRecording.tempPath.length<=0}}">
+                    <image class="icon" src="{{pageConfig.mainConfig.templet4.commodityConfig.soundRecording}}"></image>
+                </view>
+                <view class="soundRecordingPlay" wx:if="{{soundRecording.tempPath.length>0}}">
+                    <view bindtap="soundRecordingPlay" class="soundRecordingPlay-left">
+                        <image class="soundRecording-icon" name="yinpin" src="{{webRoot}}/public/WeChat/default/user/play-icon1.png" wx:if="{{!soundRecording.isPlay}}"></image>
+                        <image class="soundRecording-icon" src="{{webRoot}}/public/WeChat/default/user/play-icon2.gif" wx:if="{{soundRecording.isPlay}}"></image>
+                        <view>{{soundRecording.duration}}＂</view>
+                    </view>
+                    <view bindtap="soundRecordingRemove">
+                        <image class="soundRecording-icon" src="{{webRoot}}/public/WeChat/default/user/play-icon3.png"></image>
+                    </view>
+                </view>
+            </view>
         </view>
+
+        <!-- 上面是增加代码块 -->
         <view class="column">
             <view class="address-module">
                 <view class="address-item">

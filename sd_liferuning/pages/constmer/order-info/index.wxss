@@ -245,3 +245,17 @@ page {
     display: inline-block;
     margin-right: 20rpx;
 }
+
+.back-to-home navigator{
+  position: fixed;
+  bottom: 25rpx;
+  width: 700rpx;
+  height: 100rpx;
+  margin:0 25rpx;
+  border-radius:15rpx;
+  background-color: #1aad19;
+  color: white;
+  line-height: 100rpx;
+  text-align: center;
+  letter-spacing: 8rpx;
+}

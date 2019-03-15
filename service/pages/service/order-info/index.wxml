@@ -22,7 +22,7 @@
             <text>订单距离您</text>
         </view>
         <view class="right">
-            <text class="order_status">{{order.reward_price}}元</text>
+            <text class="order_status">{{order.runner_profit}}元</text>
             <text>服务费（不含商品）</text>
         </view>
     </view>
@@ -82,12 +82,12 @@
             </view>
         </block>
         <block wx:elif="{{order.class_id==7}}">
-            <view class="item">
+            <view class="item" wx:if="{{order.take_name!='undefined'}}">
                 <text class="field">取货人姓名</text>
                 <text bindtap="toPhone" class="context" data-phone="{{order.take_phone}}">{{order.take_name}}</text>
             </view>
             <view class="border-bottom"></view>
-            <view class="item">
+            <view class="item" wx:if="{{order.take_phone!='undefined'}}">
                 <text class="field">取货人电话</text>
                 <text bindtap="toPhone" class="context" data-phone="{{order.take_phone}}">{{order.take_phone}}</text>
             </view>
@@ -148,7 +148,7 @@
             </view>
         </block>
         <view class="border-bottom"></view>
-        <view class="item">
+        <view class="item" wx:if="{{order.remark}}">
             <text class="field">订单备注</text>
             <text class="context"> {{order.remark}}</text>
         </view>

@@ -24,34 +24,60 @@ page {
     height: 100%;
 }
 
-.service-module {
+.textarea-module {
+    width: 540rpx;
     background: #FFF;
+    float: left;
+}
+
+.textarea-module textarea {
     width: 95%;
-    margin-bottom: 15rpx;
-    padding: 0 2.5%;
-}
-
-.service-title {
-    font-size: 30rpx;
-    line-height: 60rpx;
-    color: #666;
-}
-
-.service-group {
-    padding: 15rpx 0;
-}
-
-.service-item {
+    margin: 10rpx auto;
+    height: 120rpx;
     font-size: 28rpx;
-    display: inline-block;
-    height: 60rpx;
-    line-height: 60rpx;
-    margin: 10rpx;
 }
 
-.service-group .active {
-    background: #be3737;
-    color: #FFF;
+.multi-media-module {
+    width: 200rpx;
+    height: 160rpx;
+    float: left;
+    border-left: 1rpx solid #eee;
+    margin: 40rpx 0;
+}
+
+.takePictrue,.soundRecording {
+    width: 50rpx;
+    height: 50rpx;
+    display: block;
+    margin: 20rpx auto 15rpx;
+}
+
+.soundRecording {
+    margin: 30rpx auto 15rpx;
+}
+
+.soundRecordingPlay {
+    height: 60rpx;
+    width: 80%;
+    margin: 20rpx auto;
+    border-radius: 60rpx;
+    font-size: 20rpx;
+    line-height: 60rpx;
+    background: #eee;
+    padding: 0 5%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.soundRecordingPlay-left {
+    display: flex;
+}
+
+.soundRecording-icon {
+    width: 30rpx;
+    height: 30rpx;
+    padding: 15rpx;
+    display: inline-block;
 }
 
 .address-module {
@@ -169,6 +195,18 @@ page {
     line-height: 60rpx;
 }
 
+.input-module .r {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.input-module input {
+    text-align: right;
+    padding: 0 10rpx;
+    margin-right: 5rpx;
+}
+
 .picker-module-icon {
     width: 35rpx;
     height: 35rpx;
@@ -207,6 +245,20 @@ page {
 .picker-weight-input input {
     width: 80rpx;
     margin-right: 15rpx;
+}
+
+.slider-module {
+    padding: 30rpx 20rpx;
+}
+
+.slider-info {
+    font-size: 28rpx;
+    color: #333;
+    margin: 20rpx 0 0 40rpx;
+}
+
+.slider-info text {
+    color: #20AF1F;
 }
 
 .user-hint {
@@ -261,8 +313,4 @@ page {
 
 .none {
     display: none;
-}
-
-.picker-module .jf {
-    font-size: 24rpx;
 }

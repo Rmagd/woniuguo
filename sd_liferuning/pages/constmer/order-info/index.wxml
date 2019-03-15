@@ -171,7 +171,7 @@
         </view>
     </view>
 </view>
-<view class="page-content">
+<view class="page-content" style='margin-bottom:150rpx;'>
     <view class="title">
         <text>订单详情</text>
     </view>
@@ -227,4 +227,7 @@
         </view>
         </view>
     </view>
+</view>
+<view class='back-to-home' wx:if="{{showBtn}}">
+<navigator  open-type='redirect' url='/sd_liferuning/pages/constmer/index/index'>回到首页</navigator>
 </view>

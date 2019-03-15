@@ -68,9 +68,9 @@ innerAudioContext.src = "", innerAudioContext.obeyMuteSwitch = !1, Page({
         });
     },
     into_polyline: function(e) {
-        console.log(e.currentTarget.dataset.url), wx.navigateTo({
-            url: e.currentTarget.dataset.url
-        });
+        console.log(e.currentTarget.dataset.url), wx.redirectTo({
+          url: e.currentTarget.dataset.url,
+        })
     },
     onUnload: function() {
         innerAudioContext.stop(), clearInterval(set);

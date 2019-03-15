@@ -38,6 +38,16 @@ innerAudioContext.src = "", innerAudioContext.obeyMuteSwitch = !1, Page((_define
                 vtype: !0
             });
         }), this.get_data(e.orderid);
+      var pages = getCurrentPages();
+      if(pages.length==1){
+        this.setData({
+          showBtn: true
+        })
+      }else{
+        this.setData({
+          showBtn: false
+        })
+      }
     },
     get_data: function(e) {
         var n = this;

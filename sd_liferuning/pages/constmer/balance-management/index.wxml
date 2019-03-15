@@ -16,10 +16,6 @@
             <image src="{{webRoot}}/public/WeChat/resource/common/image/customer/balance-management/icon2.png"></image>
             <text>充值</text>
         </navigator>
-        <!-- <navigator class="fn-btn-item" url="/sd_liferuning/pages/constmer/bankcard-list/index">
-            <image src="{{webRoot}}/public/WeChat/resource/common/image/customer/balance-management/icon3.png"></image>
-            <text>银行卡</text>
-        </navigator> -->
     </view>
     <view class="income-module">
         <view class="income-module-title">

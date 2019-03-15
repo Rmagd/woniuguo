@@ -194,6 +194,7 @@
                     <text>{{menuItem.name}}</text>
                 </button>
                 <view bindtap="check_phone" class="nav-item" data-url="{{menuItem.url}}" wx:elif="{{menuItem.id=='pao'}}">
+                <view class='red-dot' wx:if="{{menuItem.name=='我想赚'}}"></view>
                     <image class="nav-icon" src="{{menuItem.icon}}"></image>
                     <text>{{menuItem.name}}</text>
                 </view>

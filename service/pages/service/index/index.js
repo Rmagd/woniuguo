@@ -15,7 +15,7 @@ Page({
             isPlay: !1
         },
         webRoot: app.webRoot,
-        class_id: [ "帮我买", "帮我送", "代排队", "代驾", "家政", "代办", "代取" ],
+        class_id: ["帮买", "未知", "代排队", "未知", "代写论文", "代课", "帮取", "其他"],
         wait_finished: [],
         finished_order: [],
         detele_order: []
@@ -134,7 +134,11 @@ Page({
         });
     },
     navto: function(e) {
-        wx.setStorageSync("current_order", e.currentTarget.dataset.order), app.navTo("/service/pages/service/order-info/index?id=" + e.currentTarget.dataset.id);
+        wx.setStorageSync("current_order", e.currentTarget.dataset.order),
+        wx.redirectTo({
+          url: "/service/pages/service/order-info/index?id=" + e.currentTarget.dataset.id,
+        })
+        // app.navTo("/service/pages/service/order-info/index?id=" + e.currentTarget.dataset.id,);
     },
     navToUrl: function(e) {
         var t = e.currentTarget.dataset.url;

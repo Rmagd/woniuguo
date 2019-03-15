@@ -125,16 +125,16 @@
     <view style="height:90rpx"></view>
     <view class="btn-group">
         <navigator class="btn-item active" openType="redirect" url="/service/pages/service/get-order/index">
-            <image class="btn-group-icon" src="{{webRoot}}/public/WeChat/resource/common/image/nav-icon/icon0-1.png"></image>
+            <image class="btn-group-icon" src="{{webRoot}}/public/WeChat/resource/common/image/nav-icon/rob-order-tap.svg"></image>
             <text>抢单</text>
         </navigator>
         <navigator class="btn-item" openType="redirect" url="/service/pages/service/index/index">
-            <image class="btn-group-icon" src="{{webRoot}}/public/WeChat/resource/common/image/nav-icon/icon1.png"></image>
+            <image class="btn-group-icon" src="{{webRoot}}/public/WeChat/resource/common/image/nav-icon/order.svg"></image>
             <text>订单</text>
         </navigator>
         <navigator class="btn-item " openType="redirect" url="/service/pages/service/user/index">
-            <image class="btn-group-icon" src="{{webRoot}}/public/WeChat/resource/common/image/nav-icon/icon2.png"></image>
-            <text>个人</text>
+            <image class="btn-group-icon" src="{{webRoot}}/public/WeChat/resource/common/image/nav-icon/me.svg"></image>
+            <text>我的</text>
         </navigator>
     </view>
 </view>
